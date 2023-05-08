@@ -1,7 +1,7 @@
 ![HenryLogo](https://d31uz8lwfmyn8g.cloudfront.net/Assets/logo-henry-white-lg.png)
 
 # **COUNTRIES** | Proyecto Individual
-
+qweqw
 ## **📌 OBJETIVOS**
 
 -  Construir una Single Page Application utlizando las tecnologías: **React**, **Redux**, **Node**, **Express** y **Sequelize**.
