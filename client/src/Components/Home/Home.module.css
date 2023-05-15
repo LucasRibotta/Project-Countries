@@ -1,0 +1,29 @@
+.conteinerHome{
+    background-image: url('../../assets/MundoHome.jpg');
+    width: 100vw;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.cardHome{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    padding-left: 18px;
+    padding-right: 10px;
+}
+
+
+.pagination{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    width: 100%;
+}
+
+.filtro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
