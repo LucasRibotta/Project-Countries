@@ -44,8 +44,8 @@ module.exports = (sequelize) => {
       type: DataTypes.INTEGER,
      
     },
-    googleMaps:{
-      type: DataTypes.STRING,
+    maps:{
+      type: DataTypes.STRING(1000),
     },
   },
     { timestamps: false }

@@ -25,7 +25,7 @@ const getAllCountries = async (req, res) => {
                      subregion: pais.subregion,
                      area: pais.area,
                      population: pais.population,
-                     googleMaps: pais.maps[0].googleMaps || null,
+                     maps: pais.maps?.googleMaps || null,
                 }
             })
              // Insertar los países obtenidos de la API en la base de datos

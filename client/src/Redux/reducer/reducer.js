@@ -1,19 +1,20 @@
 import {
-    GET_COUNTRIES, 
+    GET_COUNTRIES,
     GET_COUNTRIES_NAME,
     GET_COUNTRIES_ID,
     FILTER_BY_CONTINENTS,
-    FILTER_TOUR_ACTIVITY,
     ORDER_BY_NAME,
-    ORDER_BY_POPULATION
-} from "../actions/actions.js"
+    ORDER_BY_POPULATION,
+    GET_ACTIVITY_CREATED,
+    POST_ACTIVITY,
+    COUNTRY_BY_ACTIVITY} from '../actions-types/actions-types'
 
 const initialState = {
     countries: [],
     allContinents: [],
     activities: [],
-    detailId: {},
-    controllActivities: {},
+    /* detailId: {}, */
+    controllActivities: {}, 
 }
 
 function rootReducer (state= initialState, action) {
@@ -46,7 +47,7 @@ function rootReducer (state= initialState, action) {
                 countries: filteredContinents
             }
 
-        case FILTER_TOUR_ACTIVITY:
+       /*  case FILTER_TOUR_ACTIVITY:
                 const seasonFilter = action.payload.season;
                 const filteredActivityCountrys = state.countries.filter(country => {
                     const hasTourActivities = country.activity.length > 0;
@@ -60,7 +61,7 @@ function rootReducer (state= initialState, action) {
             return{
                 ...state,
                 countries: filteredActivityCountrys
-                }
+                } */
 
         case ORDER_BY_NAME:
                const { type } = action.payload;
@@ -95,7 +96,29 @@ function rootReducer (state= initialState, action) {
                   countries: state.countries.slice().sort(populationOrden).reverse(),
                  
                 }
-              }  
+              } 
+         
+        case GET_ACTIVITY_CREATED:
+            return {
+                ...state,
+                activities: action.payload
+
+            }      
+        
+        case COUNTRY_BY_ACTIVITY:
+            const activitiesbycountries = state.activities
+            const countrysAll = state.countries
+            const filtro = action.payload === 'sin filtros' ? countrysAll : activitiesbycountries.filter(a=> a.name ===  action.payload)[0].countries.map(e => e)
+            return {
+                ...state,
+                countries: filtro
+            }   
+        
+        case POST_ACTIVITY:
+            return {
+                ...state,
+                controllActivities: action.payload
+            }      
             
                  
 

@@ -1,13 +1,15 @@
 import axios from 'axios';
 
-const url = "http://localhost:3001"
-export const GET_COUNTRIES = "GET_COUNTRIES";
-export const GET_COUNTRIES_NAME = "GET_COUNTRIES_NAME";
-export const GET_COUNTRIES_ID = "GET_COUNTRIES_ID";
-export const FILTER_BY_CONTINENTS = 'FILTER_BY_CONTINENTS';
-export const FILTER_TOUR_ACTIVITY = 'FILTER_TOUR_ACTIVITY'
-export const ORDER_BY_NAME = 'ORDER_BY_NAME'
-export const ORDER_BY_POPULATION = 'ORDER_BY_POPULATION'
+import {url,
+    GET_COUNTRIES,
+    GET_COUNTRIES_NAME,
+    GET_COUNTRIES_ID,
+    FILTER_BY_CONTINENTS,
+    ORDER_BY_NAME,
+    ORDER_BY_POPULATION,
+    GET_ACTIVITY_CREATED,
+    POST_ACTIVITY,
+    COUNTRY_BY_ACTIVITY} from '../actions-types/actions-types'
 
 
 
@@ -19,7 +21,7 @@ export function getCountries () {
         return axios.get(`${url}/countries`)
         .then(response => {
             dispatch({
-                type: 'GET_COUNTRIES',
+                type: GET_COUNTRIES,
                 payload: response.data
             });
         })
@@ -30,12 +32,13 @@ export function getCountries () {
     };
 }
 
+//Para el searchBar
 export function getCountriesName (name) {
     return function(dispatch) {
         return axios.get(`${url}/countries?name=${name}`)
         .then(response => {
             dispatch({
-                type: 'GET_COUNTRIES_NAME',
+                type: GET_COUNTRIES_NAME,
                 payload: response.data
             });
         })
@@ -45,12 +48,14 @@ export function getCountriesName (name) {
         });
     };
 }
+
+//Para el detailId
 export function getCountriesId (id) {
     return function(dispatch) {
         return axios.get(`${url}/countries/${id}`)
         .then(response => {
             dispatch({
-                type: 'GET_COUNTRIES_ID',
+                type: GET_COUNTRIES_ID,
                 payload: response.data
             });
         })
@@ -64,18 +69,11 @@ export function getCountriesId (id) {
 //Filtro por Continentes
 export function filterByContinents(payload) {
     return {
-        type: 'FILTER_BY_CONTINENTS',
+        type: FILTER_BY_CONTINENTS,
         payload
     }
 }
 
-//Filtro por actividad
-export function filterTourActivity(payload){
-    return {
-        type: FILTER_TOUR_ACTIVITY,
-        payload
-    }
-}
 
 //Orden por nombre alfabetico
 export function orderByName(type) {
@@ -93,3 +91,39 @@ export function orderByPopulation(payload) {
     }
 }
 
+/* //Filtro por actividad
+export function filterTourActivity(payload){
+    return {
+        type: FILTER_TOUR_ACTIVITY,
+        payload
+    }
+} */
+
+//control de renderizado de action - reducer - home - created - app ! no llama a la app
+
+//Crea actividades
+export const createActivity = (payload) => {
+    return async function (dispatch) {
+        const apiData = await axios.post(`${url}/activities`, payload)
+         console.log(apiData);
+        
+        dispatch({type: POST_ACTIVITY, payload: apiData})
+    }
+}
+
+//Busca las actividades creadas
+export const getActivityCreated = () => {
+    return async function (dispatch) {
+        const apiData = await axios.get(`${url}/activities`)
+
+        const getDataActivity = apiData.data;
+        dispatch({ type: GET_ACTIVITY_CREATED , payload: getDataActivity})
+    }
+}
+
+export const countryByActivitys = (payload) => {
+    return {
+        type: COUNTRY_BY_ACTIVITY,
+        payload
+    }
+}

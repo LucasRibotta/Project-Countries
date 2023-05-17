@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {useDispatch, useSelector} from 'react-redux'
-import { getCountries } from "../../redux/actions/actions";
+import { getCountries, getActivityCreated, countryByActivitys } from "../../redux/actions/actions";
 import {Link} from 'react-router-dom'
 import Card from "../CardCountry/Card";
 import Pagination from "../Pagination/Pagination";
@@ -8,6 +8,7 @@ import style from './Home.module.css'
 import FilterContinents from "../FilterAndOrder/FilterContinents";
 import OrderNameAlpha from "../FilterAndOrder/OrderAlfa";
 import OrderPopulation from '../FilterAndOrder/OrderPopulation';
+import SearchBar from "../Searchbar/Search";
 
 
 
@@ -26,9 +27,17 @@ export default function Home () {
         setCurrentPage(pageNumber)
     }
 
+ /*    function handleCountryActivity(ev){
+        ev.preventDefault();
+        dispatch(countryByActivitys(ev.target.value))
+        setCurrentPage(1);
+        setInOrder(`Ordenado ${ev.target.value}`)
+      } */
+
 
 useEffect(()=> {
     dispatch(getCountries());
+    dispatch(getActivityCreated())
 },[dispatch]);
 
 function handleClick(e){
@@ -41,9 +50,10 @@ function handleClick(e){
 
 return (
     <div className={style.conteinerHome}>
-        <Link to= '/countries'>Paises</Link>
+         <Link to="/create">Crear actividad</Link>
         
         <h1>Bienvenidos a los paises</h1>
+        <SearchBar />
 
         <button onClick={e=> {handleClick(e)}}>
             Volver a cargar todos los paises

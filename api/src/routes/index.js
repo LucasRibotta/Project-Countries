@@ -16,7 +16,7 @@ const router = Router();
 }) */
 
 router.use('/countries', countries);  //"countries" es el nombre del modelo
-router.use('/activity', activities);  //"activity" es el nombre del modelo
+router.use('/activities', activities);  //"activity" es el nombre del modelo
 
 
 module.exports = router;

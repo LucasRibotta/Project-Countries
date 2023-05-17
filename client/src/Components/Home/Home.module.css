@@ -1,5 +1,5 @@
 .conteinerHome{
-    background-image: url('../../assets/MundoHome.jpg');
+    background-image: url('../../assets/mapa.jpg');
     width: 100vw;
     height: 100vh;
     background-position: center;
@@ -19,7 +19,7 @@
     align-items: center;
     justify-content: center;
     bottom: 0;
-    width: 100%;
+    width: 100%; 
 }
 
 .filtro{
