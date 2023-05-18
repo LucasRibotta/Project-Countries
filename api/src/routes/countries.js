@@ -6,7 +6,7 @@ const router = Router();
 
 
 router.get('/', getAllCountries);
-router.get('/:id', getCountriesId);
+router.get('/:id', getCountriesId );
 
 
 module.exports = router;

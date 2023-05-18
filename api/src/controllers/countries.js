@@ -52,14 +52,41 @@ const getAllCountries = async (req, res) => {
 }
 
 
-const getCountriesId = async (req, res) => {
+/* const getCountriesId = async (req, res) => {
     const { id } = req.params;
     const idUpper = id.toUpperCase();
     const countryId = await Country.findOne({ where: { id: idUpper }, include: Activity });
     countryId ?
         res.status(200).json(countryId) :
         res.status(404).json(`El país con el id: ${id} no se encontró`);
+} */
+
+const getCountriesId = async (req, res) => {
+    const { id } = req.params
+    try {
+        const country = await Country.findByPk(id.toUpperCase(), {
+            include: {
+                model: Activity, through: { attributes: [] },
+            }
+        })
+        if (country) return res.json(country)
+        return res.status(404).json({
+            error: {
+                message: "Country doesn't exist",
+                values: { ...req.params }
+            }
+        })
+    } catch (error) {
+        console.log(error)
+        return res.status(500).json({
+            error: {
+                message: "Server error"
+            }
+        })
+    }
 }
+
+
 module.exports = {
     getAllCountries,
     getCountriesId
