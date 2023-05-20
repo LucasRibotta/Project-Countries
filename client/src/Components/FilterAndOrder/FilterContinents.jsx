@@ -17,8 +17,10 @@ export default function FilterContinents ({setCurrentPage}) {
     return(
         <div>
         <div>
+     
+
         <select onChange={handleFilterContinents}>
-                <option value={"All"}>All Contients</option>
+                <option  value={"All"}>All Contients</option>
                 <option value={"North America"} key="North America">North America</option>
                 <option value={"South America"} key="South America">South America</option>
                 <option value={"Europe"} key="Europe">Europe</option>
@@ -31,4 +33,3 @@ export default function FilterContinents ({setCurrentPage}) {
     </div>
     )
 }
-//video 3 min 51

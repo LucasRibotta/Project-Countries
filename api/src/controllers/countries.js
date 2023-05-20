@@ -47,7 +47,7 @@ const getAllCountries = async (req, res) => {
         };
            
     } catch (error) {
-        return res.status(404).json(error)
+        return res.status(500).json(error)
     }  
 }
 
@@ -62,29 +62,31 @@ const getAllCountries = async (req, res) => {
 } */
 
 const getCountriesId = async (req, res) => {
-    const { id } = req.params
+    const { id } = req.params;
     try {
-        const country = await Country.findByPk(id.toUpperCase(), {
-            include: {
-                model: Activity, through: { attributes: [] },
-            }
-        })
-        if (country) return res.json(country)
-        return res.status(404).json({
-            error: {
-                message: "Country doesn't exist",
-                values: { ...req.params }
-            }
-        })
+      const country = await Country.findByPk(id.toUpperCase(), {
+        include: {
+          model: Activity,
+          through: { attributes: [] },
+        },
+      });
+  
+      if (country) return res.status(200).json(country);
+      return res.status(404).json({
+        error: {
+          message: "Country doesn't exist",
+          values: { ...req.params },
+        },
+      });
     } catch (error) {
-        console.log(error)
-        return res.status(500).json({
-            error: {
-                message: "Server error"
-            }
-        })
+      console.log(error);
+      return res.status(500).json({
+        error: {
+          message: "Server error",
+        },
+      });
     }
-}
+  };
 
 
 module.exports = {

@@ -1,20 +1,23 @@
 import {
     GET_COUNTRIES,
     GET_COUNTRIES_NAME,
-    GET_COUNTRIES_ID,
+    GET_DETAIL,
     FILTER_BY_CONTINENTS,
     ORDER_BY_NAME,
     ORDER_BY_POPULATION,
     GET_ACTIVITY_CREATED,
     POST_ACTIVITY,
-    COUNTRY_BY_ACTIVITY} from '../actions-types/actions-types'
+    CLEAR_DETAIL,
+    FILTER_TOUR_ACTIVITY
+    } from '../actions-types/actions-types'
 
 const initialState = {
     countries: [],
     allContinents: [],
     activities: [],
-    /* detailId: {}, */
+    detailId: [], 
     controllActivities: {}, 
+    
 }
 
 function rootReducer (state= initialState, action) {
@@ -32,11 +35,20 @@ function rootReducer (state= initialState, action) {
                 countries: action.payload
             }
 
-        case GET_COUNTRIES_ID:
+        case GET_DETAIL:
             return {
                 ...state,
                 detailId: action.payload,
             }
+        
+
+        case CLEAR_DETAIL :
+            return {
+                ...state,
+                detailId: [],
+            }    
+        
+        
 
         case FILTER_BY_CONTINENTS:
             const continents = state.allContinents;
@@ -47,21 +59,23 @@ function rootReducer (state= initialState, action) {
                 countries: filteredContinents
             }
 
-       /*  case FILTER_TOUR_ACTIVITY:
+            case FILTER_TOUR_ACTIVITY:
                 const seasonFilter = action.payload.season;
                 const filteredActivityCountrys = state.countries.filter(country => {
-                    const hasTourActivities = country.activity.length > 0;
-                    let passesSeasonFilter = true;
-                    if(seasonFilter){
-                        passesSeasonFilter = country.season === seasonFilter
-                    }
-                    return hasTourActivities && passesSeasonFilter
-                })
-
-            return{
-                ...state,
-                countries: filteredActivityCountrys
-                } */
+                  const hasTourActivities = country.activity && country.activity.length > 0;
+                  let passesSeasonFilter = true;
+                  if (seasonFilter && seasonFilter !== "All") {
+                    passesSeasonFilter = country.season === seasonFilter;
+                  }
+                  return hasTourActivities && passesSeasonFilter;
+                });
+              
+                console.log(state.activities)
+                return {
+                  ...state,
+                  countries: filteredActivityCountrys
+                  
+                };
 
         case ORDER_BY_NAME:
                const { type } = action.payload;
@@ -105,14 +119,6 @@ function rootReducer (state= initialState, action) {
 
             }      
         
-        case COUNTRY_BY_ACTIVITY:
-            const activitiesbycountries = state.activities
-            const countrysAll = state.countries
-            const filtro = action.payload === 'sin filtros' ? countrysAll : activitiesbycountries.filter(a=> a.name ===  action.payload)[0].countries.map(e => e)
-            return {
-                ...state,
-                countries: filtro
-            }   
         
         case POST_ACTIVITY:
             return {

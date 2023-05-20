@@ -7,7 +7,7 @@ import { validate } from './validate'
 export default function CreateActivity (){
     const dispatch = useDispatch();
     const history = useHistory();
-    const countrys = useSelector((state) => state.countries); //trae el estado de las actividades(reducer)
+    const countries = useSelector((state) => state.countries); //trae el estado de las actividades(reducer)
 
     const [errors, setErrors] = useState({})
     const [form, setForm] = useState({
@@ -60,6 +60,13 @@ export default function CreateActivity (){
         }))
     }
 
+    function handleDelete(e){
+        setForm({
+            ...form,
+            countries: form.countries.filter(coun => coun !== e)
+        })
+    }
+
     function handleSubmit(e){
         e.preventDefault();
         console.log(form)
@@ -74,6 +81,11 @@ export default function CreateActivity (){
         })
         history.push('/home')
     }
+
+
+
+
+
 
     return (
 
@@ -174,20 +186,31 @@ export default function CreateActivity (){
 
                 <div>
                 <select onChange={(e)=> handleSelect(e)}>
-                    {countrys.map((cou) => 
+                    {countries.map((cou) => 
                     <option value={cou.name} key={cou.name} > {cou.name}</option>
                     )}
                 </select>
-
-                <ul><li>{form.countries.map(el=> el + " ,")}</li></ul>
+                <div>
+                <ul>
+                    <li>{form.countries.map((el, index)=> 
+                        <div key={index}>
+                            {el}
+                        <button onClick={() => handleDelete(el)}>X</button>
+                        </div>)}</li>
+                    </ul>
+                        
+                        {/* el + " ,")}</li></ul> */}
 
                         {errors.countries && (
                         <p>{errors.countries}</p>
                     )}
+
                 </div>
 
-            <button type="submit">Create New Activity</button>
 
+                </div>
+             
+            <button type="submit">Create New Activity</button>
 
             </form>
 

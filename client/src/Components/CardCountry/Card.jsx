@@ -1,15 +1,29 @@
 import React from 'react';
-import styles from './Card.module.css'
+import {Link} from 'react-router-dom'
+import style from './Card.module.css'
 
-export default function Card({image, name, continents}){
-    return(
-        <div className={styles.card}>
-            <img src={image} alt="img not found" width="200px" height="250px"/>
-            <div className={styles.info}>
-            <h3>{name}</h3>
-            <h5>{continents}</h5>
+
+export default function Card(props){
+    const {name, image,continents,id} = props 
+    return (
+        <div className={style.card}>
+          <div className={style.cardContainer}>
+            <div className={style.imageContainer}>
+              <img src={image} width="150" height="150" alt={name} />
             </div>
+    
+            <div className={style.contentContainer}>
+              <h1>{name}</h1>
+              <h3>{continents}</h3>
+            </div>
+          </div>
+    
+          <div className={style.buttonContainer}>
+            <Link to={`/detail/${id}`}>
+              <button>Look</button>
+            </Link>
+          </div>
         </div>
-    )
+      );
+    }
 
-}

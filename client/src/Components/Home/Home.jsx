@@ -1,21 +1,23 @@
 import React, { useEffect, useState } from "react";
 import {useDispatch, useSelector} from 'react-redux'
-import { getCountries, getActivityCreated, countryByActivitys } from "../../redux/actions/actions";
-import {Link} from 'react-router-dom'
+import { getCountries, getActivityCreated} from "../../redux/actions/actions";
 import Card from "../CardCountry/Card";
+import NavBar from "../NavBar/NavBar"
 import Pagination from "../Pagination/Pagination";
 import style from './Home.module.css'
 import FilterContinents from "../FilterAndOrder/FilterContinents";
+import FilterActivity from "../FilterAndOrder/FilterActivity"
 import OrderNameAlpha from "../FilterAndOrder/OrderAlfa";
 import OrderPopulation from '../FilterAndOrder/OrderPopulation';
-import SearchBar from "../Searchbar/Search";
 
 
 
 export default function Home () {
 
     const dispatch = useDispatch();
+    
     const allCountries = useSelector ((state) => state.countries);
+    
     const [currentPage, setCurrentPage] = useState(1); //Se setea en 1 ya que mi primer pág es 1
     const [countryPerPage] = useState(10); // Se guarda la cantidad de países por página
     const indexOfLastCountrys = currentPage * countryPerPage; // 10
@@ -27,78 +29,56 @@ export default function Home () {
         setCurrentPage(pageNumber)
     }
 
- /*    function handleCountryActivity(ev){
-        ev.preventDefault();
-        dispatch(countryByActivitys(ev.target.value))
-        setCurrentPage(1);
-        setInOrder(`Ordenado ${ev.target.value}`)
-      } */
-
 
 useEffect(()=> {
     dispatch(getCountries());
     dispatch(getActivityCreated())
 },[dispatch]);
 
-function handleClick(e){
-    //Para resetear la data de países
-    console.log('clicked')
-    e.preventDefault();
-    dispatch(getCountries())
 
-}
 
 return (
     <div className={style.conteinerHome}>
-         <Link to="/create">Crear actividad</Link>
-        
-        <h1>Bienvenidos a los paises</h1>
-        <SearchBar />
-
-        <button onClick={e=> {handleClick(e)}}>
-            Volver a cargar todos los paises
-        </button>
-        
-    <div className={style.filtro}> 
-
-        <div>
-        <FilterContinents setCurrentPage={setCurrentPage}/>
+      <NavBar />
+  
+      <h1>Countries App</h1>
+  
+      <div className={style.filtersContainer}>
+        <div className={style.filter}>
+          <FilterContinents setCurrentPage={setCurrentPage} />
         </div>
-        <div>
-        <OrderNameAlpha setCurrentPage={setCurrentPage}/>
+        <div className={style.filter}>
+          <FilterActivity setCurrentPage={setCurrentPage} />
         </div>
-        <div>
-         <OrderPopulation setCurrentPage={setCurrentPage}/>   
+        <div className={style.filter}>
+          <OrderNameAlpha setCurrentPage={setCurrentPage} />
         </div>
-
+        <div className={style.filter}>
+          <OrderPopulation setCurrentPage={setCurrentPage} />
         </div>
-
-        <div className={style.cardHome}>
-            {
-             currentCountrys?.map(el => (
-                 <Card 
-                 key={el.id}
-                 name={el.name} 
-                 continents={el.continents} 
-                 image={el.flags}  
-                 />
-                 ))
-                }
-        </div>
-
-        <div className={style.pagination}>
-
-            <Pagination 
-            countryPerPage={countryPerPage}
-            allCountries={allCountries.length}
-            paginado={paginado}
-            />
-
-        </div>
-            
+      </div>
+  
+      <div className={style.cardHome}>
+        {currentCountrys?.map((el) => (
+          <Card
+            key={el.id}
+            id={el.id}
+            name={el.name}
+            continents={el.continents}
+            image={el.flags}
+          />
+        ))}
+      </div>
+  
+      <div className={style.pagination}>
+        <Pagination
+          countryPerPage={countryPerPage}
+          allCountries={allCountries.length}
+          paginado={paginado}
+        />
+      </div>
     </div>
-
-)
+  );
 
 
 }

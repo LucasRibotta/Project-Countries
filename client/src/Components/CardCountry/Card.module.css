@@ -1,47 +1,46 @@
 .card {
-    min-height: 250px;
-    width: 180px;
-    background-color: #faedcd;
-    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
-    margin: 15px;
-    text-align: center;
-    border-radius: 10px;
-    padding: 12px;
+    /* Estilos generales de la tarjeta */
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .cardContainer {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    gap: 1rem;
+    align-items: center;
+  }
   
-}
+  .imageContainer {
+    flex: 0 0 150px; /* Tamaño fijo de la imagen */
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Para hacerla redonda */
+    overflow: hidden; /* Para ocultar partes de la imagen redonda */
+    margin-right: 20px; /* Espacio entre la imagen y el contenido */
+  }
+  
+  .imageContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajuste de la imagen dentro del contenedor */
+  }
+  
+  .contentContainer {
+    flex: 1;
+  }
+  
+  .buttonContainer {
+    margin-top: 10px; /* Espacio entre el contenido y el botón */
+    text-align: center;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
-.card h1 {
-    text-transform: capitalize;
-    font-weight: 700;
-    color: #3C2317;
-    font-size: 1rem;
-   
-}
 
-.card h3 {
-    background-color: #ffb4a2;
-    color: #425F57;
-    padding: .5rem;
-    border-radius: 10px;
-    width: 7.7rem;
-    margin: 0;
-    font-size: .8rem;
-    margin-bottom: 5px;
-}
-
-.info {
-    display: flex;
-    flex-direction: column;
-   align-items: center;
-    gap: 0.8rem;
-}
-
-.card img {
-    max-width: 100px;
-    height: 20%;
-}

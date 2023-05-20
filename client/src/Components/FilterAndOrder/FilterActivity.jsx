@@ -1,27 +1,32 @@
-/* import React from "react";
+import React from "react";
 import {useDispatch} from 'react-redux';
-import {filterTourActivity} from '../../redux/actions/actions'
+import {filterTourActivity} from '../../redux/actions/actions';
 
-
-export default function FilterActivity ({setCurrentPage}) {
+export default function FilterActivity({setCurrentPage}){
     
     const dispatch = useDispatch();
-   
-    function handleFilterActivity(e){
+
+    function handleActivity(e){
+        console.log(FilterActivity)
         e.preventDefault();
         setCurrentPage(1)
         dispatch(filterTourActivity(e.target.value));
-        console.log(handleFilterActivity)
+
     }
 
     return(
         <div>
             <div>
-                <select name="" id=""></select>
+            <select onChange={handleActivity}>
+
+                <option value={"All"}>All Activities</option>
+                <option value={"Summer"} key="Summer">Summer</option>
+                <option value={"Spring"} key="Spring">Spring</option>
+                <option value={"Autumn"} key="Autumn">Autumn</option>
+                <option value={"Winter"} key="Winter">Winter</option>
+
+            </select>
             </div>
         </div>
     )
-} */
-
-//segur funciton = realizar renderizado para dos tipos de filtros
-// 60min creacion de filtro por nombre video 3
+}
