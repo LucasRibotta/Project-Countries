@@ -21,7 +21,7 @@ const getAllCountries = async (req, res) => {
                      name: pais.name.common,
                      flags: pais.flags[1],
                      continents: pais.continents[0],
-                     capital: pais.capital ? pais.capital : "Sin Datos",
+                     capital: pais.capital || "Sin Datos",
                      subregion: pais.subregion,
                      area: pais.area,
                      population: pais.population,

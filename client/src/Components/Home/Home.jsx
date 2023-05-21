@@ -38,47 +38,48 @@ useEffect(()=> {
 
 
 return (
-    <div className={style.conteinerHome}>
-      <NavBar />
-  
-      <h1>Countries App</h1>
-  
-      <div className={style.filtersContainer}>
-        <div className={style.filter}>
-          <FilterContinents setCurrentPage={setCurrentPage} />
-        </div>
-        <div className={style.filter}>
-          <FilterActivity setCurrentPage={setCurrentPage} />
-        </div>
-        <div className={style.filter}>
-          <OrderNameAlpha setCurrentPage={setCurrentPage} />
-        </div>
-        <div className={style.filter}>
-          <OrderPopulation setCurrentPage={setCurrentPage} />
-        </div>
+
+  <div>
+    <NavBar />
+  <div className={style.containerHome}>
+
+    <div className={style.filtersContainer}>
+      <div className={style.filter}>
+        <FilterContinents setCurrentPage={setCurrentPage} />
       </div>
-  
-      <div className={style.cardHome}>
-        {currentCountrys?.map((el) => (
-          <Card
-            key={el.id}
-            id={el.id}
-            name={el.name}
-            continents={el.continents}
-            image={el.flags}
-          />
-        ))}
+      <div className={style.filter}>
+        <FilterActivity setCurrentPage={setCurrentPage} />
       </div>
-  
-      <div className={style.pagination}>
-        <Pagination
-          countryPerPage={countryPerPage}
-          allCountries={allCountries.length}
-          paginado={paginado}
-        />
+      <div className={style.filter}>
+        <OrderNameAlpha setCurrentPage={setCurrentPage} />
+      </div>
+      <div className={style.filter}>
+        <OrderPopulation setCurrentPage={setCurrentPage} />
       </div>
     </div>
-  );
+
+    <div className={style.cardContainer}>
+      {currentCountrys?.map((el) => (
+        <Card
+          key={el.id}
+          id={el.id}
+          name={el.name}
+          continents={el.continents}
+          image={el.flags}
+        />
+      ))}
+    </div>
+
+    <div className={style.pagination}>
+      <Pagination
+        countryPerPage={countryPerPage}
+        allCountries={allCountries.length}
+        paginado={paginado}
+      />
+    </div>
+  </div>
+  </div>
+);
 
 
 }

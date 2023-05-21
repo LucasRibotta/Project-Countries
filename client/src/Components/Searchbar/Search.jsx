@@ -9,17 +9,14 @@ export default function SearchBar() {
     const dispatch = useDispatch();
     const [name, setName] = useState("");
 
-function handleInputChange(e){
-    e.preventDefault();
-    setName(e.target.value)
-    console.log(name)
-}
-
-function handleSubmit(e){
-    e.preventDefault();
-    dispatch(getCountriesName(name))
+    function handleInputChange(e) {
+        setName(e.target.value);
+      }
     
-}
+      function handleSubmit(e) {
+        e.preventDefault();
+        dispatch(getCountriesName(name));
+      }
 
 
 
@@ -34,7 +31,7 @@ function handleSubmit(e){
             onChange={handleInputChange} 
             className={style.search}
             />
-            <button className={style.submit} type="submit" onClick={(e) => handleSubmit(e)}>
+            <button className={style.submit} type="submit" onClick={handleSubmit}>
                 <span>Seacrh</span>
             </button>
 

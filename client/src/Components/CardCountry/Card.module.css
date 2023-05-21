@@ -1,46 +1,103 @@
 .card {
-    /* Estilos generales de la tarjeta */
-    width: 100%;
-    margin-bottom: 20px;
-  }
-  
-  .cardContainer {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-  
-  .imageContainer {
-    flex: 0 0 150px; /* Tamaño fijo de la imagen */
-    width: 150px;
-    height: 150px;
-    border-radius: 50%; /* Para hacerla redonda */
-    overflow: hidden; /* Para ocultar partes de la imagen redonda */
-    margin-right: 20px; /* Espacio entre la imagen y el contenido */
-  }
-  
-  .imageContainer img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ajuste de la imagen dentro del contenedor */
-  }
-  
-  .contentContainer {
-    flex: 1;
-  }
-  
-  .buttonContainer {
-    margin-top: 10px; /* Espacio entre el contenido y el botón */
-    text-align: center;
-  }
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  min-height: 250px;
+  width: 180px;
+  background-color: #faedcd;
+  box-shadow: 0px 10px 15px -3px rgb(0, 0, 0),
+              0px 12px 16px -4px rgb(0, 0, 0);
+  margin: 15px;
+  text-align: center;
+  border-radius: 10px;
+  padding: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+  transition: transform 0.3s ease-in-out; /* Agregamos una transición suave para el efecto */
+}
 
+.card:hover {
+  transform: scale(1.05); /* Aumentamos la escala del elemento al acercar el cursor */
+}
 
+.card h1 {
+  text-transform: capitalize;
+  font-weight: 700;
+  color: #3C2317;
+  font-size: 1rem;
+ 
+}
+
+.card h3 {
+  background-color: #ffb4a2;
+  color: #425F57;
+  padding: .5rem;
+  border-radius: 10px;
+  width: 7.7rem;
+  margin: 0;
+  font-size: .8rem;
+  
+}
+
+.cardInfo {
+  display: flex;
+  flex-direction: column;
+ align-items: center;
+  gap: 0.8rem;
+}
+
+.card img {
+  width: 100px; 
+  height: 100px;
+  border-radius: 30%;
+}
+
+.conteinerBtn {
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  font-size: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  background-color: #faedcd;
+}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  padding: 12px;
+  text-align: center;
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #cc0000;
+  background-color: #fff;
+  border: 3px solid #ff914d;
+  border-radius: 50%; /* Hace que el botón sea redondo */
+  cursor: pointer;
+  transition: ease-out 0.5s;
+  transform: scale(1); /* Aplicamos una escala inicial de 1 */
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: -3px; /* Ajustamos la posición del recuadro adicional */
+  left: -3px; /* Ajustamos la posición del recuadro adicional */
+  width: 100%; /* El recuadro adicional ocupa todo el ancho */
+  height: 100%; /* El recuadro adicional ocupa todo el alto */
+  border: 3px solid transparent;
+  border-radius: 50%; /* Hace que el recuadro adicional sea redondo */
+  opacity: 0;
+  transition: opacity 0.5s, border-color 0.5s, transform 0.5s; /* Añadimos la transición para la escala */
+  z-index: -1; /* Colocamos el recuadro adicional detrás del botón */
+}
+
+.btn:hover {
+  transform: scale(1.1); /* Aumentamos la escala del botón al acercar el cursor */
+}
+
+.btn:hover::before {
+  opacity: 1;
+  border-color: #4d2d2b;
+}

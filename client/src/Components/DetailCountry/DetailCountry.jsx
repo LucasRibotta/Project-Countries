@@ -1,12 +1,113 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
+import { getDetail } from "../../redux/actions/actions";
+import style from './Detail.module.css'
+import { Link } from 'react-router-dom';
+
+export default function Detail() {
+  const dispatch = useDispatch();
+  const details = useSelector((state) => state.detailId);
+  const { id } = useParams();
+  const apiKey = process.env.API_KEY;
+
+  useEffect(() => {
+    dispatch(getDetail(id));
+  }, [dispatch, id]);
+
+  return (
+    <div className={style.detailContainer}>
+      <div className={style.linksSection}>
+        <Link to='/create' className={style.linkButton}>Add an Activity</Link>
+        <Link to='/home' className={style.linkButton}>⬅ Back to home</Link>
+      </div>
+      <div className={style.nameFlagsContainer}>
+        <div className={style.flagContainer}>
+          {details.hasOwnProperty("name") ? (
+            <div>
+              <img className={style.flagImage} src={details.flags} alt='Bandera' />
+            </div>
+          ) : (
+            <p>Buscando.....</p>
+          )}
+        </div>
+        <div className={style.nameContainer}>
+          {details.hasOwnProperty("name") && (
+            <h2>{details.name}</h2>
+          )}
+        </div>
+      </div>
+
+      <div className={style.countriesActivitiesContainer}>
+        <div className={style.countriesContainer}>
+          {details.hasOwnProperty("name") && (
+            <div className={style.details}>
+              <p>Continent: {details.continents}</p>
+              <p>Capital: {details.capital.replace(/["{}]/g, '')}</p>
+              <p>Subregion: {details.subregion}</p>
+              <p>Area: {parseInt(details.area).toLocaleString('de-DE')} Km2</p>
+              <p>Population: {details.population.toLocaleString('de-DE')}</p>
+            </div>
+          )}
+        </div>
+        <div className={style.activitiesContainer}>
+            <h2><i>Activities:</i></h2>
+            {details.activities?.length > 0 ? (
+              details.activities.map(act => (
+                <div key={act.id} className={style.activityItem}>
+                  <h3 className={style.titleAct}>Activity: {act.name}</h3>
+                  <p className={style.activityDetails}>
+                    <span>Season: {act.season}</span>
+                    <span>Duration: {act.duration}</span>
+                    <span>Difficulty: {act.difficulty}</span>
+                  </p>
+                </div>
+              ))
+            ) : (
+              <h3 className={style.noActivity}>The country has no activities!</h3>
+            )}
+          </div>
+      </div>
+
+      <div className={style.mapContainer}>
+        {details.hasOwnProperty("name") && (
+          <div className={style.map}>
+            <h3>Map:</h3>
+            <iframe
+              width="100%"
+              height="450"
+              title="Map"
+              src={`https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=${details.maps}`}
+              allowFullScreen
+            ></iframe>
+          </div>
+        )}
+      </div>
+
+
+    </div>
+  );
+}
+
+
+
+
+
+
+
+
+
+
+/* import React from "react";
 import { useEffect } from "react";
 import { useDispatch ,useSelector} from "react-redux"
 import { useParams } from "react-router-dom";
-import { /* clearDetail */ getDetail } from "../../redux/actions/actions";
+import { getDetail } from "../../redux/actions/actions";
 import {Link} from 'react-router-dom';
+ */
 
 
-export default function Detail(){
+/* export default function Detail(){
 
     const dispatch = useDispatch();
     const details = useSelector((state)=> state.detailId)
@@ -73,46 +174,8 @@ export default function Detail(){
         </div>
         )
     
-    }
+    } */
 
 
 
 
-
-
-    /* <Link to={"/home"}>
-        <button>Back to Home</button>
-        </Link>
-      </div>
-         <div >
-          
-            <div >
-            <h2 >{details.name}</h2> 
-            <img src={details.flags} alt="No hay Bandera" />
-              <h5>{details.id}</h5> 
-              <h5> <b>Continent:</b> { details.continent}</h5> 
-              <h5><b>Capital:</b> { details.capital}</h5>
-              <h5><b>Population:</b> { details.population}</h5>
-              <h5><b>Area:</b>  km2</h5>
-              <h5><b>Subregion:</b> {details.subregion}</h5>
-          
-              </div> 
-                <h3 >Activities:</h3>
-            {details.activities.length?
-             details.activities.map(e=>{
-                
-              return (
-              <div >
-              
-                <h5><b>Activity:</b> {e.name}</h5>
-                <h5><b>Difficulty:</b> {e.difficulty}</h5>
-                <h5><b>Duration:</b> {e.duration} hs</h5>
-                <h5><b>Season:</b> {e.season}</h5>   
-              </div>
-              )
-            }) : <div> <h3 >There are no registered activities</h3></div>
-            }
-             </div>
-      </div>
-
-    </> */    

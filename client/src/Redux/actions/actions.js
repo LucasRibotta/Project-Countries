@@ -34,21 +34,25 @@ export function getCountries () {
 }
 
 //Para el searchBar
-export function getCountriesName (name) {
+export function getCountriesName(name) {
     return function(dispatch) {
-        return axios.get(`${url}/countries?name=${name}`)
+      return axios
+        .get(`${url}/countries`)
         .then(response => {
-            dispatch({
-                type: GET_COUNTRIES_NAME,
-                payload: response.data
-            });
+          const filteredCountries = response.data.filter(country =>
+            country.name.toLowerCase().includes(name.toLowerCase())
+          );
+          dispatch({
+            type: GET_COUNTRIES_NAME,
+            payload: filteredCountries
+          });
         })
         .catch(error => {
-        // Manejar el error en caso de que la solicitud falle
-            console.error('Error:', error);
+          // Manejar el error en caso de que la solicitud falle
+          console.error('Error:', error);
         });
     };
-}
+  }
 
 //Para el detailId
 export function getDetail(id) {

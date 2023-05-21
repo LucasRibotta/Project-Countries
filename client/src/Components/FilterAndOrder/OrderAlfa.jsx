@@ -16,7 +16,7 @@ function handleSort(e){
     return (
         <div>
             <select onChange={e=> handleSort(e)}>
-                <option value="reset">Orden Alfabético</option>
+                <option value="reset">Order Alphabetical</option>
                 <option value="a-z">A - Z</option>
                 <option value="z-a">Z - A</option>
             </select>

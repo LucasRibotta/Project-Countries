@@ -198,9 +198,7 @@ export default function CreateActivity (){
                         <button onClick={() => handleDelete(el)}>X</button>
                         </div>)}</li>
                     </ul>
-                        
-                        {/* el + " ,")}</li></ul> */}
-
+                   
                         {errors.countries && (
                         <p>{errors.countries}</p>
                     )}

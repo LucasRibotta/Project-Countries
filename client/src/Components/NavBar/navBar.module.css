@@ -1,6 +1,78 @@
-.conteiner{
+.container {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: center;
-}
+    justify-content: space-between;
+    background-color: #f2f2f2;
+    padding: 10px;
+  }
+  
+  .menuContainer {
+    display: flex;
+    align-items: center;
+  }
+  
+  .searchContainer {
+    position: relative;
+    margin-right: 10px;
+  }
+  
+  .resetButton {
+    height: 30px;
+    padding: 0 10px;
+    margin-left: 5px;
+    background-color: #e6e6e6;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .hamburgerMenu {
+    display: none;
+  }
+  
+  .checkbox {
+    display: none;
+  }
+  
+  .menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #f2f2f2;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  
+  .menu a {
+    margin-bottom: 5px;
+    color: #333;
+    text-decoration: none;
+  }
+  
+  @media (max-width: 768px) {
+    .hamburgerMenu {
+      display: block;
+      cursor: pointer;
+      position: relative;
+      z-index: 1;
+    }
+  
+    .hamburgerMenu span {
+      display: block;
+      width: 30px;
+      height: 4px;
+      margin-bottom: 5px;
+      background-color: #333;
+      transition: 0.3s;
+    }
+  
+    .checkbox:checked ~ .menu {
+      display: flex;
+    }
+  
+    .checkbox:checked ~ .menu a {
+      opacity: 1;
+    }
+  }

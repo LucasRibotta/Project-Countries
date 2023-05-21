@@ -15,9 +15,9 @@ export default function OrderPopulation ({ setCurrentPage }) {
     return(
         <div>
             <select onChange={handleSort}>
-            <option value="reset">Ordenar por Población</option>
-            <option value="population +">Ascendente</option>
-            <option value="population -">Descendente</option>
+            <option value="reset">Order by Population</option>
+            <option value="population +">Asc</option>
+            <option value="population -">Desc</option>
             </select>
         </div>
     )
