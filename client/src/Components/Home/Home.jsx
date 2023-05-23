@@ -70,6 +70,7 @@ return (
       ))}
     </div>
 
+      </div>
     <div className={style.pagination}>
       <Pagination
         countryPerPage={countryPerPage}
@@ -77,7 +78,6 @@ return (
         paginado={paginado}
       />
     </div>
-  </div>
   </div>
 );
 

@@ -1,78 +1,179 @@
 .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #f2f2f2;
-    padding: 10px;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #bd3232;
+  padding: 10px;
+  height: 60px;
+}
+
+.menuContainer {
+  display: flex;
+  align-items: flex-start;
+}
+
+.menuContainer > div {
+  margin-left: 0;
+}
+
+.hamburgerMenu {
+  position: relative;
+}
+
+.checkbox {
+  display: none;
+}
+
+.hamburger {
+  display: block;
+  width: 25px;
+  height: 25px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  z-index: 2;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #000;
+  margin-bottom: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.checkbox:checked + .hamburger span:nth-child(1) {
+  transform: rotate(45deg) translate(0, 6px);
+}
+
+.checkbox:checked + .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+
+.checkbox:checked + .hamburger span:nth-child(3) {
+  transform: rotate(-45deg) translate(0, -6px);
+}
+
+.menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0px;
+  background-color: #f2f2f2;
+  padding: 5px;
+  display: none;
+  width: 150px;
+  height: 150px;
+}
+
+.checkbox:checked ~ .menu {
+  display: block;
+}
+
+.menu a {
+  display: block;
+  margin-bottom: 5px;
+  margin-top: 20px;
+  color: #000;
+  text-decoration: none;
+}
+
+.menu a:last-child {
+  margin-bottom: 10px;
+}
+
+.container {
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.menuContainer {
+  align-items: center;
+  margin-left: 20px;
+}
+
+.backLink {
+  display: none;
+}
+
+.h1Container {
+  flex: 1;
+  text-align: center;
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.searchFocused {
+  width: 300px;
+}
+
+.search:focus:hover {
+  border-bottom: 1px solid #bbbbbb00;
+}
+
+.search:focus {
+  width: 300px;
+  z-index: 1;
+  border-bottom: 1px solid #bbbbbb00;
+  cursor: text;
+}
+
+.search {
+  height: 35px;
+  font-size: 30px;
+  display: inline-block;
+  font-family: "Lato";
+  font-weight: 100;
+  border: none;
+  outline: none;
+  color: #fafafa;
+  background-color: rgb(102, 102, 126);
+  padding: 3px;
+  padding-right: 60px;
+  width: 0px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: width 0.4s cubic-bezier(0.000, 0.795, 0.000, 1.000);
+  cursor: pointer;
+}
+
+.search::placeholder {
+  color: #fefdfd; 
+}
+
+
+.submit {
+  height: 40px;
+  width: 30px;
+  display: inline-block;
+  border: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  cursor: pointer;
+  background-color: transparent;
   
-  .menuContainer {
-    display: flex;
-    align-items: center;
-  }
-  
-  .searchContainer {
-    position: relative;
-    margin-right: 10px;
-  }
-  
-  .resetButton {
-    height: 30px;
-    padding: 0 10px;
-    margin-left: 5px;
-    background-color: #e6e6e6;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .hamburgerMenu {
-    display: none;
-  }
-  
-  .checkbox {
-    display: none;
-  }
-  
-  .menu {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background-color: #f2f2f2;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-  }
-  
-  .menu a {
-    margin-bottom: 5px;
-    color: #333;
-    text-decoration: none;
-  }
-  
-  @media (max-width: 768px) {
-    .hamburgerMenu {
-      display: block;
-      cursor: pointer;
-      position: relative;
-      z-index: 1;
-    }
-  
-    .hamburgerMenu span {
-      display: block;
-      width: 30px;
-      height: 4px;
-      margin-bottom: 5px;
-      background-color: #333;
-      transition: 0.3s;
-    }
-  
-    .checkbox:checked ~ .menu {
-      display: flex;
-    }
-  
-    .checkbox:checked ~ .menu a {
-      opacity: 1;
-    }
-  }
+}
+
+
+.resetButton {
+  height: 20px;
+  width:60px;
+  display: inline-block;
+  color: rgb(0, 0, 0);
+  background-color: #6d6767;
+  border: 1px solid black;
+  border-radius: 10px;
+  position: absolute;
+  top: 50px;
+  right: 3px;
+  z-index: 2;
+  cursor: pointer;
+  transition: opacity 0.4s ease;
+}

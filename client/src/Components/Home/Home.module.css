@@ -1,31 +1,33 @@
 .containerHome {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-  }
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.filtersContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 20px;
   
-  .filtersContainer {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-  }
   
-  .filter {
-    flex: 1;
-    margin-right: 10px;
-  }
-  
-  .cardContainer {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .pagination {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-  }
+}
+
+.filter {
+  margin-bottom: 10px;
+}
+
+.cardContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}

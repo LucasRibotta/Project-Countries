@@ -3,6 +3,7 @@ import {Link, useHistory} from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import {createActivity, getCountries} from '../../redux/actions/actions'
 import { validate } from './validate'
+import style from './style/Create.module.css'
  
 export default function CreateActivity (){
     const dispatch = useDispatch();
@@ -26,28 +27,35 @@ export default function CreateActivity (){
 
     function handleChange(e) {
         setForm({
-            ...form,
-            [e.target.name]: e.target.value
-        })
-        setErrors(validate ({
-            ...form, 
-            [e.target.name]: e.target.value
-        }))
-    }
+          ...form,
+          [e.target.name]: e.target.value,
+        });
+        setErrors(validate({
+          ...form,
+          [e.target.name]: e.target.value,
+        }));
+      }
 
 
-    function handleCheck(e) {
-        if(e.target.checked){
+      function handleCheck(e) {
+        if (e.target.checked) {
+          if (form.season.length < 2) {
             setForm({
-                ...form,
-                season: e.target.value
-            })
+              ...form,
+              season: [...form.season, e.target.value],
+            });
+          }
+        } else {
+          setForm({
+            ...form,
+            season: form.season.filter((s) => s !== e.target.value),
+          });
         }
-        setErrors(validate ({
-            ...form, 
-            [e.target.name]: e.target.value
-        }))
-    }
+        setErrors(validate({
+          ...form,
+          season: e.target.checked ? [...form.season, e.target.value] : form.season,
+        }));
+      }
 
     function handleSelect(e){
         setForm({
@@ -67,21 +75,29 @@ export default function CreateActivity (){
         })
     }
 
-    function handleSubmit(e){
+    function handleSubmit(e) {
         e.preventDefault();
-        console.log(form)
-        dispatch(createActivity(form))
-        alert('Activity created!!')
-        setForm({
+
+        if (!form.difficulty) {
+        setErrors({ difficulty: "Select a difficulty" });
+        return;
+     }
+        if (Object.keys(errors).length === 0) {
+          console.log(form);
+          dispatch(createActivity(form));
+          alert("Activity created!!");
+          setForm({
             name: "",
             difficulty: "",
             duration: "",
             season: "",
             countries: [],
-        })
-        history.push('/home')
-    }
-
+          });
+          history.push("/home");
+        } else {
+          alert("Please fill in all the required fields.");
+        }
+      }
 
 
 
@@ -91,10 +107,11 @@ export default function CreateActivity (){
 
         <div>
             <Link to= '/home'> <button>Volver</button> </Link>
+            <div>
             <h1>Crear tu actividad Turística</h1>
             <form onSubmit={(e) => handleSubmit(e)} >
 
-                <div>
+                <div className={style.conteiner}>
                     <label>Activity Name:</label>
                     <input 
                     placeholder="Name..."
@@ -104,7 +121,7 @@ export default function CreateActivity (){
                     onChange={handleChange}
                     />
                     {errors.name && (
-                        <p>{errors.name}</p>
+                        <p className={style.error} >{errors.name}</p>
                     )}
                 </div>
 
@@ -116,6 +133,7 @@ export default function CreateActivity (){
                     name="difficulty"
                     onChange={handleChange} 
                     >
+                        <option value="">Select Difficulty</option>
                         <option value="1">Very Easy</option>
                         <option value="2">Easy</option>
                         <option value="3">Normal</option>
@@ -123,7 +141,7 @@ export default function CreateActivity (){
                         <option value="5">Extreme</option>
                     </select>
                     {errors.difficulty && (
-                        <p>{errors.difficulty}</p>
+                        <p className={style.error} >{errors.difficulty}</p>
                     )}
                 </div>
 
@@ -138,11 +156,11 @@ export default function CreateActivity (){
                     
                     />
                     {errors.duration && (
-                    <p>{errors.duration}</p>
+                    <p className={style.error} >{errors.duration}</p>
                     )}
                 </div>
 
-                <div>
+                <div className={style.seasonContainer}>
                     <label>Season:</label>
                     <label>
                     <input 
@@ -180,27 +198,28 @@ export default function CreateActivity (){
                         onChange={handleCheck}/>Spring
                     </label>
                     {errors.season && (
-                        <p>{errors.season}</p>
+                        <p className={style.error} >{errors.season}</p>
                     )}
                 </div>
 
-                <div>
+
+                <div className={style.countriesContainer}>
                 <select onChange={(e)=> handleSelect(e)}>
                     {countries.map((cou) => 
                     <option value={cou.name} key={cou.name} > {cou.name}</option>
                     )}
                 </select>
                 <div>
-                <ul>
+                <ul className={style.selectedList}>
                     <li>{form.countries.map((el, index)=> 
                         <div key={index}>
                             {el}
-                        <button onClick={() => handleDelete(el)}>X</button>
+                        <button className={style.selectedCountry} onClick={() => handleDelete(el)}>X</button>
                         </div>)}</li>
                     </ul>
                    
                         {errors.countries && (
-                        <p>{errors.countries}</p>
+                        <p className={style.error} >{errors.countries}</p>
                     )}
 
                 </div>
@@ -208,9 +227,11 @@ export default function CreateActivity (){
 
                 </div>
              
-            <button type="submit">Create New Activity</button>
+            <button className={style.createButton } type="submit">Create New Activity</button>
 
             </form>
+
+            </div>
 
         </div>
     )

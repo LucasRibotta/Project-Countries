@@ -1,0 +1,111 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.homeButton {
+  margin-top: 5px;
+  margin-left: 0;
+  border-radius: 20px;
+  width: 70px;
+  height: 70px;
+  font-size: 10px;
+}
+
+.socialIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; /* Ajusta el tamaño según tus necesidades */
+  height: 40px; /* Ajusta el tamaño según tus necesidades */
+  border-radius: 50%; /* Da forma redonda al contenedor */
+  background-color: #ccc; /* Color de fondo opcional */
+}
+
+.socialIcon img {
+  width: 100%; /* Asegura que la imagen ocupe todo el espacio del contenedor */
+  height: auto; /* Mantiene la proporción original de la imagen */
+}
+
+.socialButton {
+  position: relative;
+  z-index: 1;
+}
+
+.socialMenu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.socialMenu.open {
+  display: flex;
+  justify-content: center;
+}
+
+.socialMenu a {
+  margin: 0 3px;
+  color: #000;
+  text-decoration: none;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ccc;
+  transition: transform 0.3s ease;
+  position: absolute;
+}
+
+.socialMenu a svg {
+  width: 24px;
+  height: 24px;
+  fill: #fff;
+}
+
+.socialMenu a:nth-child(1) {
+  transform: rotate(-60deg) translateY(-40px) rotate(60deg);
+}
+
+.socialMenu a:nth-child(2) {
+  transform: rotate(0deg) translateY(-70px) rotate(0deg);
+}
+
+.socialMenu a:nth-child(3) {
+  transform: rotate(60deg) translateY(-40px) rotate(-60deg);
+}
+
+.socialButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  font-size: 10px;
+  border-radius: 40px;
+  background-color: #ccc;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.socialButton:hover {
+  background-color: #aaa;
+}
+
+.socialButton:focus {
+  outline: none;
+  background-color: #888;
+}
+
+.socialButton:active {
+  background-color: #666;
+}

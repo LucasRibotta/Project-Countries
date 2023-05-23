@@ -8,7 +8,7 @@ import {
     GET_ACTIVITY_CREATED,
     POST_ACTIVITY,
     CLEAR_DETAIL,
-    FILTER_TOUR_ACTIVITY
+    FILTER_BY_ACTIVITY
     } from '../actions-types/actions-types'
 
 const initialState = {
@@ -17,6 +17,7 @@ const initialState = {
     activities: [],
     detailId: [], 
     controllActivities: {}, 
+    season: [],
     
 }
 
@@ -59,23 +60,27 @@ function rootReducer (state= initialState, action) {
                 countries: filteredContinents
             }
 
-            case FILTER_TOUR_ACTIVITY:
-                const seasonFilter = action.payload.season;
-                const filteredActivityCountrys = state.countries.filter(country => {
-                  const hasTourActivities = country.activity && country.activity.length > 0;
-                  let passesSeasonFilter = true;
-                  if (seasonFilter && seasonFilter !== "All") {
-                    passesSeasonFilter = country.season === seasonFilter;
-                  }
-                  return hasTourActivities && passesSeasonFilter;
-                });
-              
-                console.log(state.activities)
+            case FILTER_BY_ACTIVITY:
+                const { season } = action.payload;
+                const countriesSeason = state.allContinents;
+                let filteredCountries = [];
+                
+                if (season === "All") {
+                  filteredCountries = countriesSeason;
+                } else {
+                  filteredCountries = countriesSeason.filter((country) => {
+                    return country.activities.some(
+                      (activity) => activity.season.toLowerCase() === season.toLowerCase()
+                    );
+                  });
+                  console.log(filteredCountries)
+                }
+                
                 return {
                   ...state,
-                  countries: filteredActivityCountrys
-                  
+                  countries: filteredCountries
                 };
+
 
         case ORDER_BY_NAME:
                const { type } = action.payload;

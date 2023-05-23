@@ -10,7 +10,8 @@ import {url,
     GET_ACTIVITY_CREATED,
     POST_ACTIVITY,
     CLEAR_DETAIL,
-    FILTER_TOUR_ACTIVITY } from '../actions-types/actions-types'
+    FILTER_BY_ACTIVITY
+    } from '../actions-types/actions-types'
 
 
 
@@ -102,14 +103,14 @@ export function orderByPopulation(payload) {
 }
 
 //Filtro por actividad
-export function filterTourActivity(season){
-    return {
-        type: FILTER_TOUR_ACTIVITY,
-        payload: season
-    }
-} 
+export function filterByActivity(payload) {
+  return {
+    type: FILTER_BY_ACTIVITY,
+    payload
+  };
+}
 
-//control de renderizado de action - reducer - home - created - app ! no llama a la app
+
 
 //Crea actividades
 export const createActivity = (payload) => {

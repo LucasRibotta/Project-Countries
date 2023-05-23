@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+/* import React, {useState} from "react";
 import {useDispatch} from 'react-redux';
 import {filterByContinents} from '../../redux/actions/actions'
 
@@ -30,20 +30,23 @@ export default function FilterContinents ({setCurrentPage}) {
         </div>
     
     )
-}
+} */
 
-/* import React, { useState } from "react";
+import React, { useState } from "react";
 import { useDispatch } from 'react-redux';
 import { filterByContinents } from '../../redux/actions/actions';
+import style from './style/Filter.module.css'
 
 export default function FilterContinents({ setCurrentPage }) {
   const dispatch = useDispatch();
   const [isOpen, setIsOpen] = useState(false);
+  const [selectedContinents, setSelectedContinent] = useState([]);
 
   function handleFilterContinents(e) {
-    e.preventDefault();
+    const continent = e.target.value;
     setCurrentPage(1);
-    dispatch(filterByContinents(e.target.value));
+    setSelectedContinent(continent);
+    dispatch(filterByContinents(continent));
   }
 
   function toggleDropdown() {
@@ -53,96 +56,98 @@ export default function FilterContinents({ setCurrentPage }) {
   return (
     <div>
       <div>
-        <label>Filter Continent</label>
-        <div className="dropdown">
-          <button className="dropdown-toggle" onClick={toggleDropdown}>
-            Select Continent
+        <div >
+          <button className={style.filterName} onClick={toggleDropdown}>
+            Filter Continent
           </button>
           {isOpen && (
-            <div className="dropdown-menu">
-              <label>
+            <div >
+              <div className={style.continentList}>
+              <label className={style.filterTitle}>
                 <input
                   type="checkbox"
                   name="All"
                   value="All"
+                  checked={selectedContinents.includes("All")}
                   onChange={handleFilterContinents}
                 />
                 All
               </label>
-              <label>
+              <label className={style.filterTitle}>
                 <input
                   type="checkbox"
                   name="North America"
-                  value={"North America"}
-                  key="North America"
+                  value="North America"
+                  checked={selectedContinents.includes("North America")}
                   onChange={handleFilterContinents}
                 />
                 North America
               </label>
-              <label>
+              <label className={style.filterTitle}>
                 <input
                   type="checkbox"
                   name="South America"
-                  value={"South America"}
-                  key="South America"
+                  value="South America"
+                  checked={selectedContinents.includes("South America")}
                   onChange={handleFilterContinents}
                 />
                 South America
               </label>
-              <label>
+              <label className={style.filterTitle}>
                 <input
                   type="checkbox"
                   name="Europe"
-                  value={"Europe"}
-                  key="Europe"
+                  value="Europe"
+                  checked={selectedContinents.includes("Europe")}
                   onChange={handleFilterContinents}
                 />
                 Europe
               </label>
-              <label>
+              <label className={style.filterTitle}>
                 <input
                   type="checkbox"
                   name="Asia"
-                  value={"Asia"}
-                  key="Asia"
+                  value="Asia"
+                  checked={selectedContinents.includes("Asia")}
                   onChange={handleFilterContinents}
                 />
                 Asia
               </label>
-              <label>
+              <label className={style.filterTitle}>
                 <input
                   type="checkbox"
                   name="Oceania"
-                  value={"Oceania"}
-                  key="Oceania"
+                  value="Oceania"
+                  checked={selectedContinents.includes("Oceania")}
                   onChange={handleFilterContinents}
                 />
                 Oceania
               </label>
-              <label>
+              <label className={style.filterTitle}>
                 <input
                   type="checkbox"
                   name="Africa"
-                  value={"Africa"}
-                  key="Africa"
+                  value="Africa"
+                  checked={selectedContinents.includes("Africa")}
                   onChange={handleFilterContinents}
                 />
                 Africa
               </label>
-              <label>
+              <label className={style.filterTitle}>
                 <input
                   type="checkbox"
                   name="Antarctica"
-                  value={"Antarctica"}
-                  key="Antarctica"
+                  value="Antarctica"
+                  checked={selectedContinents.includes("Antarctica")}
                   onChange={handleFilterContinents}
                 />
                 Antarctica
               </label>
+              </div>
             </div>
           )}
         </div>
       </div>
     </div>
   );
-} */
+}

@@ -1,32 +1,26 @@
-import React from "react";
-import {useDispatch} from 'react-redux';
-import {filterTourActivity} from '../../redux/actions/actions';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { filterByActivity } from '../../redux/actions/actions';
 
-export default function FilterActivity({setCurrentPage}){
-    
-    const dispatch = useDispatch();
+export default function FilterActivity({ setCurrentPage }) {
+  const dispatch = useDispatch();
+  const [season, setSeason] = useState('All');
 
-    function handleActivity(e){
-        console.log(FilterActivity)
-        e.preventDefault();
-        setCurrentPage(1)
-        dispatch(filterTourActivity(e.target.value));
+  const handleSeasonChange = (e) => {
+    const selectedSeason = e.target.value;
+    setSeason(selectedSeason);
+    dispatch(filterByActivity({ season: selectedSeason }));
+  };
 
-    }
-
-    return(
-        <div>
-            <div>
-            <select onChange={handleActivity}>
-
-                <option value={"All"}>All Activities</option>
-                <option value={"Summer"} key="Summer">Summer</option>
-                <option value={"Spring"} key="Spring">Spring</option>
-                <option value={"Autumn"} key="Autumn">Autumn</option>
-                <option value={"Winter"} key="Winter">Winter</option>
-
-            </select>
-            </div>
-        </div>
-    )
+  return (
+    <div>
+      <select value={season} onChange={handleSeasonChange}>
+        <option value="All">All Seasons</option>
+        <option value="Summer">Summer</option>
+        <option value="Spring">Spring</option>
+        <option value="Autumn">Autumn</option>
+        <option value="Winter">Winter</option>
+      </select>
+    </div>
+  );
 }

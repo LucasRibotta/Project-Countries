@@ -9,7 +9,7 @@ export default function Detail() {
   const dispatch = useDispatch();
   const details = useSelector((state) => state.detailId);
   const { id } = useParams();
-  const apiKey = process.env.API_KEY;
+  const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
   useEffect(() => {
     dispatch(getDetail(id));
@@ -92,7 +92,9 @@ export default function Detail() {
 
 
 
-
+/* <script src="
+https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false
+"></script>  */
 
 
 

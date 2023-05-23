@@ -1,0 +1,44 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .error {
+    color: red;
+  }
+  
+  .seasonContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .countriesContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .selectedList {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+  }
+  
+  .selectedCountry {
+    display: flex;
+    align-items: center;
+    margin: 5px;
+  }
+  
+  .selectedCountry button {
+    margin-left: 5px;
+  }
+  
+  .createButton {
+    margin-bottom: 20px;
+  }
