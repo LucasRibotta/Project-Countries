@@ -8,7 +8,7 @@ import {
     GET_ACTIVITY_CREATED,
     POST_ACTIVITY,
     CLEAR_DETAIL,
-    FILTER_BY_ACTIVITY
+    FILTER_BY_ACTIVITY,
     } from '../actions-types/actions-types'
 
 const initialState = {
@@ -49,6 +49,7 @@ function rootReducer (state= initialState, action) {
                 detailId: [],
             }    
         
+            
         
 
         case FILTER_BY_CONTINENTS:
@@ -61,25 +62,24 @@ function rootReducer (state= initialState, action) {
             }
 
             case FILTER_BY_ACTIVITY:
-                const { season } = action.payload;
-                const countriesSeason = state.allContinents;
-                let filteredCountries = [];
-                
-                if (season === "All") {
-                  filteredCountries = countriesSeason;
-                } else {
-                  filteredCountries = countriesSeason.filter((country) => {
-                    return country.activities.some(
-                      (activity) => activity.season.toLowerCase() === season.toLowerCase()
-                    );
-                  });
-                  console.log(filteredCountries)
-                }
-                
-                return {
-                  ...state,
-                  countries: filteredCountries
-                };
+              const { season } = action.payload;
+              const allCountries = state.countries;
+              let filteredCountries = [];
+            
+              if (season === "All") {
+                filteredCountries = allCountries;
+              } else {
+                filteredCountries = allCountries.filter((country) => {
+                  return country.activities.some(
+                    (activity) => activity.season.toLowerCase() === season.toLowerCase()
+                  );
+                });
+              }
+            
+              return {
+                ...state,
+                countries: filteredCountries
+              };
 
 
         case ORDER_BY_NAME:
@@ -96,26 +96,21 @@ function rootReducer (state= initialState, action) {
                  ...state,
                       countries: sortedCountries
                };
-
-        case ORDER_BY_POPULATION:
-            const populationOrden = (a, b) => {
-                if(b.population > a.population) return 1;
-                if(a.population > b.population)return -1;
-                return 0
-            }
-            if (action.payload === "population +") {
+              
+               case ORDER_BY_POPULATION:
+                let populationOrden;
+                if (action.payload === "asc") {
+                  populationOrden = state.countries.slice().sort((a, b) => b.population - a.population);
+                } else if (action.payload === "desc") {
+                  populationOrden = state.countries.slice().sort((a, b) => a.population - b.population);
+                } else {
+                  populationOrden = state.countries;
+                }
                 return {
                   ...state,
-                 countries: state.countries.slice().sort(populationOrden),
-                
-                }
-              } else {
-                return {
-                  ...state,
-                  countries: state.countries.slice().sort(populationOrden).reverse(),
-                 
-                }
-              } 
+                  countries: populationOrden,
+                };
+                      
          
         case GET_ACTIVITY_CREATED:
             return {

@@ -15,10 +15,10 @@ export default function OrderPopulation ({ setCurrentPage }) {
 
     function handleSort(e){
         const sortOrder = e.target.value;
-        if (sortOrder === "a-z") {
+        if (sortOrder === "asc") {
             setAscending(!ascending);
             setDescending(false);
-          } else if (sortOrder === "z-a") {
+          } else if (sortOrder === "desc") {
             setDescending(!descending);
             setAscending(false);
           }

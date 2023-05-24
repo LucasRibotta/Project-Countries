@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import {createActivity, getCountries} from '../../redux/actions/actions'
 import { validate } from './validate'
 import style from './style/Create.module.css'
+import imageSwal from '../../assets/createExito.jpg'
+import swal from 'sweetalert';
  
 export default function CreateActivity (){
     const dispatch = useDispatch();
@@ -77,29 +79,47 @@ export default function CreateActivity (){
 
     function handleSubmit(e) {
         e.preventDefault();
-
-        if (!form.difficulty) {
-        setErrors({ difficulty: "Select a difficulty" });
-        return;
-     }
+      
         if (Object.keys(errors).length === 0) {
-          console.log(form);
-          dispatch(createActivity(form));
-          alert("Activity created!!");
-          setForm({
-            name: "",
-            difficulty: "",
-            duration: "",
-            season: "",
-            countries: [],
+          swal({
+            title: "Do you want to create the activity?",
+            text: "This step cannot be modified...",
+            icon: "warning",
+            buttons: ["No", "Yes"],
+            dangerMode: true,
+          }).then((isConfirm) => {
+            if (isConfirm) {
+              swal({
+                title: "¡Successful!",
+                text: "Now you can enjoy your activity",
+                icon: "success",
+                imageUrl: {imageSwal},
+                imageWidth: 100,
+                imageHeight: 100,
+              }).then(() => {
+                console.log(form);
+                dispatch(createActivity(form));
+                setForm({
+                  name: "",
+                  difficulty: "",
+                  duration: "",
+                  season: "",
+                  countries: []
+                });
+                history.push("/home");
+              });
+            } else {
+              swal({
+                title: "¡No!",
+                text: "Proceed to make the changes",
+                icon: "error"
+              });
+            }
           });
-          history.push("/home");
         } else {
-          alert("Please fill in all the required fields.");
+          swal("Please fill in all the required fields.");
         }
       }
-
-
 
 
 
@@ -146,7 +166,7 @@ export default function CreateActivity (){
                 </div>
 
                 <div>
-                    <label>Duration:</label>
+                    <label>Duration: </label>
                     <input 
                     placeholder="Duration..."
                     type="number" 
@@ -158,6 +178,7 @@ export default function CreateActivity (){
                     {errors.duration && (
                     <p className={style.error} >{errors.duration}</p>
                     )}
+                    <span>Hs</span>
                 </div>
 
                 <div className={style.seasonContainer}>
@@ -205,6 +226,7 @@ export default function CreateActivity (){
 
                 <div className={style.countriesContainer}>
                 <select onChange={(e)=> handleSelect(e)}>
+                <option value="">Select Countries</option>
                     {countries.map((cou) => 
                     <option value={cou.name} key={cou.name} > {cou.name}</option>
                     )}

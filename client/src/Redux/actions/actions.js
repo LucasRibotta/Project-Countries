@@ -38,7 +38,7 @@ export function getCountries () {
 export function getCountriesName(name) {
     return function(dispatch) {
       return axios
-        .get(`${url}/countries`)
+      .get(`${url}/countries?name=${name}`)
         .then(response => {
           const filteredCountries = response.data.filter(country =>
             country.name.toLowerCase().includes(name.toLowerCase())
@@ -96,20 +96,37 @@ export function orderByName(type) {
 
 //Orden por población
 export function orderByPopulation(payload) {
-    return {
-        type: ORDER_BY_POPULATION,
-        payload
-    }
-}
-
-//Filtro por actividad
-export function filterByActivity(payload) {
   return {
-    type: FILTER_BY_ACTIVITY,
+    type: ORDER_BY_POPULATION,
     payload
   };
 }
 
+//Filtro por actividad
+export function filterByActivity(payload) {
+  return function(dispatch) { // Agregar getState como argumento
+    
+    return axios
+      .get(`${url}/activities`)
+      .then(response => {
+        const activities = response.data;
+        
+        const filteredCountries = activities.countries.filter(country =>
+          country.activities && country.activities.some(activity =>
+            activity.season && activity.season.toLowerCase() === payload.season.toLowerCase()
+          )
+        );
+        
+        dispatch({
+          type: FILTER_BY_ACTIVITY,
+          payload: filteredCountries
+        });
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  };
+}
 
 
 //Crea actividades

@@ -8,6 +8,7 @@ export const validate = (form) => {
     if (regexName.test(form.name)) { errors.name = "The name cannot have special characters or tildes"}
     if (!form.difficulty || form.difficulty === " ") { errors.difficulty = "The difficulty field is required" }
     if (form.difficulty > 5 || form.difficulty < 1 ) { errors.difficulty = "Only values from 1 to 5 are accepted"}
+    if(form.difficulty === "Select a difficulty") {errors.difficulty = "Not valid"}
     if (!form.duration || form.duration === " ") { errors.duration = "The duration field is required" } 
     if (form.duration >24 || form.duration < 1)  { errors.duration = "Only values from 1 to 24 are accepted"}
     if(!form.season || form.season.length === 0){errors.season = "Select at least one season"}

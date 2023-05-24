@@ -55,7 +55,7 @@ export default function Detail() {
             {details.activities?.length > 0 ? (
               details.activities.map(act => (
                 <div key={act.id} className={style.activityItem}>
-                  <h3 className={style.titleAct}>Activity: {act.name}</h3>
+                  <h3 className={style.titleAct}>Activity: {act.names}</h3>
                   <p className={style.activityDetails}>
                     <span>Season: {act.season}</span>
                     <span>Duration: {act.duration}</span>
