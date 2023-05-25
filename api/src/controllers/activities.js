@@ -2,14 +2,14 @@ const { Country, Activity } = require('../db');
 
 const getCreateActivity = async (data) => {
   try {
-    const { name, difficulty, duration, season, countries } = data;
+    const { names, difficulty, duration, season, countries } = data;
     const activity = await Activity.findOne({
-      where: { name }
+      where: { names }
     });
     let createdActivity = null;
     if (!(activity instanceof Activity)) {
       createdActivity = await Activity.create({
-        name,
+        names,
         difficulty,
         duration,
         season

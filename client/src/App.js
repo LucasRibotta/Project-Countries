@@ -5,6 +5,7 @@ import CreateActivity from "./components/FormActivity/CreateActivity"
 import Detail from './components/DetailCountry/DetailCountry'
 import About from "./components/About/About";
 import Footer from "./components/Footer/Footer";
+import Error from "./components/Error/Error";
 import './App.css';
 
 
@@ -18,7 +19,7 @@ function App() {
        <Route exact path="/about" component={About} />
        <Route path = '/create' component={CreateActivity} />  
        <Route path="/detail/:id" component={Detail} />
-
+       <Route path={"/*" } component={Error} />
        
       </Switch>
       

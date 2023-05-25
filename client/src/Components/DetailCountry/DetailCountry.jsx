@@ -4,12 +4,17 @@ import { useParams } from "react-router-dom";
 import { getDetail } from "../../redux/actions/actions";
 import style from './Detail.module.css'
 import { Link } from 'react-router-dom';
+import coordenadas from "./maps/map";
 
 export default function Detail() {
   const dispatch = useDispatch();
   const details = useSelector((state) => state.detailId);
   const { id } = useParams();
   const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+
+  function toCamelCase(name) {
+    return name.toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g, (match, character) => character.toUpperCase());
+  }
 
   useEffect(() => {
     dispatch(getDetail(id));
@@ -69,20 +74,24 @@ export default function Detail() {
           </div>
       </div>
 
-      <div className={style.mapContainer}>
-        {details.hasOwnProperty("name") && (
-          <div className={style.map}>
-            <h3>Map:</h3>
-            <iframe
-              width="100%"
-              height="450"
-              title="Map"
-              src={`https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=${details.maps}`}
-              allowFullScreen
-            ></iframe>
-          </div>
-        )}
-      </div>
+        <div className={style.mapContainer}>
+          {details.hasOwnProperty("name") && (
+            <div className={style.map}>
+              <h3>Map:</h3>
+              {details.name && coordenadas.hasOwnProperty(toCamelCase(details.name)) ? (
+                <iframe
+                  width="100%"
+                  height="450"
+                  title="Map"
+                  src={`https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=${coordenadas[toCamelCase(details.name)].join(",")}&zoom=4`}
+                  allowFullScreen
+                ></iframe>
+              ) : (
+                <p>No se encontraron coordenadas para mostrar el mapa.</p>
+              )}
+            </div>
+          )}
+        </div>
 
 
     </div>

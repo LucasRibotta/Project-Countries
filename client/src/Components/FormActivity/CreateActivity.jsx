@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import {createActivity, getCountries} from '../../redux/actions/actions'
 import { validate } from './validate'
 import style from './style/Create.module.css'
-import imageSwal from '../../assets/createExito.jpg'
 import swal from 'sweetalert';
  
 export default function CreateActivity (){
@@ -93,9 +92,6 @@ export default function CreateActivity (){
                 title: "¡Successful!",
                 text: "Now you can enjoy your activity",
                 icon: "success",
-                imageUrl: {imageSwal},
-                imageWidth: 100,
-                imageHeight: 100,
               }).then(() => {
                 console.log(form);
                 dispatch(createActivity(form));
@@ -126,12 +122,13 @@ export default function CreateActivity (){
     return (
 
         <div>
-            <Link to= '/home'> <button>Volver</button> </Link>
+            <Link to= '/home'> <button>Back</button> </Link>
             <div>
-            <h1>Crear tu actividad Turística</h1>
+            <h1>Create tourist activity</h1>
             <form onSubmit={(e) => handleSubmit(e)} >
 
-                <div className={style.conteiner}>
+              <div className={style.conteiner}>
+                <div className={style.title}>
                     <label>Activity Name:</label>
                     <input 
                     placeholder="Name..."
@@ -144,7 +141,7 @@ export default function CreateActivity (){
                         <p className={style.error} >{errors.name}</p>
                     )}
                 </div>
-
+                  
                 <div>
                     <label>Difficulty:</label>
                     <select 
@@ -248,9 +245,13 @@ export default function CreateActivity (){
 
 
                 </div>
+            </div>
              
-            <button className={style.createButton } type="submit">Create New Activity</button>
-
+             <div className={style.conteinerButton}>
+            <button className={style.createButton } type="submit">
+              <span>Create New Activity</span>
+            </button>
+            </div>
             </form>
 
             </div>

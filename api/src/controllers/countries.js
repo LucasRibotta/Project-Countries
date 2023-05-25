@@ -34,7 +34,12 @@ const getAllCountries = async (req, res) => {
             // Si se proporciona el parámetro 'name', buscar países por nombre en la base de datos
             const countryName = await Country.findAll({
                 where: {
-                     name:  { [Op.iLike]: `%${name}%` }
+                     name:  { [Op.iLike]: `%${name}%` },
+                    },
+                    include:{
+                     model: Activity,
+                     attributes: ['names', 'season'],
+                     through: {attributes: []}
                 }
             })
             countryName ?
@@ -42,7 +47,11 @@ const getAllCountries = async (req, res) => {
                 res.status(404).json(`El pais con el nombre:${name} no se encontro`);
         } else {
             // Si no se proporciona el parámetro 'name', obtener todos los países de la base de datos
-            const allCountrys = await Country.findAll()
+            const allCountrys = await Country.findAll({include: {
+              model: Activity,
+              attributes: ['names', 'season'],
+              through: {attributes: []}
+            }})
             res.status(200).json(allCountrys);
         };
            
@@ -51,15 +60,6 @@ const getAllCountries = async (req, res) => {
     }  
 }
 
-
-/* const getCountriesId = async (req, res) => {
-    const { id } = req.params;
-    const idUpper = id.toUpperCase();
-    const countryId = await Country.findOne({ where: { id: idUpper }, include: Activity });
-    countryId ?
-        res.status(200).json(countryId) :
-        res.status(404).json(`El país con el id: ${id} no se encontró`);
-} */
 
 const getCountriesId = async (req, res) => {
     const { id } = req.params;

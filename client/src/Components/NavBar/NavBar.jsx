@@ -37,7 +37,7 @@ export default function NavBar() {
             <Link to="/about">About</Link>
             <Link to="/create">Create an Activity</Link>
             <Link to="/" className={style.backLink}>
-              Back
+              &#x261A; Exit
             </Link>
           </div>
         </div>
