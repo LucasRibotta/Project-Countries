@@ -241,15 +241,15 @@ const coordenadas = {
   southGeorgia: [-54.4296, -36.5879],
   antarctica: [-82.8628, 135.0000],
   bouvetIsland: [-54.4232, 3.4139],
-  
-  heardIslandandMcDonaldIslands: [-53.0667, 73.5167],
-  SaintHelenaAscensionAndTristanDaCunha: [-15.9650, -5.7089],
-  sãoToméAndPríncipe: [0.1864, 6.6131],
-  Réunion: [-21.1151, 55.5364],
   unitedStatesMinorOutlyingIslands: [19.2823, 166.6470],
+
+  heardIslandAndMcDonaldIslands: [-53.0667, 73.5167],
+  sainthElenaAscensionAndTristanDaCunha: [-15.9650, -5.7089],
+  saoTomeandPrincipe: [0.1864, 6.6131],
+  reunion: [-21.1151, 55.5364],
   cocosIslands: [-12.1642, 96.8701],
   ÅlandIslands: [60.1785, 19.9156],
-  SaintBarthélemy: [17.9000, -62.8333],
+  saintBarthelemy: [17.9000, -62.8333], 
 };
 
 export default  coordenadas;

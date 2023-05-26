@@ -19,15 +19,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px; /* Ajusta el tamaño según tus necesidades */
-  height: 40px; /* Ajusta el tamaño según tus necesidades */
-  border-radius: 50%; /* Da forma redonda al contenedor */
-  background-color: #ccc; /* Color de fondo opcional */
+  width: 40px; 
+  height: 40px; 
+  border-radius: 50%; 
+  background-color: #ccc;
 }
 
 .socialIcon img {
-  width: 100%; /* Asegura que la imagen ocupe todo el espacio del contenedor */
-  height: auto; /* Mantiene la proporción original de la imagen */
+  width: 100%; 
+  height: auto; 
 }
 
 .socialButton {
@@ -72,14 +72,17 @@
 
 .socialMenu a:nth-child(1) {
   transform: rotate(-60deg) translateY(-40px) rotate(60deg);
+  top: 70px;
 }
 
 .socialMenu a:nth-child(2) {
   transform: rotate(0deg) translateY(-70px) rotate(0deg);
+  top: 70px;
 }
 
 .socialMenu a:nth-child(3) {
   transform: rotate(60deg) translateY(-40px) rotate(-60deg);
+  top: 70px;
 }
 
 .socialButton {

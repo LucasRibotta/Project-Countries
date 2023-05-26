@@ -1,32 +1,30 @@
 .landingContainer {
   position: relative;
   width: 100%;
-  height: 100vh;
-}
-
-.video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-}
-
-.content {
+  min-height: 100vh;
+  background-image: url('../../assets/Travel-HM-Hero-1200x500.gif');
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center;
+  background-attachment: fixed;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  height: 100%;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1;
+
 }
 
 .title {
+  font-size: 3rem;
+  color: #fff;
+  font-weight: 700;
   text-align: center;
-  margin-bottom: 20px;
-  color: white;
-}
+  margin-top: 0;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  }
+
 
 .button {
   margin-top: 20px;
@@ -46,6 +44,3 @@
   background-color: #4A4C4E;
 }
 
-.highlightedButton {
-  background-color: #71DFBE;
-}

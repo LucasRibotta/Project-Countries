@@ -1,19 +1,20 @@
 .container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row-reverse;
   align-items: center;
   background-color: #bd3232;
   padding: 10px;
-  height: 60px;
+  height: 30px;
 }
 
 .menuContainer {
   display: flex;
   align-items: flex-start;
+  justify-content: flex-end;
 }
 
 .menuContainer > div {
-  margin-left: 0;
+  margin-right: 0;
 }
 
 .hamburgerMenu {
@@ -26,12 +27,13 @@
 
 .hamburger {
   display: block;
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
   position: relative;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  z-index: 2;
+  z-index: 5;
+  margin-right: 5px;
 }
 
 .hamburger span {
@@ -44,7 +46,7 @@
 }
 
 .checkbox:checked + .hamburger span:nth-child(1) {
-  transform: rotate(45deg) translate(0, 6px);
+  transform: rotate(43deg) translate(0, 10px);
 }
 
 .checkbox:checked + .hamburger span:nth-child(2) {
@@ -52,13 +54,17 @@
 }
 
 .checkbox:checked + .hamburger span:nth-child(3) {
+  transform: rotate(-45deg) translate(0, -10px);
+}
+
+.checkbox:checked + .hamburger span:nth-child(4) {
   transform: rotate(-45deg) translate(0, -6px);
 }
 
 .menu {
   position: absolute;
   top: calc(100% + 10px);
-  left: 0px;
+  right: -5px;
   background-color: #9a3d3d;
   padding: 5px;
   display: none;
@@ -66,10 +72,13 @@
   height: 140px;
   border: 1px solid black;
   border-radius: 30px;
+  text-align: right;
 }
 
 .checkbox:checked ~ .menu {
   display: block;
+  right: 0;
+  left: auto;
 }
 
 .menu a {
@@ -91,81 +100,4 @@
 .h1Container {
   flex: 1;
   text-align: center;
-}
-
-.searchContainer {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-
-.searchFocused {
-  width: 300px;
-}
-
-.search:focus:hover {
-  border-bottom: 1px solid #bbbbbb00;
-}
-
-.search:focus {
-  width: 300px;
-  z-index: 1;
-  border-bottom: 1px solid #bbbbbb00;
-  cursor: text;
-}
-
-.search {
-  height: 35px;
-  font-size: 30px;
-  display: inline-block;
-  font-family: "Lato";
-  font-weight: 100;
-  border: none;
-  outline: none;
-  color: #fafafa;
-  background-color: rgb(102, 102, 126);
-  padding: 3px;
-  padding-right: 60px;
-  width: 0px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  transition: width 0.4s cubic-bezier(0.000, 0.795, 0.000, 1.000);
-  cursor: pointer;
-}
-
-.search::placeholder {
-  color: #fefdfd; 
-}
-
-
-.lupa {
-  height: 40px;
-  width: 30px;
-  display: inline-block;
-  border: none;
-  position: absolute;
-  top: 5px;
-  right: 0;
-  z-index: 2;
-  cursor: pointer;
-  background-color: transparent;
-  
-}
-
-
-.resetButton {
-  height: 20px;
-  width:60px;
-  display: inline-block;
-  color: rgb(0, 0, 0);
-  background-color: #6d6767;
-  border: 1px solid black;
-  border-radius: 10px;
-  position: absolute;
-  top: 50px;
-  right: 3px;
-  z-index: 2;
-  cursor: pointer;
-  transition: opacity 0.4s ease;
 }

@@ -1,15 +1,16 @@
-import React, {useState, useEffect} from "react";
-import {Link, useHistory} from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
-import {createActivity, getCountries} from '../../redux/actions/actions'
+import { createActivity, getCountries } from '../../redux/actions/actions'
 import { validate } from './validate'
 import style from './style/Create.module.css'
 import swal from 'sweetalert';
- 
-export default function CreateActivity (){
-    const dispatch = useDispatch();
-    const history = useHistory();
-    const countries = useSelector((state) => state.countries); //trae el estado de las actividades(reducer)
+import { useHistory } from 'react-router'; // Importa useHistory desde react-router
+
+export default function CreateActivity() {
+  const dispatch = useDispatch();
+  const history = useHistory(); // Utiliza useHistory desde react-router
+  const countries = useSelector((state) => state.countries);
 
     const [errors, setErrors] = useState({})
     const [form, setForm] = useState({

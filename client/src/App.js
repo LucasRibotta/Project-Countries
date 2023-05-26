@@ -1,31 +1,29 @@
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import React from "react";
+import { Routes, Route } from "react-router-dom";
 import LandingPage from './components/Landing/LandingPage'
 import Home from './components/Home/Home';
-import CreateActivity from "./components/FormActivity/CreateActivity" 
-import Detail from './components/DetailCountry/DetailCountry'
+import CreateActivity from "./components/FormActivity/CreateActivity";
+import Detail from './components/DetailCountry/DetailCountry';
 import About from "./components/About/About";
 import Footer from "./components/Footer/Footer";
-import Error from "./components/Error/Error";
+import Error from "./components/Error/Error"; 
+import NavBar from "./components/NavBar/NavBar";
 import './App.css';
-
 
 function App() {
   return (
-      <BrowserRouter>
     <div className="App">
-      <Switch>
-       <Route exact path= '/' component={LandingPage} />
-       <Route path = '/home' component={Home} />
-       <Route exact path="/about" component={About} />
-       <Route path = '/create' component={CreateActivity} />  
-       <Route path="/detail/:id" component={Detail} />
-       <Route path={"/*" } component={Error} />
-       
-      </Switch>
-      
-       <Footer className="footer"/>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/create" element={<CreateActivity />} />
+        <Route path="/detail/:id" element={<Detail />} />
+        <Route path="/*" element={<Error />} /> 
+      </Routes>
+      <Footer className="footer" />
     </div>
-    </BrowserRouter>
   );
 }
 

@@ -1,8 +1,13 @@
+.fondo{
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 19%, rgba(35,174,203,1) 92%);
+}
+
 .containerHome {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   padding: 20px;
+  
 }
 
 .filtersContainer {
@@ -17,6 +22,7 @@
 .filter {
   margin-bottom: 10px;
 }
+
 
 .cardContainer {
   display: grid;

@@ -1,0 +1,87 @@
+.searchContainer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative; 
+  }
+  
+  .searchFocused {
+    width: 250px;
+  }
+  
+  .searchOpen {
+    width: 250px;
+    transition: width 0.4s cubic-bezier(0.000, 0.795, 0.000, 1.000);
+  }
+  
+  .searchContainer .search:focus:hover {
+    border-bottom: 1px solid #bbbbbb00;
+  }
+  
+  .searchContainer .search:focus {
+    width: 250px;
+    z-index: 1;
+    border-bottom: 1px solid #bbbbbb00;
+    cursor: text;
+  }
+  
+  .searchContainer .search {
+    height: 30px;
+    font-size: 30px;
+    display: inline-block;
+    font-family: "Lato";
+    font-weight: 90;
+    border: none;
+    outline: none;
+    color: #fafafa;
+    background-color: rgb(102, 102, 126);
+    padding: 3px;
+    padding-left: 40px;
+    width: 10px;
+    position: absolute;
+    top: 0;
+    left: 0; 
+    transition: width 0.4s cubic-bezier(0.000, 0.795, 0.000, 1.000); 
+    cursor: pointer;
+  }
+  
+  .searchContainer .search::placeholder {
+    color: #fefdfd;
+  }
+  
+  .searchContainer .lupa {
+    height: 40px;
+    width: 30px;
+    display: inline-block;
+    border: none;
+    position: absolute;
+    top: 5px;
+    left: 0;
+    z-index: 2;
+    cursor: pointer;
+    background-color: transparent;
+  }
+  
+  .searchContainer.open .lupa {
+    display: none;
+  }
+
+  .resetButton {
+    height: 20px;
+    width: 60px;
+    display: inline-block;
+    color: rgb(0, 0, 0);
+    background-color: #6d6767;
+    border: 1px solid black;
+    border-radius: 10px;
+    position: absolute;
+    top: 50px;
+    left: 0px;
+    z-index: 2;
+    cursor: pointer;
+    transition: opacity 0.4s ease;
+  }
+
+  .resetButton:hover {
+    transform: scale(1.1);
+  }

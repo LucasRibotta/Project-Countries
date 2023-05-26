@@ -38,5 +38,13 @@
 }
 
 .footer{
+  position: fixed;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: 100%;
+  width: 100%;
+  left: 0;
   bottom: 0;
 }

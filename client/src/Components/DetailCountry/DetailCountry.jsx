@@ -4,7 +4,8 @@ import { useParams } from "react-router-dom";
 import { getDetail } from "../../redux/actions/actions";
 import style from './Detail.module.css'
 import { Link } from 'react-router-dom';
-import coordenadas from "./maps/map";
+import coordenadas from "./maps/utils/map";
+import toCamelCase from "./maps/utils/utils";
 
 export default function Detail() {
   const dispatch = useDispatch();
@@ -12,15 +13,6 @@ export default function Detail() {
   const { id } = useParams();
   const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
-  function toCamelCase(name) {
-    return name
-      .toLowerCase()
-      .replace(/[^a-zA-Z0-9]+(.)/g, (match, character) => character.toUpperCase())
-      .replace(/[^a-zA-Z0-9]/g, "")
-      .replace(/[^a-zA-Z0-9áéíóúñ\s]/g, "")
-      .replace(/\s/g, "")
-      .replace(/,\s*/g, "");
-  }
 
   useEffect(() => {
     dispatch(getDetail(id));
@@ -89,8 +81,8 @@ export default function Detail() {
                   width="100%"
                   height="450"
                   title="Map"
-                  src={`https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=${coordenadas[toCamelCase(details.name)]?.join(",")}&zoom=4`}                  allowFullScreen
-                ></iframe>
+                  src={`https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=${coordenadas[toCamelCase(details.name)].join(",")}&zoom=4`}
+                  ></iframe>
               ) : (
                 <p>No se encontraron coordenadas para mostrar el mapa.</p>
               )}

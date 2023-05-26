@@ -1,25 +1,18 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { getCountries, getCountriesName } from "../../redux/actions/actions";
+import React from "react";
+import { Link, useLocation } from "react-router-dom";
 import style from "./navBar.module.css";
 
 export default function NavBar() {
-  const dispatch = useDispatch();
-  const [name, setName] = useState("");
+  const location = useLocation();
+  const allowedRoutes = ["/home", "/about"];
 
+  // Verificar si la ruta actual está permitida
+  const isAllowedRoute = allowedRoutes.includes(location.pathname) || location.pathname.startsWith("/detail/");
 
-  const handleInputChange = (e) => {
-    const { value } = e.target;
-    setName(value);
-    dispatch(getCountriesName(value));
-  };
+  if (!isAllowedRoute) {
+    return null; // No renderizar el NavBar cuando la ruta no está permitida
+  }
 
-  const handleClick = (e) => {
-    e.preventDefault();
-    setName("");
-    dispatch(getCountries());
-  };
 
   return (
     <div className={style.container}>
@@ -42,29 +35,12 @@ export default function NavBar() {
           </div>
         </div>
 
-        <div className={style.searchContainer}>
-          <form action="search-bar">
-            <input
-              type="search"
-              placeholder="Search..."
-              value={name}
-              onChange={handleInputChange}
-              className={style.search}
-            />
 
-            <div className={style.lupa} >
-              <span>🔍</span>
-            </div>
-          </form>
-          <button onClick={handleClick} className={style.resetButton}>
-            Reset
-          </button>
-        </div>
       </div>
       
-      <div className={style.h1Container}>
+   <div className={style.h1Container}>
         <h1>COUNTRIES API</h1>
-      </div>
+      </div> 
 
     </div>
   );

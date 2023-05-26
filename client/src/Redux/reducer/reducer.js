@@ -8,7 +8,7 @@ import {
     GET_ACTIVITY_CREATED,
     POST_ACTIVITY,
     CLEAR_DETAIL,
-    FILTER_BY_ACTIVITY,
+    COUNTRY_BY_ACTIVITY,
     } from '../actions-types/actions-types'
 
 const initialState = {
@@ -61,27 +61,6 @@ function rootReducer (state= initialState, action) {
                 countries: filteredContinents
             }
 
-            case FILTER_BY_ACTIVITY:
-              const { season } = action.payload;
-              const allCountries = state.countries;
-              let filteredCountries = [];
-            
-              if (season === "All") {
-                filteredCountries = allCountries;
-              } else {
-                filteredCountries = allCountries.filter((country) => {
-                  return country.activities.some(
-                    (activity) => activity.season.toLowerCase() === season.toLowerCase()
-                  );
-                });
-              }
-            
-              return {
-                ...state,
-                countries: filteredCountries
-              };
-
-
         case ORDER_BY_NAME:
                const { type } = action.payload;
                const sortedCountries = [...state.countries];
@@ -124,9 +103,17 @@ function rootReducer (state= initialState, action) {
             return {
                 ...state,
                 controllActivities: action.payload
-            }      
-            
-                 
+            } 
+         
+        case COUNTRY_BY_ACTIVITY:
+          const activitiesCountries = state.activities;
+          const countriesAll = state.countries
+          const filterAct = action.payload === "Sin Filtro" ? countriesAll : activitiesCountries.filter(a=> a.nam=== action.payload)[0].countries.map(e=> e)
+          return {
+            ...state,
+            countries: filterAct
+          }     
+         
 
         default:
                 return state;

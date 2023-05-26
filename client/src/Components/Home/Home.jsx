@@ -2,14 +2,13 @@ import React, { useEffect, useState } from "react";
 import {useDispatch, useSelector} from 'react-redux'
 import { getCountries, getActivityCreated} from "../../redux/actions/actions";
 import Card from "../CardCountry/Card";
-import NavBar from "../NavBar/NavBar"
 import Pagination from "../Pagination/Pagination";
 import style from './Home.module.css'
 import FilterContinents from "../FilterAndOrder/FilterContinents";
 import FilterActivity from "../FilterAndOrder/FilterActivity"
 import OrderNameAlpha from "../FilterAndOrder/OrderAlfa";
 import OrderPopulation from '../FilterAndOrder/OrderPopulation';
-
+import SearchBar from "../SearchBar/SearchBar";
 
 
 export default function Home () {
@@ -39,8 +38,7 @@ useEffect(()=> {
 
 return (
 
-  <div>
-    <NavBar />
+  <div className={style.fondo}>
   <div className={style.containerHome}>
 
     <div className={style.filtersContainer}>
@@ -56,6 +54,7 @@ return (
       <div className={style.filter}>
         <OrderPopulation setCurrentPage={setCurrentPage} />
       </div>
+      <SearchBar />
     </div>
 
     <div className={style.cardContainer}>

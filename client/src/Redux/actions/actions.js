@@ -10,7 +10,7 @@ import {url,
     GET_ACTIVITY_CREATED,
     POST_ACTIVITY,
     CLEAR_DETAIL,
-    FILTER_BY_ACTIVITY
+    COUNTRY_BY_ACTIVITY,
     } from '../actions-types/actions-types'
 
 
@@ -102,32 +102,6 @@ export function orderByPopulation(payload) {
   };
 }
 
-//Filtro por actividad
-export function filterByActivity(payload) {
-  return function(dispatch) { // Agregar getState como argumento
-    
-    return axios
-      .get(`${url}/activities`)
-      .then(response => {
-        const activities = response.data;
-        
-        const filteredCountries = activities.countries.filter(country =>
-          country.activities && country.activities.some(activity =>
-            activity.season && activity.season.toLowerCase() === payload.season.toLowerCase()
-          )
-        );
-        
-        dispatch({
-          type: FILTER_BY_ACTIVITY,
-          payload: filteredCountries
-        });
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
-  };
-}
-
 
 //Crea actividades
 export const createActivity = (payload) => {
@@ -147,5 +121,12 @@ export const getActivityCreated = () => {
         const getDataActivity = apiData.data;
         dispatch({ type: GET_ACTIVITY_CREATED , payload: getDataActivity})
     }
+}
+
+export const countryByActivitys = (payload) => {
+  return {
+      type: COUNTRY_BY_ACTIVITY,
+      payload
+  }
 }
 
