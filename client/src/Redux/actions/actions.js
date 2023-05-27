@@ -10,10 +10,8 @@ import {url,
     GET_ACTIVITY_CREATED,
     POST_ACTIVITY,
     CLEAR_DETAIL,
-    COUNTRY_BY_ACTIVITY,
+    FILTER_BY_SEASON
     } from '../actions-types/actions-types'
-
-
 
 
 //Renderizado de todos los países, por Id y nombre
@@ -96,6 +94,7 @@ export function orderByName(type) {
 
 //Orden por población
 export function orderByPopulation(payload) {
+  console.log(payload)
   return {
     type: ORDER_BY_POPULATION,
     payload
@@ -103,30 +102,39 @@ export function orderByPopulation(payload) {
 }
 
 
-//Crea actividades
 export const createActivity = (payload) => {
-    return async function (dispatch) {
-        const apiData = await axios.post(`${url}/activities`, payload)
-         console.log(apiData);
-        
-        dispatch({type: POST_ACTIVITY, payload: apiData})
-    }
+  return async function (dispatch) {
+      const apiData = await axios.post(`${url}/activities`, payload)
+       console.log(apiData);
+      
+      dispatch({type: POST_ACTIVITY, payload: apiData})
+  }
 }
+
 
 //Busca las actividades creadas
 export const getActivityCreated = () => {
-    return async function (dispatch) {
-        const apiData = await axios.get(`${url}/activities`)
+  return async function (dispatch) {
+    try {
+      const response = await axios.get(`${url}/activities`);
+      const activities = response.data;
 
-        const getDataActivity = apiData.data;
-        dispatch({ type: GET_ACTIVITY_CREATED , payload: getDataActivity})
+      dispatch({ type: GET_ACTIVITY_CREATED, payload: activities });
+    } catch (error) {
+      console.log(error);
+      // Manejo de errores: puedes mostrar una notificación de error o realizar cualquier otra acción necesaria
     }
+  };
+};
+
+export function filterBySeason(payload) {
+  console.log(payload)
+  return {
+    type: FILTER_BY_SEASON,
+    payload
+  };
+  
 }
 
-export const countryByActivitys = (payload) => {
-  return {
-      type: COUNTRY_BY_ACTIVITY,
-      payload
-  }
-}
+
 

@@ -8,6 +8,7 @@ import About from "./components/About/About";
 import Footer from "./components/Footer/Footer";
 import Error from "./components/Error/Error"; 
 import NavBar from "./components/NavBar/NavBar";
+import Game from './components/Game/Game'
 import './App.css';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/create" element={<CreateActivity />} />
+        <Route path="/game" element={<Game />} />
         <Route path="/detail/:id" element={<Detail />} />
         <Route path="/*" element={<Error />} /> 
       </Routes>

@@ -8,7 +8,7 @@ import {
     GET_ACTIVITY_CREATED,
     POST_ACTIVITY,
     CLEAR_DETAIL,
-    COUNTRY_BY_ACTIVITY,
+    FILTER_BY_SEASON
     } from '../actions-types/actions-types'
 
 const initialState = {
@@ -24,10 +24,12 @@ const initialState = {
 function rootReducer (state= initialState, action) {
     switch(action.type) {
         case GET_COUNTRIES:
+            
             return {
                 ...state,
                 countries: action.payload,
                 allContinents: action.payload
+                
             }
 
         case GET_COUNTRIES_NAME :
@@ -54,6 +56,7 @@ function rootReducer (state= initialState, action) {
 
         case FILTER_BY_CONTINENTS:
             const continents = state.allContinents;
+            console.log(continents)
             const filteredContinents = action.payload === "All" ? continents :
             continents.filter(c => c.continents === action.payload)
             return{
@@ -105,15 +108,31 @@ function rootReducer (state= initialState, action) {
                 controllActivities: action.payload
             } 
          
-        case COUNTRY_BY_ACTIVITY:
-          const activitiesCountries = state.activities;
-          const countriesAll = state.countries
-          const filterAct = action.payload === "Sin Filtro" ? countriesAll : activitiesCountries.filter(a=> a.nam=== action.payload)[0].countries.map(e=> e)
-          return {
-            ...state,
-            countries: filterAct
-          }     
-         
+        case FILTER_BY_SEASON:
+            const {payload} = action;
+            console.log(payload)
+            
+            const filteredActivities = state.allContinents.map((act) => {
+                console.log(act.activities)
+                const temporada = act.activities.map((el) => el.season)
+                console.log(temporada)
+                return{
+                    id: act.id,
+                    name: act.name,
+                    flags: act.flags,
+                    continents: act.continents,
+                    capital: act.capital,
+                    activities: temporada,
+                }
+                });
+                let seasonActivities = []
+                if(payload === 'All') seasonActivities = filteredActivities.filter(el => el.activities.length > 0 )
+                if(payload !== 'All')seasonActivities = filteredActivities.filter((el)=> el.activities.includes(payload))
+            console.log(seasonActivities)
+            return {
+                ...state,
+                countries: seasonActivities
+            };     
 
         default:
                 return state;
@@ -122,3 +141,20 @@ function rootReducer (state= initialState, action) {
 }
 
 export default rootReducer;
+
+
+/* {
+    "id": "ARG",
+    "name": "Argentina",
+    "flags": "https://flagcdn.com/w320/ar.png",
+    "continents": "South America",
+    "capital": "{\"Buenos Aires\"}",
+    "subregion": "South America",
+    "area": "2780400",
+    "population": 45376763,
+    "maps": "https://goo.gl/maps/Z9DXNxhf2o93kvyc6",
+    "activities": [
+        {
+            "names": "Beach",
+            "season": "Summer"
+        } */

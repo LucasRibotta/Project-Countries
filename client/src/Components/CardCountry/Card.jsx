@@ -4,9 +4,9 @@ import style from './Card.module.css'
 
 
 export default function Card(props){
-    const {name, image,continents,id} = props 
+    const {name, image,continents, id, season} = props 
     return (
-      <div className={style.card}>
+      <div className={style.card} key={id}>
         <div className={style.cardImage}>
           <img src={image}  width="150" height="150" alt={name} />
         </div>

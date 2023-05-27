@@ -81,10 +81,12 @@ export default function Detail() {
                   width="100%"
                   height="450"
                   title="Map"
-                  src={`https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=${coordenadas[toCamelCase(details.name)].join(",")}&zoom=4`}
+                  src={`https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=${coordenadas[toCamelCase(details.name)].join(",")}&zoom=6`}
                   ></iframe>
               ) : (
-                <p>No se encontraron coordenadas para mostrar el mapa.</p>
+                <a href={details.maps} target="_blank" rel="noopener noreferrer">
+                        <img src="https://img.icons8.com/color/48/000000/google-maps.png" alt="Mapa" width="100px" height="100px"/>
+                      </a>
               )}
             </div>
           )}

@@ -2,10 +2,10 @@ const regexName = /[^A-Za-z0-9 ]+/g;
 
 export const validate = (form) => {
     let errors = {}
-    if (!form.name) { errors.name = "Name is required" }
-    if (form.name.length < 3) { errors.name = "The name cannot be less than 3 characters" }
-    if (form.name.length > 30) { errors.name = "The name cannot be longer than 30 characters" }
-    if (regexName.test(form.name)) { errors.name = "The name cannot have special characters or tildes"}
+    if (!form.names) { errors.names = "Name is required" }
+    if (form.names.length < 3) { errors.names = "The name cannot be less than 3 characters" }
+    if (form.names.length > 30) { errors.names = "The name cannot be longer than 30 characters" }
+    if (regexName.test(form.names)) { errors.names = "The name cannot have special characters or tildes"}
     if (!form.difficulty || form.difficulty === " ") { errors.difficulty = "The difficulty field is required" }
     if (form.difficulty > 5 || form.difficulty < 1 ) { errors.difficulty = "Only values from 1 to 5 are accepted"}
     if(form.difficulty === "Select a difficulty") {errors.difficulty = "Not valid"}

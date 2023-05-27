@@ -4,7 +4,7 @@ import style from "./navBar.module.css";
 
 export default function NavBar() {
   const location = useLocation();
-  const allowedRoutes = ["/home", "/about"];
+  const allowedRoutes = ["/home", "/about", "/game"];
 
   // Verificar si la ruta actual está permitida
   const isAllowedRoute = allowedRoutes.includes(location.pathname) || location.pathname.startsWith("/detail/");
@@ -29,6 +29,7 @@ export default function NavBar() {
           <div className={style.menu}>
             <Link to="/about">About</Link>
             <Link to="/create">Create an Activity</Link>
+            <Link to="/game">Game</Link>
             <Link to="/" className={style.backLink}>
               &#x261A; Exit
             </Link>

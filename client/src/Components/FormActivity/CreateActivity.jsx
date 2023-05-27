@@ -4,17 +4,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { createActivity, getCountries } from '../../redux/actions/actions'
 import { validate } from './validate'
 import style from './style/Create.module.css'
-import swal from 'sweetalert';
-import { useHistory } from 'react-router'; // Importa useHistory desde react-router
+import { useNavigate } from 'react-router-dom';
 
 export default function CreateActivity() {
   const dispatch = useDispatch();
-  const history = useHistory(); // Utiliza useHistory desde react-router
+  const navigate = useNavigate();
   const countries = useSelector((state) => state.countries);
 
     const [errors, setErrors] = useState({})
     const [form, setForm] = useState({
-        name: "",
+        names: "",
         difficulty: "",
         duration: "",
         season: "",
@@ -41,7 +40,7 @@ export default function CreateActivity() {
 
       function handleCheck(e) {
         if (e.target.checked) {
-          if (form.season.length < 2) {
+          if (form.season.length <= 2) {
             setForm({
               ...form,
               season: [...form.season, e.target.value],
@@ -58,6 +57,7 @@ export default function CreateActivity() {
           season: e.target.checked ? [...form.season, e.target.value] : form.season,
         }));
       }
+      
 
     function handleSelect(e){
         setForm({
@@ -78,45 +78,29 @@ export default function CreateActivity() {
     }
 
     function handleSubmit(e) {
-        e.preventDefault();
-      
+      e.preventDefault();
+    
         if (Object.keys(errors).length === 0) {
-          swal({
-            title: "Do you want to create the activity?",
-            text: "This step cannot be modified...",
-            icon: "warning",
-            buttons: ["No", "Yes"],
-            dangerMode: true,
-          }).then((isConfirm) => {
-            if (isConfirm) {
-              swal({
-                title: "¡Successful!",
-                text: "Now you can enjoy your activity",
-                icon: "success",
-              }).then(() => {
-                console.log(form);
-                dispatch(createActivity(form));
-                setForm({
-                  name: "",
-                  difficulty: "",
-                  duration: "",
-                  season: "",
-                  countries: []
-                });
-                history.push("/home");
-              });
-            } else {
-              swal({
-                title: "¡No!",
-                text: "Proceed to make the changes",
-                icon: "error"
-              });
-            }
-          });
-        } else {
-          swal("Please fill in all the required fields.");
-        }
+    if (window.confirm("Do you want to create the activity? This step cannot be modified...")) {
+      if (window.confirm("¡Successful! Now you can enjoy your activity")) {
+        console.log(form);
+        dispatch(createActivity(form));
+        setForm({
+          names: "",
+          difficulty: "",
+          duration: "",
+          season: "",
+          countries: []
+        });
+        navigate("/home");
       }
+    } else {
+      window.alert("Proceed to make the changes");
+    }
+  } else {
+    window.alert("Please fill in all the required fields.");
+  }
+}
 
 
 
@@ -134,8 +118,8 @@ export default function CreateActivity() {
                     <input 
                     placeholder="Name..."
                     type="text" 
-                    value={form.name}
-                    name="name"
+                    value={form.names}
+                    name="names"
                     onChange={handleChange}
                     />
                     {errors.name && (

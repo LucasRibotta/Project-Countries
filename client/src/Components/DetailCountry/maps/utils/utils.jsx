@@ -3,7 +3,7 @@ function toCamelCase(name) {
         heardIslandAndMcDonaldIslands: 'Heard Island And McDonald Islands',
         sainthElenaAscensionAndTristanDaCunha: 'Saint Helena, Ascension And Tristan Da Cunha',
         saoTomeandPrincipe: 'São Tomé And Príncipe',
-        reunion: 'Réunion',
+        reunion: 'Réunion' || 'réunion',
         cocosIslands: 'Cocos (Keeling) Islands',
         alandIslands: 'Åland Islands',
         saintBarthelemy: 'Saint Barthélemy',
