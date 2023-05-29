@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import { createActivity, getCountries } from '../../redux/actions/actions'
 import { validate } from './validate'
@@ -107,9 +106,8 @@ export default function CreateActivity() {
     return (
 
         <div>
-            <Link to= '/home'> <button>Back</button> </Link>
             <div>
-            <h1>Create tourist activity</h1>
+            <h1 className={style.titleH1}>Create tourist activity</h1>
             <form onSubmit={(e) => handleSubmit(e)} >
 
               <div className={style.conteiner}>
@@ -122,13 +120,13 @@ export default function CreateActivity() {
                     name="names"
                     onChange={handleChange}
                     />
-                    {errors.name && (
-                        <p className={style.error} >{errors.name}</p>
+                    {errors.names && (
+                        <p className={style.error} >{errors.names}</p>
                     )}
                 </div>
                   
                 <div>
-                    <label>Difficulty:</label>
+                    <label>Difficulty: </label>
                     <select 
                     type="number" 
                     value={form.difficulty}

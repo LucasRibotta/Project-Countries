@@ -32,7 +32,7 @@ export default function OrderPopulation ({ setCurrentPage }) {
           <button onClick={handleToggleOpen} className={style.filterName}>Order By 
             Population</button>
           {open && (
-            <div className={style.continentList}>
+            <div className={style.filterList}>
               <input
                 type="checkbox"
                 value="asc"

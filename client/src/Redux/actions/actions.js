@@ -9,7 +9,7 @@ import {url,
     ORDER_BY_POPULATION,
     GET_ACTIVITY_CREATED,
     POST_ACTIVITY,
-    CLEAR_DETAIL,
+    CLEAR_FILTER,
     FILTER_BY_SEASON
     } from '../actions-types/actions-types'
 
@@ -68,9 +68,9 @@ export function getDetail(id) {
     };
   }
 
-export function clearDetail(){
+export function clearFilter(){
     return{
-        type: CLEAR_DETAIL
+      type: CLEAR_FILTER
     }
 }
 

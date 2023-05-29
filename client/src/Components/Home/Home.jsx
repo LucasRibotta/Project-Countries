@@ -8,6 +8,7 @@ import FilterContinents from "../FilterAndOrder/FilterContinents";
 import FilterActivity from "../FilterAndOrder/FilterActivity"
 import OrderNameAlpha from "../FilterAndOrder/OrderAlfa";
 import OrderPopulation from '../FilterAndOrder/OrderPopulation';
+import ClearFilter from "../FilterAndOrder/ClearFilter";
 import SearchBar from "../SearchBar/SearchBar";
 
 
@@ -22,7 +23,6 @@ export default function Home () {
     const indexOfLastCountrys = currentPage * countryPerPage; // 10
     const indexOfFristCountrys = indexOfLastCountrys - countryPerPage // 0
     const currentCountrys = allCountries.slice(indexOfFristCountrys, indexOfLastCountrys);
-
 
     const paginado = (pageNumber) => {
         setCurrentPage(pageNumber)
@@ -39,7 +39,16 @@ useEffect(()=> {
 return (
 
   <div className={style.fondo}>
+        <div className={style.pagination}>
+    <Pagination
+      countryPerPage={countryPerPage}
+      allCountries={allCountries.length}
+      paginado={paginado}
+      currentPage={currentPage} 
+    />
+    </div>
   <div className={style.containerHome}>
+
 
     <div className={style.filtersContainer}>
       <div className={style.filter}>
@@ -54,8 +63,14 @@ return (
       <div className={style.filter}>
         <OrderPopulation setCurrentPage={setCurrentPage} />
       </div>
+      <div>
+        <ClearFilter setCurrentPage={setCurrentPage}/>
+      </div>
+    <div className={style.searchBar}>
       <SearchBar />
     </div>
+    </div>
+    
 
     <div className={style.cardContainer}>
       {currentCountrys?.map((el) => (
@@ -71,13 +86,7 @@ return (
     </div>
 
       </div>
-    <div className={style.pagination}>
-      <Pagination
-        countryPerPage={countryPerPage}
-        allCountries={allCountries.length}
-        paginado={paginado}
-      />
-    </div>
+
   </div>
 );
 

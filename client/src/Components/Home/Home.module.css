@@ -1,5 +1,7 @@
 .fondo{
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 19%, rgba(35,174,203,1) 92%);
+  background: linear-gradient(#141e30, #243b55);
+  height: 100%;
+  width: 100%;
 }
 
 .containerHome {
@@ -10,17 +12,24 @@
   
 }
 
+
 .filtersContainer {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   margin-right: 20px;
-  
-  
+   
 }
 
 .filter {
   margin-bottom: 10px;
+}
+
+.searchBar{
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ margin-top: 30px;
 }
 
 

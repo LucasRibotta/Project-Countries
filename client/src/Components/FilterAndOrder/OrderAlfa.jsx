@@ -31,7 +31,7 @@ export default function OrderNameAlpha({ setCurrentPage }) {
       <button onClick={handleToggleOpen} className={style.filterName}>Order By 
         Alphabetical</button>
       {open && (
-        <div className={style.continentList}>
+        <div className={style.filterList}>
           <input
             type="checkbox"
             value="a-z"

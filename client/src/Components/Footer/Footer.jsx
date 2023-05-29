@@ -1,5 +1,6 @@
 import React from "react";
 import {useLocation } from "react-router-dom";
+import style from "./Footer.module.css";
 
 
 export default function Footer(){
@@ -15,9 +16,10 @@ export default function Footer(){
 
   return (
     <footer>
-      <p>&copy; 2023 Creado por Lucas Ribotta. Todos los derechos reservados.</p>
+      <p className={style.footer}>&copy; 2023 Creado por Lucas Ribotta. Todos los derechos reservados.</p>
       
     </footer>
   );
 };
+
 

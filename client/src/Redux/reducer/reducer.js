@@ -7,7 +7,7 @@ import {
     ORDER_BY_POPULATION,
     GET_ACTIVITY_CREATED,
     POST_ACTIVITY,
-    CLEAR_DETAIL,
+    CLEAR_FILTER,
     FILTER_BY_SEASON
     } from '../actions-types/actions-types'
 
@@ -45,11 +45,13 @@ function rootReducer (state= initialState, action) {
             }
         
 
-        case CLEAR_DETAIL :
+        case CLEAR_FILTER :
+            const clear = state.allContinents
             return {
                 ...state,
-                detailId: [],
-            }    
+                countries: clear
+
+            } 
         
             
         

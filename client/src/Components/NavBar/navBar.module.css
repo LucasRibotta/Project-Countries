@@ -2,9 +2,10 @@
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
-  background-color: #bd3232;
-  padding: 10px;
-  height: 30px;
+  background-color: rgba(1, 8, 72, 0.5);
+  padding: 0;
+  margin: 0;
+  height: 40px;
 }
 
 .menuContainer {
@@ -100,4 +101,5 @@
 .h1Container {
   flex: 1;
   text-align: center;
+  color: whitesmoke;
 }

@@ -15,28 +15,28 @@
   }
   
   .searchContainer .search:focus:hover {
-    border-bottom: 1px solid #bbbbbb00;
+    border-bottom: 2px solid black
   }
   
   .searchContainer .search:focus {
-    width: 250px;
+    width: 220px;
     z-index: 1;
-    border-bottom: 1px solid #bbbbbb00;
+    border-bottom: 2px solid black;
     cursor: text;
   }
   
   .searchContainer .search {
     height: 30px;
-    font-size: 30px;
+    font-size: 25px;
     display: inline-block;
     font-family: "Lato";
     font-weight: 90;
     border: none;
     outline: none;
-    color: #fafafa;
-    background-color: rgb(102, 102, 126);
+    color: #000000;
+    background-color: rgb(221, 221, 255);
     padding: 3px;
-    padding-left: 40px;
+    padding-left: 30px;
     width: 10px;
     position: absolute;
     top: 0;
@@ -46,7 +46,7 @@
   }
   
   .searchContainer .search::placeholder {
-    color: #fefdfd;
+    color: #000000;
   }
   
   .searchContainer .lupa {
@@ -70,9 +70,9 @@
     height: 20px;
     width: 60px;
     display: inline-block;
-    color: rgb(0, 0, 0);
-    background-color: #6d6767;
-    border: 1px solid black;
+    color: rgb(244, 244, 244);
+    background-color: #000000;
+    border: 1px solid rgb(255, 252, 252);
     border-radius: 10px;
     position: absolute;
     top: 50px;
@@ -83,5 +83,5 @@
   }
 
   .resetButton:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
   }

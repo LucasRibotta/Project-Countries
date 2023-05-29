@@ -1,8 +1,23 @@
-    .detailContainer {
+ .conteinerPrincipal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ } 
+  
+  .detailContainer {
         display: flex;
         flex-direction: column;
         align-items: center;
         padding: 20px;
+        width: 80%;
+        height: 80%;
+        border-radius: 5px;
+        background-color: #fff;
+        box-shadow: 0 2px 5px #ccc;
+        margin: 5px;
+        margin-top: 20px;
+        margin-bottom: 5px;
+
     }
     
     .nameFlagsContainer {
@@ -14,8 +29,10 @@
     }
     
     .flagContainer {
-        border: 1px solid #ccc;
         padding: 10px;
+        border: 1px solid black;
+        border-radius: 10px;
+        background-color: #464646;
     }
     
     .flagImage {
@@ -30,11 +47,12 @@
     
     .countriesActivitiesContainer {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
         margin-bottom: 20px;
-        height: 50%;
-        width: 50%;
+        height: 100%;
+        width: 100%;
     }
     
     .countriesContainer {
@@ -48,12 +66,17 @@
         align-items: flex-start;
         margin-right: 20%;
         margin-bottom: 20px;
+
     }
     
     .activityItem {
         margin-bottom: 20px;
-        border: 1px solid #cccccc88;
+        border: 1px solid #00000088;
+        color: rgb(0, 0, 0);
+        font-size: 12px;
+        font-weight: bold;
         padding: 10px;
+        border-radius: 10px;
     }
     
     .titleAct {
@@ -69,11 +92,20 @@
         display: block;
         margin-bottom: 5px;
     }
+
+    .img{
+        width: 40px;
+        height: 40px;
+        
+    }
+
     .mapContainer {
         display: flex;
         justify-content: center;
         height: 100%;
         width: 70%;
+        color: white;
+        font-size: 20px;
     }
     
     .map {
@@ -83,21 +115,18 @@
         justify-content: center;
     }
     
-    .linksSection {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 20px; 
+
+.iconMap{
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid #000000;
+    margin: 10px;
+    color: #000000;
+    font-size: 20px;
+    transition: transform 0.3s ease;
+    &:hover{
+        transform: scale(1.1);
     }
-    
-    .linkButton {
-        margin-right: 10px;
-        padding: 10px 20px;
-        background-color: #ccc;
-        border: none;
-        text-decoration: none;
-        color: #000;
-    }
-    
-    .linkButton:hover {
-        background-color: #aaa;
-    }
+}

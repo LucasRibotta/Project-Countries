@@ -1,4 +1,4 @@
-.continentList {
+.filterList {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -6,15 +6,17 @@
 }
 
 .filterName {
-  color: black;
+  color: rgb(255, 255, 255);
+  background-color: black;
+  border: 1px solid white;
+  border-radius: 20px;
   font-size: 14px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .filterTitle{
-  color: #131313;
-  top: 3px;
+  color: #ffffff;
   font-weight: bold;
-  font-size: 10px;
+  font-size: 12px;
   font-family: 'Segoe UI', Tahoma, Geneva
 }

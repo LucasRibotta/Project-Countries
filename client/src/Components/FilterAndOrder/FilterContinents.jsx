@@ -1,37 +1,3 @@
-/* import React, {useState} from "react";
-import {useDispatch} from 'react-redux';
-import {filterByContinents} from '../../redux/actions/actions'
-
-export default function FilterContinents ({setCurrentPage}) {
-    const dispatch = useDispatch();
-    const [selectedContinent, setSelectedContinent] = useState("All");
-
-    function handleFilterContinents(e) {
-      const continent = e.target.value;
-      setCurrentPage(1);
-      setSelectedContinent(continent);
-      dispatch(filterByContinents(continent));
-    }
-
-    
-    return(
-        <div>
-        
-        <select value={selectedContinent} onChange={handleFilterContinents}>
-                <option  value={"All"}>All Contients</option>
-                <option value={"North America"} key="North America">North America</option>
-                <option value={"South America"} key="South America">South America</option>
-                <option value={"Europe"} key="Europe">Europe</option>
-                <option value={"Asia"} key="Asia">Asia</option>
-                <option value={"Oceania"} key="Oceania">Oceania</option>
-                <option value={"Africa"} key="Africa">Africa</option>
-                <option value={"Antarctica"} key="Antarctica">Antarctica</option>
-            </select>
-        </div>
-    
-    )
-} */
-
 import React, { useState } from "react";
 import { useDispatch } from 'react-redux';
 import { filterByContinents } from '../../redux/actions/actions';
@@ -54,15 +20,13 @@ export default function FilterContinents({ setCurrentPage }) {
   }
 
   return (
-    <div>
-      <div>
         <div >
           <button className={style.filterName} onClick={toggleDropdown}>
             Filter Continent
           </button>
           {isOpen && (
             <div >
-              <div className={style.continentList}>
+              <div className={style.filterList}>
               <label className={style.filterTitle}>
                 <input
                   type="checkbox"
@@ -147,7 +111,6 @@ export default function FilterContinents({ setCurrentPage }) {
             </div>
           )}
         </div>
-      </div>
-    </div>
+
   );
 }
