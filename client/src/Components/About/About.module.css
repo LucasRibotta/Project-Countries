@@ -1,0 +1,143 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin-top: 30px;
+}
+
+.subConteiner{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: whitesmoke;
+  width: 50%;
+  height: 80%;
+  margin-top: 0;
+
+}
+
+.p{
+  color: whitesmoke;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  align-items: center;
+}
+
+.mundoImg{
+  width: 200px;
+  height: 300px;
+  border: 1px solid black;
+  border-radius: 20px;
+
+}
+
+.conteinerRedes {
+  width: 80px;
+  height: 70px;
+  padding-bottom: 200px;
+}
+
+.socialIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; 
+  height: 40px; 
+  border-radius: 50%; 
+  background-color: #ccc;
+  & svg {
+    color: rgb(0, 0, 0);
+  }
+  &:hover{
+    background-color: blueviolet;
+  }
+}
+
+.socialButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 40px;
+  background: whitesmoke;
+  box-shadow: 
+  2px 4px 6px #afb7c5,
+  3px 5px 7px #f1f1f1;
+  color: #000000;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  
+}
+
+
+.socialButton:focus {
+  outline: none;
+  background-color: whitesmoke;
+}
+
+.socialButton:active {
+  background-color: #04f414;
+}
+
+.socialMenu {
+  display: none;
+  position: absolute;
+  top: calc(95% + 5px); 
+  left: 50%;
+  padding-bottom: 50px ;
+  
+  
+}
+
+.socialMenu.open {
+  display: flex;
+  justify-content: center;
+  
+}
+
+.socialMenu a {
+  margin: 0 3px;
+  color: #000;
+  text-decoration: none;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ccc;
+  transition: transform 0.3s ease;
+  position: absolute;
+}
+
+
+.socialMenu .socialIcon {
+  display: flex;
+  flex-direction: row;
+  align-items: center; 
+}
+
+.socialMenu a:nth-child(1) {
+  transform: translateX(-20px);
+  right: 10px;
+}
+
+.socialMenu a:nth-child(2) {
+  transform: translateX(0);
+  
+}
+
+.socialMenu a:nth-child(3) {
+  transform: translateX(20px);
+  left: 10px;
+}
+
