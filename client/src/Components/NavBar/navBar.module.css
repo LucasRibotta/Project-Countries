@@ -33,7 +33,7 @@
   position: relative;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  z-index: 5;
+  z-index: 10;
   margin-right: 5px;
 }
 
@@ -73,7 +73,7 @@
   height: 170px;
   border: 2px solid black;
   text-align: left;
-  z-index: 10;
+  z-index: 100;
 }
 
 .checkbox:checked ~ .menu {
