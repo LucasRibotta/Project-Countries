@@ -1,4 +1,4 @@
-export const url = "http://localhost:3001"
+export const url = "https://pi-countries-production-f4db.up.railway.app"
 export const GET_COUNTRIES = "GET_COUNTRIES";
 export const GET_COUNTRIES_NAME = "GET_COUNTRIES_NAME";
 export const GET_DETAIL = "GET_DETAIL";

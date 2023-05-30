@@ -7,8 +7,6 @@ import mapaMundo2 from '../../assets/mapaMundo2.png';
 
 
 const LandingPage = () => {
-  const animationSpeed = '10s';
-  const globeSize = '500px';
 
 
   return (

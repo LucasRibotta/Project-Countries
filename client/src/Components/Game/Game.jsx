@@ -21,6 +21,7 @@ function Game() {
     if (countries.length > 0 && questionCount < 10) {
       generateQuestion();
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [countries, questionCount]);
 
   const generateQuestion = () => {

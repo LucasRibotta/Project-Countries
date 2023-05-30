@@ -4,7 +4,7 @@ import { clearFilter } from "../../redux/actions/actions";
 
 export default function ClearFilter({setCurrentPage}){
     const dispatch = useDispatch()
-    const [order, setOrder] = useState("")
+    const [ , setOrder] = useState("")
 
     
 
