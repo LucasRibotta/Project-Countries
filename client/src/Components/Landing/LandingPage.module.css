@@ -44,6 +44,28 @@
   z-index: 2;
 }
 
+@media (min-width: 768px) {
+  .globe {
+    grid-template-columns: repeat(2, 1fr);
+    margin-left: 10%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .globe {
+    grid-template-columns: repeat(3, 1fr);
+    margin-left: 3%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .globe {
+    grid-template-columns: repeat(4, 1fr);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 .img{
   max-width: 200%;
   position: absolute;

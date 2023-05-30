@@ -16,7 +16,7 @@ function App() {
     <div className="App">
       <NavBar />
       <Routes>
-        <Route path="/" element={<LandingPage />} />
+        <Route path="/PI-Countries" element={<LandingPage />} />
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/create" element={<CreateActivity />} />

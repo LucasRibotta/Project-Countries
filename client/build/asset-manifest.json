@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/PI-Countries/static/css/main.83f037c7.css",
+    "main.js": "/PI-Countries/static/js/main.0c4a751e.js",
+    "static/js/787.c4e7f8f9.chunk.js": "/PI-Countries/static/js/787.c4e7f8f9.chunk.js",
+    "static/media/mapaMundo.png": "/PI-Countries/static/media/mapaMundo.494c34704d63af1b29f4.png",
+    "static/media/mapaMundo2.png": "/PI-Countries/static/media/mapaMundo2.494c34704d63af1b29f4.png",
+    "static/media/mundoAbout.jpg": "/PI-Countries/static/media/mundoAbout.8cfbe7d0573d53cd2651.jpg",
+    "index.html": "/PI-Countries/index.html",
+    "main.83f037c7.css.map": "/PI-Countries/static/css/main.83f037c7.css.map",
+    "main.0c4a751e.js.map": "/PI-Countries/static/js/main.0c4a751e.js.map",
+    "787.c4e7f8f9.chunk.js.map": "/PI-Countries/static/js/787.c4e7f8f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.83f037c7.css",
+    "static/js/main.0c4a751e.js"
+  ]
+}
