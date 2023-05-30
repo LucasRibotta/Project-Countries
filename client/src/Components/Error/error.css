@@ -103,13 +103,13 @@
   
   .star:before {
     top: calc(var(--size) / 2);
-    left: calc(-var(--size) / 2);
+    left: calc(var(--size) / 2);
     width: calc(3 * var(--size));
     height: var(--size);
   }
   
   .star:after {
-    top: calc(-var(--size) / 2);
+    top: calc(var(--size) / 2);
     left: calc(var(--size) / 2);
     width: var(--size);
     height: calc(3 * var(--size));

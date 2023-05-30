@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/PI-Countries/static/css/main.c609c749.chunk.css",
+    "main.js": "/PI-Countries/static/js/main.a635ebb9.chunk.js",
+    "main.js.map": "/PI-Countries/static/js/main.a635ebb9.chunk.js.map",
+    "runtime-main.js": "/PI-Countries/static/js/runtime-main.8c7f3825.js",
+    "runtime-main.js.map": "/PI-Countries/static/js/runtime-main.8c7f3825.js.map",
+    "static/js/2.e562f97b.chunk.js": "/PI-Countries/static/js/2.e562f97b.chunk.js",
+    "static/js/2.e562f97b.chunk.js.map": "/PI-Countries/static/js/2.e562f97b.chunk.js.map",
+    "static/js/3.bf3c0f69.chunk.js": "/PI-Countries/static/js/3.bf3c0f69.chunk.js",
+    "static/js/3.bf3c0f69.chunk.js.map": "/PI-Countries/static/js/3.bf3c0f69.chunk.js.map",
+    "index.html": "/PI-Countries/index.html",
+    "static/css/main.c609c749.chunk.css.map": "/PI-Countries/static/css/main.c609c749.chunk.css.map",
+    "static/js/2.e562f97b.chunk.js.LICENSE.txt": "/PI-Countries/static/js/2.e562f97b.chunk.js.LICENSE.txt",
+    "static/media/mapaMundo.494c3470.png": "/PI-Countries/static/media/mapaMundo.494c3470.png",
+    "static/media/mapaMundo2.494c3470.png": "/PI-Countries/static/media/mapaMundo2.494c3470.png",
+    "static/media/mundoAbout.8cfbe7d0.jpg": "/PI-Countries/static/media/mundoAbout.8cfbe7d0.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8c7f3825.js",
+    "static/js/2.e562f97b.chunk.js",
+    "static/css/main.c609c749.chunk.css",
+    "static/js/main.a635ebb9.chunk.js"
+  ]
+}
