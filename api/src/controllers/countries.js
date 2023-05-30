@@ -1,6 +1,8 @@
 const axios = require('axios');
 const { Country, Activity } = require('../db');
 const { Op } = require('sequelize');
+require('dotenv').config();
+const {DB_URL} = process.env;
 
 
 const getAllCountries = async (req, res) => {
@@ -13,7 +15,7 @@ const getAllCountries = async (req, res) => {
        
         if (!dBCountry) {
             // Si no hay países en la base de datos, obtener los países de la API externa
-            const countriesApiGet = await axios.get("https://restcountries.com/v3/all")
+            const countriesApiGet = await axios.get(DB_URL)
              // Mapear los datos de los países obtenidos de la API a un formato deseado
             const apiCountries =  countriesApiGet.data.map(pais => {
                 return {
