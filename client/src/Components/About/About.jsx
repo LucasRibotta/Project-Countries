@@ -13,7 +13,7 @@ export default function About() {
     <div>
       <div className={styles.container}>
         <div className={styles.subConteiner}>
-          <h1>Hi Welcome to Api Countries.</h1>
+          <h1>Bienvenidos a la Api de Countries!!</h1>
           <img className={styles.mundoImg} src={imageMundo} alt="mundo" />
           <p>En esta Api podras realizar un recorrido por todos los países, acceder a sus caracteristicas, sus ubicaciones, como tambien podras ver las posibles actividades turísticas con las que cuentan y así podras decidir tu proximo destino.</p>
         </div>
