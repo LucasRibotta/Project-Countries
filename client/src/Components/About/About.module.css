@@ -4,7 +4,26 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  margin-top: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin-top: 10px; 
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    margin-top: 50px; 
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    margin-top: 50px; 
+  }
 }
 
 .subConteiner{
@@ -28,7 +47,7 @@
 }
 
 .mundoImg{
-  width: 200px;
+  max-width: 100%;
   height: 300px;
   border: 1px solid black;
   border-radius: 20px;
@@ -57,12 +76,34 @@
   }
 }
 
+@media (max-width: 768px) {
+  .socialIcon {
+    margin-top: 10px; 
+    margin-bottom: 30px;
+
+  }
+}
+
+@media (min-width: 1200px) {
+  .socialIcon {
+    margin-top: 50px; 
+    margin-bottom: 30px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .socialIcon {
+    margin-top: 50px; 
+    margin-bottom: 30px;
+  }
+}
+
 .socialButton {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 70px;
-  height: 70px;
+  width: 100%;
+  height: 40px;
   font-size: 16px;
   font-weight: bold;
   border-radius: 40px;
@@ -75,6 +116,24 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
   
+}
+
+@media (max-width: 768px) {
+  .socialButton {
+    margin-top: 80px; 
+  }
+}
+
+@media (max-width: 1024px) {
+  .socialButton {
+    margin-top: 80px; 
+  }
+}
+
+@media (max-width: 1280px) {
+  .socialButton {
+    margin-top: 80px; 
+  }
 }
 
 
@@ -90,11 +149,29 @@
 .socialMenu {
   display: none;
   position: absolute;
-  top: calc(95% + 5px); 
+  font-size: 14px;
+  margin-top: 15px;
   left: 50%;
   padding-bottom: 50px ;
-  
-  
+   
+}
+
+@media (max-width: 768px) {
+  .socialMenu {
+    margin-top: 10px; 
+  }
+}
+
+@media (max-width: 1024px) {
+  .socialMenu {
+    margin-top: 20px; 
+  }
+}
+
+@media (max-width: 1280px) {
+  .socialMenu {
+    margin-top: 20px; 
+  }
 }
 
 .socialMenu.open {
