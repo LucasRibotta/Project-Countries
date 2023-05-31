@@ -1,4 +1,4 @@
-export const url = "https://pi-countries-production-cd54.up.railway.app"
+export const url = "https://pi-countries-production-e7e8.up.railway.app"
 export const GET_COUNTRIES = "GET_COUNTRIES";
 export const GET_COUNTRIES_NAME = "GET_COUNTRIES_NAME";
 export const GET_DETAIL = "GET_DETAIL";
