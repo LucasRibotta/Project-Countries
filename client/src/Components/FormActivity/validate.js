@@ -11,8 +11,8 @@ export const validate = (form) => {
     if(form.difficulty === "Select a difficulty") {errors.difficulty = "Not valid"}
     if (!form.duration || form.duration === " ") { errors.duration = "The duration field is required" } 
     if (form.duration >24 || form.duration < 1)  { errors.duration = "Only values from 1 to 24 are accepted"}
-    if(!form.season || form.season.length === 0){errors.season = "Select at least one season"}
-    if(!form.season || form.season.length > 2) {errors.season = "Select a maximun of two seasons"}
+    if (!form.season || form.season.length === 0) {errors.season = "Select at least one season";}
+    if (!form.season || form.season.length > 2) { errors.season = "Select a maximum of two seasons";}
     if (!form.countries || form.countries.length === 0 ) { errors.countries = "Choose a country"}
     if(form.countries.length > 10) {errors.countries = "You can select up to 10 countries"}
      return errors;

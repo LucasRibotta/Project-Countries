@@ -15,7 +15,7 @@ export default function CreateActivity() {
         names: "",
         difficulty: "",
         duration: "",
-        season: "",
+        season: [],
         countries: [],
     })
 
@@ -39,19 +39,22 @@ export default function CreateActivity() {
 
       function handleCheck(e) {
         const selectedSeason = e.target.value;
+        const maxSeasons = 2; // Máximo de temporadas permitidas
+      
         if (e.target.checked) {
-          if (form.season.length <= 2) {
+          if (form.season.length < maxSeasons) {
             setForm({
               ...form,
-              season: selectedSeason,
+              season: [...form.season, selectedSeason],
             });
           }
         } else {
           setForm({
             ...form,
-            season: '',
+            season: form.season.filter((season) => season !== selectedSeason),
           });
         }
+      
         setErrors(validate({
           ...form,
           season: form.season,
