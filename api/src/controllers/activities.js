@@ -12,7 +12,7 @@ const getCreateActivity = async (data) => {
         names,
         difficulty,
         duration,
-        selectedSeasons: season.join(",")
+        selectedSeasons: Array.isArray(season) ? season.join(",") : season
       });
     }
     let foundCountries = [];
