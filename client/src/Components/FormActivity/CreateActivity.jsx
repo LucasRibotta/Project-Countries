@@ -40,10 +40,12 @@ export default function CreateActivity() {
       function handleCheck(e) {
         const selectedSeason = e.target.value;
         if (e.target.checked) {
-          setForm({
-            ...form,
-            season: selectedSeason,
-          });
+          if (form.season.length <= 2) {
+            setForm({
+              ...form,
+              season: selectedSeason,
+            });
+          }
         } else {
           setForm({
             ...form,
