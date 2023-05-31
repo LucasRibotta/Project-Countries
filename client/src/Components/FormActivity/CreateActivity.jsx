@@ -42,7 +42,7 @@ export default function CreateActivity() {
         const maxSeasons = 2; // Máximo de temporadas permitidas
       
         if (e.target.checked) {
-          if (form.season.length < maxSeasons) {
+          if (form.season.length <= maxSeasons) {
             setForm({
               ...form,
               season: [...form.season, selectedSeason],
@@ -89,7 +89,7 @@ export default function CreateActivity() {
         console.log(form);
         const formData = {
           ...form,
-          season: form.season.join("")
+          season: form.season
         }
         dispatch(createActivity(formData));
         setForm({
