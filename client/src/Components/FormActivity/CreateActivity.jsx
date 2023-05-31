@@ -15,7 +15,7 @@ export default function CreateActivity() {
         names: "",
         difficulty: "",
         duration: "",
-        season: [],
+        season: "",
         countries: [],
     })
 
@@ -51,7 +51,7 @@ export default function CreateActivity() {
         } else {
           setForm({
             ...form,
-            season: form.season.filter((season) => season !== selectedSeason),
+            season: form.season,
           });
         }
       
@@ -83,8 +83,8 @@ export default function CreateActivity() {
     function handleSubmit(e) {
       e.preventDefault();
       let seasons = form.season;
-      if(typeof seasons === 'string'){
-        seasons = [seasons]
+      if (Array.isArray(seasons)){
+        seasons = seasons.join(",")
       }
       setForm({
         ...form,
@@ -100,7 +100,7 @@ export default function CreateActivity() {
           names: "",
           difficulty: "",
           duration: "",
-          season: JSON.stringify(form.season),
+          season: "",
           countries: []
         });
         navigate("/home");

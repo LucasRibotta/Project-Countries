@@ -12,7 +12,7 @@ const getCreateActivity = async (data) => {
         names,
         difficulty,
         duration,
-        season
+        season: season.toString()
       });
     }
     let foundCountries = [];
