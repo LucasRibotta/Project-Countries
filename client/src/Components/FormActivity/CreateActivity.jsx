@@ -51,7 +51,7 @@ export default function CreateActivity() {
         } else {
           setForm({
             ...form,
-            season: form.season,
+            season: form.season.filter(season => season !== selectedSeason),
           });
         }
       
