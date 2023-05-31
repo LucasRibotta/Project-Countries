@@ -38,22 +38,21 @@ export default function CreateActivity() {
 
 
       function handleCheck(e) {
+        const selectedSeason = e.target.value;
         if (e.target.checked) {
-          if (form.season.length <= 2) {
-            setForm({
-              ...form,
-              season: [...form.season, e.target.value],
-            });
-          }
+          setForm({
+            ...form,
+            season: selectedSeason,
+          });
         } else {
           setForm({
             ...form,
-            season: form.season.filter((s) => s !== e.target.value),
+            season: '',
           });
         }
         setErrors(validate({
           ...form,
-          season: e.target.checked ? [...form.season, e.target.value] : form.season,
+          season: selectedSeason,
         }));
       }
       
