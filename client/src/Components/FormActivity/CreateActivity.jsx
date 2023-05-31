@@ -100,7 +100,7 @@ export default function CreateActivity() {
           names: "",
           difficulty: "",
           duration: "",
-          season: "",
+          season: [],
           countries: []
         });
         navigate("/home");
