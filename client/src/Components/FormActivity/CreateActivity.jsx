@@ -52,7 +52,7 @@ export default function CreateActivity() {
         }
         setErrors(validate({
           ...form,
-          season: selectedSeason,
+          season: form.season,
         }));
       }
       
