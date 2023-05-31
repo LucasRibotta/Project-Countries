@@ -82,9 +82,17 @@ export default function CreateActivity() {
 
     function handleSubmit(e) {
       e.preventDefault();
+      let seasons = form.season;
+      if(typeof seasons === 'string'){
+        seasons = [seasons]
+      }
+      setForm({
+        ...form,
+        season: seasons,
+      })
     
-        if (Object.keys(errors).length === 0) {
-    if (window.confirm("Do you want to create the activity? This step cannot be modified...")) {
+      if (Object.keys(errors).length === 0) {
+      if (window.confirm("Do you want to create the activity? This step cannot be modified...")) {
       if (window.confirm("¡Successful! Now you can enjoy your activity")) {
         console.log(form);
         dispatch(createActivity(form));
