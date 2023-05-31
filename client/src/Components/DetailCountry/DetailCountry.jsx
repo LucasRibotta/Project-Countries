@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { getDetail } from "../../redux/actions/actions";
+import { getDetail } from "../../Redux/actions/actions";
 import style from './Detail.module.css'
 import coordenadas from "./maps/utils/map";
 import toCamelCase from "./maps/utils/utils";

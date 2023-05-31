@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import { useDispatch } from "react-redux";
-import { clearFilter } from "../../redux/actions/actions";
+import { clearFilter } from "../../Redux/actions/actions";
 
 export default function ClearFilter({setCurrentPage}){
     const dispatch = useDispatch()

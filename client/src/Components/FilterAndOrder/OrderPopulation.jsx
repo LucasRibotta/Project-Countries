@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import {orderByPopulation} from '../../redux/actions/actions';
+import {orderByPopulation} from '../../Redux/actions/actions';
 import style from './style/Filter.module.css'
 
 export default function OrderPopulation ({ setCurrentPage }) {

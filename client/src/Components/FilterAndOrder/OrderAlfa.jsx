@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from 'react-redux';
-import { orderByName } from '../../redux/actions/actions'
+import { orderByName } from '../../Redux/actions/actions'
 import style from './style/Filter.module.css'
 
 export default function OrderNameAlpha({ setCurrentPage }) {

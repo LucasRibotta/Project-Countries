@@ -1,14 +1,14 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import LandingPage from './components/Landing/LandingPage'
-import Home from './components/Home/Home';
-import CreateActivity from "./components/FormActivity/CreateActivity";
-import Detail from './components/DetailCountry/DetailCountry';
-import About from "./components/About/About";
-import Footer from "./components/Footer/Footer";
-import Error from "./components/Error/Error"; 
-import NavBar from "./components/NavBar/NavBar";
-import Game from './components/Game/Game'
+import LandingPage from './Components/Landing/LandingPage'
+import Home from './Components/Home/Home';
+import CreateActivity from "./Components/FormActivity/CreateActivity";
+import Detail from './Components/DetailCountry/DetailCountry';
+import About from "./Components/About/About";
+import Footer from "./Components/Footer/Footer";
+import Error from "./Components/Error/Error"; 
+import NavBar from "./Components/NavBar/NavBar";
+import Game from './Components/Game/Game'
 import './App.css';
 
 function App() {

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {useDispatch, useSelector} from 'react-redux'
-import { getCountries, getActivityCreated} from "../../redux/actions/actions";
+import { getCountries, getActivityCreated} from "../../Redux/actions/actions";
 import Card from "../CardCountry/Card";
 import Pagination from "../Pagination/Pagination";
 import style from './Home.module.css'

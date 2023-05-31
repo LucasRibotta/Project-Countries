@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getCountries } from '../../redux/actions/actions';
+import { getCountries } from '../../Redux/actions/actions';
 import { Link } from 'react-router-dom';
 import styles from './Game.module.css';
 

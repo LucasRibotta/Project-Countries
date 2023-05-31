@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { useDispatch } from 'react-redux';
-import { filterBySeason } from '../../redux/actions/actions';
+import { filterBySeason } from '../../Redux/actions/actions';
 import style from './style/Filter.module.css'
 
 export default function FilterActivity({ setCurrentPage }) {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { createActivity, getCountries } from '../../redux/actions/actions'
+import { createActivity, getCountries } from '../../Redux/actions/actions'
 import { validate } from './validate'
 import style from './style/Create.module.css'
 import { useNavigate } from 'react-router-dom';
