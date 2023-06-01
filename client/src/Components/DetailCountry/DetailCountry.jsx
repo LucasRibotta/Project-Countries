@@ -65,7 +65,7 @@ export default function Detail() {
             <div key={act.id} className={style.activityItem}>
               <h3 className={style.titleAct}>Activity: {act.names}</h3>
               <p className={style.activityDetails}>
-                <span>Season: {act.season}</span>
+              <span>Season: {act.season.join(", ")}</span>
                
                 <span>Duration: {act.duration} hs</span>
                 <span>Difficulty: {difficultyMapping[act.difficulty]}</span>
