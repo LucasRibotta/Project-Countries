@@ -52,9 +52,6 @@ function rootReducer (state= initialState, action) {
                 countries: clear
 
             } 
-        
-            
-        
 
         case FILTER_BY_CONTINENTS:
             const continents = state.allContinents;
@@ -63,7 +60,7 @@ function rootReducer (state= initialState, action) {
             continents.filter(c => c.continents === action.payload)
             return{
                 ...state,
-                countries: filteredContinents
+                countries: filteredContinents,
             }
 
         case ORDER_BY_NAME:
