@@ -49,8 +49,8 @@ export default function SearchBar({setCurrentPage}) {
               value={name}
               onChange={handleInputChange}
               onBlur={handleBlur}
-              setCurrentPage={setCurrentPage}
               className={`${style.search} ${isSearchOpen ? style.searchOpen : ''}`}
+              setCurrentPage={setCurrentPage}
             />
           </form>
           <button onClick={handleReset} className={style.resetButton}>
