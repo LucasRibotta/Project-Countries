@@ -68,7 +68,7 @@ return (
         <ClearFilter setCurrentPage={setCurrentPage}/>
       </div>
     <div className={style.searchBar}>
-      <SearchBar />
+      <SearchBar setCurrentPage={setCurrentPage}/>
     </div>
     </div>
     
