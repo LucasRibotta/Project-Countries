@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { filterBySeason } from '../../Redux/actions/actions';
-import style from './style/Filter.module.css';
+import style from './style/Filter.module.css'
 
 export default function FilterActivity({ setCurrentPage, handleFilterSeason }) {
   const dispatch = useDispatch();
   const selectedContinent = useSelector((state) => state.allContinents);
-  const [isOpen, setIsOpen] = useState(false);
-  const [selectSeason, setSelectSeason] = useState([]);
-
+  const [isOpen, setIsOpen] = useState(false)
+  const [selectSeason, setSelectSeason] = useState([])
+  
   const continentsSeasons = {
     "North America": ["Summer", "Spring", "Autumn", "Winter"],
     "South America": ["Summer", "Spring", "Autumn", "Winter"],
@@ -17,36 +17,20 @@ export default function FilterActivity({ setCurrentPage, handleFilterSeason }) {
     "Oceania": ["Summer", "Spring", "Autumn", "Winter"],
     "Africa": ["Summer", "Spring", "Autumn", "Winter"],
     "Antarctica": ["Summer", "Spring", "Autumn", "Winter"],
-  };
+  }
+
 
   const handleChange = (e) => {
-    const selectedSeason = e.target.value;
+    const seasons = e.target.value
     setCurrentPage(1);
+    setSelectSeason(seasons)
+    dispatch(filterBySeason(seasons));
+    handleFilterSeason(seasons);
+    };
 
-    let updatedSeasons = [...selectSeason];
-
-    if (selectedSeason === 'All') {
-      if (selectSeason.length === continentsSeasons[selectedContinent]?.length) {
-        updatedSeasons = [];
-      } else {
-        updatedSeasons = [...continentsSeasons[selectedContinent]];
-      }
-    } else {
-      if (updatedSeasons.includes(selectedSeason)) {
-        updatedSeasons = updatedSeasons.filter((season) => season !== selectedSeason);
-      } else {
-        updatedSeasons.push(selectedSeason);
-      }
+    function toggleDropdown(){
+      setIsOpen(!isOpen)
     }
-
-    setSelectSeason(updatedSeasons);
-    dispatch(filterBySeason(updatedSeasons));
-    handleFilterSeason(updatedSeasons);
-  };
-
-  function toggleDropdown() {
-    setIsOpen(!isOpen);
-  }
 
   return (
     <div>
@@ -55,36 +39,74 @@ export default function FilterActivity({ setCurrentPage, handleFilterSeason }) {
           Filter Season
         </button>
         {isOpen && (
-          <div>
-            <div className={style.filterList}>
-              <label className={style.filterTitle}>
-                <input
-                  type="checkbox"
-                  name="All"
-                  value="All"
-                  checked={selectSeason.length === continentsSeasons[selectedContinent]?.length}
-                  onChange={handleChange}
-                />
-                All
-              </label>
+          <div> 
+        <div className={style.filterList}>
+        <label className={style.filterTitle}>
+          <input 
+          type="checkbox"
+          name='All'
+          value='All'
+          checked={selectSeason.includes('All')}
+          onChange={handleChange}
+          />
+          All
+        </label>
+        
+        {selectedContinent &&
+           continentsSeasons[selectedContinent]?.map((season) => (
+        <div>
+        <label className={style.filterTitle}>
+          <input 
+          type="checkbox"
+          name='Summer'
+          value='Summer'
+          checked={selectSeason.includes('Summer')}
+          onChange={handleChange}
+          />
+          Summer
+        </label>
 
-              {selectedContinent &&
-                continentsSeasons[selectedContinent]?.map((season) => (
-                  <label className={style.filterTitle} key={season}>
-                    <input
-                      type="checkbox"
-                      name={season}
-                      value={season}
-                      checked={selectSeason.includes(season)}
-                      onChange={handleChange}
-                    />
-                    {season}
-                  </label>
-                ))}
-            </div>
+        <label className={style.filterTitle}>
+          <input 
+          type="checkbox"
+          name='Spring'
+          value='Spring'
+          checked={selectSeason.includes('Spring')}
+          onChange={handleChange}
+          />
+          Spring
+        </label>
+
+        <label className={style.filterTitle}>
+          <input 
+          type="checkbox"
+          name='Autumn'
+          value='Autumn'
+          checked={selectSeason.includes('Autumn')}
+          onChange={handleChange}
+          />
+          Autumn
+        </label>
+
+        <label className={style.filterTitle}>
+          <input 
+          type="checkbox"
+          name='Winter'
+          value='Winter'
+          checked={selectSeason.includes('Winter')}
+          onChange={handleChange}
+          />
+          Winter
+        </label>
+        </div>
+        ))}
+      </div>
           </div>
         )}
       </div>
+      
     </div>
   );
 }
+
+
