@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { getCountries, getCountriesName } from "../../Redux/actions/actions";
 import style from './Search.module.css';
 
-export default function SearchBar() {
+export default function SearchBar({setCurrentPage}) {
     const [name, setName] = useState("");
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const searchInputRef = useRef(null);
@@ -11,6 +11,7 @@ export default function SearchBar() {
   
     const handleInputChange = (e) => {
       const { value } = e.target;
+      setCurrentPage(1)
       setName(value);
       dispatch(getCountriesName(value));
     };
@@ -48,6 +49,7 @@ export default function SearchBar() {
               value={name}
               onChange={handleInputChange}
               onBlur={handleBlur}
+              setCurrentPage={setCurrentPage}
               className={`${style.search} ${isSearchOpen ? style.searchOpen : ''}`}
             />
           </form>
