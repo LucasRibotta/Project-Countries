@@ -116,7 +116,7 @@ function rootReducer (state= initialState, action) {
               
                 const filteredActivities = state.allContinents.map((act) => {
                   console.log(act.activities);
-                  const temporada = act.activities.map((el) => el.season);
+                  const temporada = act.activities.map((el) => ({ seasons: el.season }));
                   console.log(temporada);
                   return {
                     id: act.id,
@@ -137,17 +137,12 @@ function rootReducer (state= initialState, action) {
                   );
                 }
               
-                const allSeasons = seasonActivities
-                  .flatMap((country) => country.activities)
-                  .reduce((acc, activity) => acc.concat(activity.seasons || []), []);
-              
-                console.log(allSeasons);
+                console.log(seasonActivities);
               
                 return {
                   ...state,
                   countries: seasonActivities,
-                };
-                 
+                }; 
 
         default:
                 return state;
