@@ -8,7 +8,7 @@ export default function NavBar() {
   const location = useLocation();
   const [clicked, setClicked] = useState(false)
 
-  const allowedRoutes = ["/home", "/about", "/game", '/create', '/'];
+  const allowedRoutes = ["/home", "/about", "/game", '/create'];
 
   // Verificar si la ruta actual está permitida
   const isAllowedRoute = allowedRoutes.includes(location.pathname) || location.pathname.startsWith("/detail/");
@@ -24,6 +24,7 @@ export default function NavBar() {
   const btnAbout = location.pathname === '/about';
   const btnGame = location.pathname === '/game';
   const btnCreate = location.pathname === '/create';
+  const btnExit = location.pathname === '/';
 
 
   return (
@@ -66,7 +67,7 @@ export default function NavBar() {
             </svg>
             Create an Activity</a>}
 
-            <ExitButton />
+            {!btnExit && <ExitButton /> }
              
           </div>
         </div>
