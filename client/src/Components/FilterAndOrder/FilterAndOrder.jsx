@@ -39,8 +39,8 @@ export default function FilterAndOrder({setCurrentPage}){
         setCurrentPage={setCurrentPage}
         handleFilterSeason={handleFilterSeason}
       />
-      <OrderNameAlpha />
-      <OrderPopulation />
+      <OrderNameAlpha setCurrentPage={setCurrentPage}/>
+      <OrderPopulation setCurrentPage={setCurrentPage}/>
       <ClearFilter />
     </div>
   );
