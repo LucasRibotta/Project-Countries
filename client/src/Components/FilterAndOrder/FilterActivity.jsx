@@ -54,7 +54,7 @@ export default function FilterActivity({ setCurrentPage, handleFilterSeason }) {
         
         {selectedContinent &&
            continentsSeasons[selectedContinent]?.map((season) => (
-        <div>
+        <>
         <label className={style.filterTitle}>
           <input 
           type="checkbox"
@@ -98,7 +98,7 @@ export default function FilterActivity({ setCurrentPage, handleFilterSeason }) {
           />
           Winter
         </label>
-        </div>
+        </>
         ))}
       </div>
           </div>
