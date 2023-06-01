@@ -1,6 +1,6 @@
-import React, {useState} from "react";
-import { useDispatch } from 'react-redux';
-import { filterByContinents, filterBySeason } from '../../Redux/actions/actions';
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { filterByContinents, filterBySeason, clearFilter } from '../../Redux/actions/actions';
 import FilterActivity from "./FilterActivity";
 import FilterContinents from "./FilterContinents";
 import OrderNameAlpha from "./OrderAlfa";
@@ -8,26 +8,37 @@ import OrderPopulation from "./OrderPopulation";
 import ClearFilter from "./ClearFilter";
 
 
-export default function FilterAndOrder({setCurrentPage}){
+export default function FilterAndOrder({ setCurrentPage }) {
   const dispatch = useDispatch();
-  const [selectedContinent, setSelectedContinent] = useState(null);
+  const selectedContinent = useSelector(
+    (state) => state.filters.selectedContinent
+  );
+  const selectedSeason = useSelector((state) => state.filters.selectedSeason);
 
-  function handleFilterContinents(e) {
-    const continent = e.target.value;
-    setCurrentPage(1);
-    setSelectedContinent(continent);
-    dispatch(filterByContinents(continent));
-  }
-
-  const handleFilterSeason = (season) => {
-    setCurrentPage(1);
-  
-    // Realizar el filtrado por temporada y continente
-    dispatch(filterBySeason(season));
+  useEffect(() => {
+    // Realizar el filtrado por continente y temporada al cargar la página
     if (selectedContinent) {
       dispatch(filterByContinents(selectedContinent));
     }
-  };
+    if (selectedSeason) {
+      dispatch(filterBySeason(selectedSeason));
+    }
+  }, [dispatch, selectedContinent, selectedSeason]);
+
+  function handleFilterContinents(continent) {
+    setCurrentPage(1);
+    dispatch(filterByContinents(continent));
+  }
+
+  function handleFilterSeason(season) {
+    setCurrentPage(1);
+    dispatch(filterBySeason(season));
+  }
+
+  function handleClearFilters() {
+    setCurrentPage(1);
+    dispatch(clearFilter());
+  }
 
   return (
     <div>
@@ -35,13 +46,13 @@ export default function FilterAndOrder({setCurrentPage}){
         setCurrentPage={setCurrentPage}
         handleFilterContinents={handleFilterContinents}
       />
-       <FilterActivity
+      <FilterActivity
         setCurrentPage={setCurrentPage}
         handleFilterSeason={handleFilterSeason}
       />
-      <OrderNameAlpha setCurrentPage={setCurrentPage}/>
-      <OrderPopulation setCurrentPage={setCurrentPage}/>
-      <ClearFilter />
+      <OrderNameAlpha setCurrentPage={setCurrentPage} />
+      <OrderPopulation setCurrentPage={setCurrentPage} />
+      <ClearFilter handleClearFilters={handleClearFilters} />
     </div>
   );
 }
