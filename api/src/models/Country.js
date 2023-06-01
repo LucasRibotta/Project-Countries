@@ -30,11 +30,6 @@ module.exports = (sequelize) => {
       allowNull:false
     },
     
-    subregion: {
-      type: DataTypes.STRING,
-      
-    },
-
     area: {
       type: DataTypes.DECIMAL,
       

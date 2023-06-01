@@ -12,7 +12,7 @@ const getCreateActivity = async (data) => {
         names,
         difficulty,
         duration,
-        selectedSeasons: Array.isArray(season) ? season : [season]
+        season
       });
     }
     let foundCountries = [];
@@ -33,4 +33,4 @@ const getCreateActivity = async (data) => {
   }
 };
 
-module.exports = {getCreateActivity};
+module.exports = { getCreateActivity };
