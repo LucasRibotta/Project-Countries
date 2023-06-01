@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { filterBySeason } from '../../Redux/actions/actions';
 import style from './style/Filter.module.css'
 
-export default function FilterActivity({ setCurrentPage }) {
+export default function FilterActivity({ setCurrentPage, handleFilterSeason }) {
   const dispatch = useDispatch();
   const [isOpen, setIsOpen] = useState(false)
   const [selectSeason, setSelectSeason] = useState([])
@@ -14,6 +14,7 @@ export default function FilterActivity({ setCurrentPage }) {
     setCurrentPage(1);
     setSelectSeason(seasons)
     dispatch(filterBySeason(seasons));
+    handleFilterSeason(seasons);
     };
 
     function toggleDropdown(){

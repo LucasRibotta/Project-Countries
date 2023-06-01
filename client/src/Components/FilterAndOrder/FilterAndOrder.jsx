@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { useDispatch } from 'react-redux';
 import { filterByContinents, filterBySeason } from '../../Redux/actions/actions';
 import FilterActivity from "./FilterActivity";
@@ -10,26 +10,34 @@ import ClearFilter from "./ClearFilter";
 
 export default function FilterAndOrder({setCurrentPage}){
   const dispatch = useDispatch();
+  const [selectedContinent, setSelectedContinent] = useState(null);
 
-  const handleFilterContinents = (continent) => {
+  function handleFilterContinents(e) {
+    const continent = e.target.value;
     setCurrentPage(1);
+    setSelectedContinent(continent);
     dispatch(filterByContinents(continent));
   }
 
   const handleFilterSeason = (season) => {
     setCurrentPage(1);
+  
+    // Realizar el filtrado por temporada y continente
     dispatch(filterBySeason(season));
-  }
+    if (selectedContinent) {
+      dispatch(filterByContinents(selectedContinent));
+    }
+  };
 
   return (
     <div>
-      <FilterActivity
-        setCurrentPage={setCurrentPage}
-        handleFilterSeason={handleFilterSeason}
-      />
       <FilterContinents
         setCurrentPage={setCurrentPage}
         handleFilterContinents={handleFilterContinents}
+      />
+       <FilterActivity
+        setCurrentPage={setCurrentPage}
+        handleFilterSeason={handleFilterSeason}
       />
       <OrderNameAlpha />
       <OrderPopulation />

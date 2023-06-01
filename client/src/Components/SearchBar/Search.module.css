@@ -4,6 +4,27 @@
     justify-content: flex-end;
     position: relative; 
   }
+
+  @media (min-width: 768px) {
+    .searchContainer {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .searchContainer {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  
+  @media (min-width: 1280px) {
+    .searchContainer {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
   
   .searchFocused {
     width: 250px;
@@ -43,6 +64,27 @@
     left: 0; 
     transition: width 0.4s cubic-bezier(0.000, 0.795, 0.000, 1.000); 
     cursor: pointer;
+  }
+
+  @media (min-width: 768px) {
+    .searchContainer .search {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .searchContainer .search {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  
+  @media (min-width: 1280px) {
+    .searchContainer .search {
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
   
   .searchContainer .search::placeholder {
