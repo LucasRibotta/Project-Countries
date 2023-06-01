@@ -1,25 +1,14 @@
 import React, {useState} from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { filterBySeason } from '../../Redux/actions/actions';
 import style from './style/Filter.module.css'
 
 export default function FilterActivity({ setCurrentPage, handleFilterSeason }) {
   const dispatch = useDispatch();
-  const selectedContinent = useSelector((state) => state.allContinents);
   const [isOpen, setIsOpen] = useState(false)
   const [selectSeason, setSelectSeason] = useState([])
   
-  const continentsSeasons = {
-    "North America": ["Summer", "Spring", "Autumn", "Winter"],
-    "South America": ["Summer", "Spring", "Autumn", "Winter"],
-    "Europe": ["Summer", "Spring", "Autumn", "Winter"],
-    "Asia": ["Summer", "Spring", "Autumn", "Winter"],
-    "Oceania": ["Summer", "Spring", "Autumn", "Winter"],
-    "Africa": ["Summer", "Spring", "Autumn", "Winter"],
-    "Antarctica": ["Summer", "Spring", "Autumn", "Winter"],
-  }
-
-
+ 
   const handleChange = (e) => {
     const seasons = e.target.value
     setCurrentPage(1);
@@ -40,7 +29,7 @@ export default function FilterActivity({ setCurrentPage, handleFilterSeason }) {
         </button>
         {isOpen && (
           <div> 
-        <div className={style.filterList}>
+            <div className={style.filterList}>
         <label className={style.filterTitle}>
           <input 
           type="checkbox"
@@ -51,10 +40,7 @@ export default function FilterActivity({ setCurrentPage, handleFilterSeason }) {
           />
           All
         </label>
-        
-        {selectedContinent &&
-           continentsSeasons[selectedContinent]?.map((season) => (
-        <>
+
         <label className={style.filterTitle}>
           <input 
           type="checkbox"
@@ -98,8 +84,6 @@ export default function FilterActivity({ setCurrentPage, handleFilterSeason }) {
           />
           Winter
         </label>
-        </>
-        ))}
       </div>
           </div>
         )}
