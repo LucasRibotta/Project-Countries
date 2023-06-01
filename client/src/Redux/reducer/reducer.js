@@ -111,30 +111,34 @@ function rootReducer (state= initialState, action) {
             } 
          
         case FILTER_BY_SEASON:
-            const {payload} = action;
-            console.log(payload)
-            
+            const { payload } = action;
+            console.log(payload);
+              
             const filteredActivities = state.allContinents.map((act) => {
-                console.log(act.activities)
-                const temporada = act.activities.map((el) => el.season)
-                console.log(temporada)
-                return{
-                    id: act.id,
-                    name: act.name,
-                    flags: act.flags,
-                    continents: act.continents,
-                    capital: act.capital,
-                    activities: temporada,
-                }
-                });
-                let seasonActivities = []
-                if(payload === 'All') seasonActivities = filteredActivities.filter(el => el.activities.length > 0 )
-                if(payload !== 'All')seasonActivities = filteredActivities.filter((el)=> el.activities.includes(payload))
-            console.log(seasonActivities)
+                const temporada = act.activities.map((el) => el.season);
+                return {
+                id: act.id,
+                name: act.name,
+                flags: act.flags,
+                continents: act.continents,
+                capital: act.capital,
+                activities: temporada,
+                };
+            });
+              
+            let seasonActivities = [];
+            if (payload === 'All') {
+              seasonActivities = filteredActivities.filter((el) => el.activities.length > 0);
+            } else {
+              seasonActivities = filteredActivities.filter((el) => el.activities.some((season) => season.includes(payload)));
+}
+              
+            console.log(seasonActivities);
             return {
-                ...state,
-                countries: seasonActivities
-            };     
+              ...state,
+              countries: seasonActivities,
+            };
+                
 
         default:
                 return state;
