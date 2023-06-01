@@ -129,7 +129,12 @@ function rootReducer (state= initialState, action) {
                 });
                 let seasonActivities = []
                 if(payload === 'All') seasonActivities = filteredActivities.filter(el => el.activities.length > 0 )
-                if(payload !== 'All')seasonActivities = filteredActivities.filter((el) => el.activities.some((activity) => activity.seasons.includes(payload)));
+                if (payload !== 'All') {
+                    seasonActivities = filteredActivities.filter((el) => {
+                      return el.activities.some((activity) => activity.seasons.includes(payload));
+                    });
+                  }
+                  
             console.log(seasonActivities)
             return {
                 ...state,
