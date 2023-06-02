@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import style from './Card.module.css';
 
 export default function Card(props) {
-  const { name, image, continents, id } = props;
+  const { name, image, continents, id, population } = props;
 
   return (
     <div className={style.card} key={id}>
@@ -15,6 +15,7 @@ export default function Card(props) {
         <div className={style.cardInfo}>
           <h1>{name}</h1>
           <h3>{continents}</h3>
+          <h5>N° Población: {population.toLocaleString()}</h5>
         </div>
       </div>
 

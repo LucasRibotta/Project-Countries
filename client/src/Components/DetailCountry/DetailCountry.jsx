@@ -7,6 +7,7 @@ import coordenadas from "./maps/utils/map";
 import toCamelCase from "./maps/utils/utils";
 import googleMaps from '../../assets/googleMaps.jpg'
 
+
 export default function Detail() {
   const dispatch = useDispatch();
   const details = useSelector((state) => state.detailId);
@@ -30,15 +31,13 @@ export default function Detail() {
   <div className={style.detailContainer}>
   <div className={style.nameFlagsContainer}>
 
-    <div className={style.flagContainer}>
       {details.hasOwnProperty("name") ? (
-        <div>
+        <div >
           <img className={style.flagImage} src={details.flags} alt='Bandera' />
         </div>
       ) : (
         <p>Buscando.....</p>
-      )}
-    </div>
+      )}  
     <div className={style.nameContainer}>
       {details.hasOwnProperty("name") && (
         <h2>{details.name}</h2>

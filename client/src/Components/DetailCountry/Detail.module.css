@@ -6,14 +6,17 @@
   
   .detailContainer {
         display: flex;
+        color: whitesmoke;
         flex-direction: column;
         align-items: center;
         padding: 20px;
         width: 80%;
         height: 80%;
         border-radius: 5px;
-        background-color: #fff;
-        box-shadow: 0 2px 5px #ccc;
+        background-color: #3b3b3b;
+        box-shadow: 
+        0 2px 5px #ccc,
+        0 6px 10px #ccc;
         margin: 5px;
         margin-top: 20px;
         margin-bottom: 5px;
@@ -28,19 +31,59 @@
         margin-bottom: 20px;
     }
     
-    .flagContainer {
-        padding: 10px;
-        border: 1px solid black;
-        border-radius: 10px;
-        background-color: #464646;
-    }
     
-    .flagImage {
-        width: 100%;
-        max-width: 150px;
+    .flagImage {   
+        width: 200px;
+        height: 150px;
         border-radius: 10px;
-    }
-    
+        position: relative;
+        overflow: hidden;
+        animation: flagFlame 2s infinite alternate;
+      }
+      
+      .flagImage::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -50%;
+        width: 150%;
+        height: 100%;
+        background: linear-gradient(
+          to right,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(228, 2, 2, 0.8) 50%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        background-color: rgba(228, 2, 2, 0.8);
+        transform: skewX(-15deg) translateX(-25%);
+        animation: flameMotion 1s infinite linear;
+      }
+      
+      @keyframes flagFlame {
+        0% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+      
+      @keyframes flameMotion {
+        0% {
+          transform: skewX(-15deg) translateX(-25%);
+        }
+        50% {
+          transform: skewX(15deg) translateX(25%);
+        }
+        100% {
+          transform: skewX(-15deg) translateX(-25%);
+        }
+      }
+      
+
     .nameContainer {
         margin-left: 20px;
     }

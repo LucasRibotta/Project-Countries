@@ -4,12 +4,11 @@ import { getCountries, getActivityCreated} from "../../Redux/actions/actions";
 import Card from "../CardCountry/Card";
 import Pagination from "../Pagination/Pagination";
 import style from './Home.module.css'
-/* import FilterContinents from "../FilterAndOrder/FilterContinents";
+import FilterContinents from "../FilterAndOrder/FilterContinents";
 import FilterActivity from "../FilterAndOrder/FilterActivity"
 import OrderNameAlpha from "../FilterAndOrder/OrderAlfa";
-import OrderPopulation from '../FilterAndOrder/OrderPopulation'; */
+import OrderPopulation from '../FilterAndOrder/OrderPopulation'; 
 import ClearFilter from "../FilterAndOrder/ClearFilter";
-import FilterAndOrder from "../FilterAndOrder/FilterAndOrder";
 import SearchBar from "../SearchBar/SearchBar";
 
 
@@ -54,7 +53,7 @@ return (
 
     <div className={style.filtersContainer}>
       <div className={style.filter}>
-{/*         <FilterContinents setCurrentPage={setCurrentPage} />
+    <FilterContinents setCurrentPage={setCurrentPage} />
       </div>
       <div className={style.filter}>
         <FilterActivity setCurrentPage={setCurrentPage} />
@@ -63,8 +62,7 @@ return (
         <OrderNameAlpha setCurrentPage={setCurrentPage} />
       </div>
       <div className={style.filter}>
-        <OrderPopulation setCurrentPage={setCurrentPage} /> */}
-        <FilterAndOrder setCurrentPage={setCurrentPage}/>
+        <OrderPopulation setCurrentPage={setCurrentPage} /> 
       </div>
       <div>
         <ClearFilter setCurrentPage={setCurrentPage}/>
@@ -82,6 +80,7 @@ return (
           id={el.id}
           name={el.name}
           continents={el.continents}
+          population={el.population}
           image={el.flags}
           season={el.season}
         />
