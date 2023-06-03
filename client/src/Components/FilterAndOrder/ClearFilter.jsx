@@ -9,7 +9,6 @@ export default function ClearFilter({setCurrentPage}){
     function handleDefault(evt){
         const data = document.querySelectorAll('#all');
         data.forEach((e)=> e.checked = false)
-        console.log(data)
         dispatch(clearFilter())
         setCurrentPage(1)
         setOrder(evt.target.value)

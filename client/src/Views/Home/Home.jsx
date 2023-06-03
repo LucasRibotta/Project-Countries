@@ -12,13 +12,11 @@ import ClearFilter from "../../Components/FilterAndOrder/ClearFilter";
 import SearchBar from "../../Components/SearchBar/SearchBar";
 
 
-
 export default function Home () {
 
     const dispatch = useDispatch();
     
     const allCountries = useSelector((state) => state.countries);
-    
     const [currentPage, setCurrentPage] = useState(1); //Se setea en 1 ya que mi primer pág es 1
     const [countryPerPage] = useState(10); // Se guarda la cantidad de países por página
     const indexOfLastCountrys = currentPage * countryPerPage; // 10
@@ -68,7 +66,7 @@ return (
         <ClearFilter setCurrentPage={setCurrentPage}/>
       </div>
     <div className={style.searchBar}>
-      <SearchBar setCurrentPage={setCurrentPage}/>
+      <SearchBar setCurrentPage={setCurrentPage} />
     </div>
     </div>
     

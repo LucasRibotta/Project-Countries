@@ -11,7 +11,7 @@ export default function SearchBar({setCurrentPage}) {
   
     const handleInputChange = (e) => {
       const { value } = e.target;
-      setCurrentPage(1)
+      setCurrentPage(1) 
       setName(value);
       dispatch(getCountriesName(value));
     };

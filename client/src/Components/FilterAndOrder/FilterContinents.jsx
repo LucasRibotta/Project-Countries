@@ -26,7 +26,7 @@ export default function FilterContinents({ setCurrentPage }) {
             Filter Continent
           </button>
           {isOpen && (
-            <div >
+            <div>
               <div className={style.filterList}>
               <label className={style.filterTitle}>
                 <input

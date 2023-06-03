@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import {useLocation } from "react-router-dom";
 import ExitButton from '../Exit/Exit'
 import style from "./navBar.module.css";
+import plane from '../../assets/Airplane.gif'
 
 
 export default function NavBar() {
@@ -29,6 +30,7 @@ export default function NavBar() {
 
   return (
     <div className={style.container}>
+     
       <div className={style.menuContainer}>
         <div className={style.hamburgerMenu}>
           
@@ -37,7 +39,6 @@ export default function NavBar() {
             <span></span>
             <span></span>
             <span></span>
-
           </label>
 
           <div className={style.menu}>
@@ -72,12 +73,14 @@ export default function NavBar() {
           </div>
         </div>
 
-
       </div>
       
    <div className={style.h1Container}>
-        <h1>COUNTRIES API</h1>
+        <h1 className={style.h1}>COUNTRIES API</h1>
       </div> 
+      <div>
+         <img src={plane} alt="plane" className={style.animatePlane} /> 
+      </div>
 
     </div>
   );

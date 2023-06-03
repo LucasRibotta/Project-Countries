@@ -20,7 +20,7 @@ export default function Card(props) {
       </div>
 
       <div className={style.cardBack}>
-        <div className={style.cardInfo}>
+        <div className={style.btnConteiner}>
           <Link to={`/detail/${id}`}>
             <button className={style.btn}>More info</button>
           </Link>
