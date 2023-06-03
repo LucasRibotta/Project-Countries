@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { filterBySeason } from '../../Redux/actions/actions';
 import style from './style/Filter.module.css'
 
-export default function FilterActivity({ setCurrentPage, handleFilterSeason }) {
+export default function FilterActivity({ setCurrentPage }) {
   const dispatch = useDispatch();
   const [isOpen, setIsOpen] = useState(false)
   const [selectSeason, setSelectSeason] = useState([])
@@ -14,7 +14,6 @@ export default function FilterActivity({ setCurrentPage, handleFilterSeason }) {
     setCurrentPage(1);
     setSelectSeason(seasons)
     dispatch(filterBySeason(seasons));
-    handleFilterSeason(seasons);
     };
 
     function toggleDropdown(){
@@ -31,7 +30,8 @@ export default function FilterActivity({ setCurrentPage, handleFilterSeason }) {
           <div> 
             <div className={style.filterList}>
         <label className={style.filterTitle}>
-          <input 
+          <input
+          id="all"
           type="checkbox"
           name='All'
           value='All'
@@ -42,7 +42,8 @@ export default function FilterActivity({ setCurrentPage, handleFilterSeason }) {
         </label>
 
         <label className={style.filterTitle}>
-          <input 
+          <input
+          id="all" 
           type="checkbox"
           name='Summer'
           value='Summer'
@@ -53,7 +54,8 @@ export default function FilterActivity({ setCurrentPage, handleFilterSeason }) {
         </label>
 
         <label className={style.filterTitle}>
-          <input 
+          <input
+          id="all" 
           type="checkbox"
           name='Spring'
           value='Spring'
@@ -64,7 +66,8 @@ export default function FilterActivity({ setCurrentPage, handleFilterSeason }) {
         </label>
 
         <label className={style.filterTitle}>
-          <input 
+          <input
+          id="all" 
           type="checkbox"
           name='Autumn'
           value='Autumn'
@@ -75,7 +78,8 @@ export default function FilterActivity({ setCurrentPage, handleFilterSeason }) {
         </label>
 
         <label className={style.filterTitle}>
-          <input 
+          <input
+          id="all" 
           type="checkbox"
           name='Winter'
           value='Winter'
@@ -92,5 +96,3 @@ export default function FilterActivity({ setCurrentPage, handleFilterSeason }) {
     </div>
   );
 }
-
-

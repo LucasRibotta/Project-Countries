@@ -19,6 +19,7 @@ export default function FilterContinents({ setCurrentPage }) {
     setIsOpen(!isOpen);
   }
 
+
   return (
         <div >
           <button className={style.filterName} onClick={toggleDropdown}>
@@ -29,6 +30,7 @@ export default function FilterContinents({ setCurrentPage }) {
               <div className={style.filterList}>
               <label className={style.filterTitle}>
                 <input
+                  id="all"
                   type="checkbox"
                   name="All"
                   value="All"
@@ -39,6 +41,7 @@ export default function FilterContinents({ setCurrentPage }) {
               </label>
               <label className={style.filterTitle}>
                 <input
+                  id="all"
                   type="checkbox"
                   name="North America"
                   value="North America"
@@ -49,6 +52,7 @@ export default function FilterContinents({ setCurrentPage }) {
               </label>
               <label className={style.filterTitle}>
                 <input
+                  id="all"
                   type="checkbox"
                   name="South America"
                   value="South America"
@@ -59,6 +63,7 @@ export default function FilterContinents({ setCurrentPage }) {
               </label>
               <label className={style.filterTitle}>
                 <input
+                  id="all"
                   type="checkbox"
                   name="Europe"
                   value="Europe"
@@ -69,6 +74,7 @@ export default function FilterContinents({ setCurrentPage }) {
               </label>
               <label className={style.filterTitle}>
                 <input
+                  id="all"
                   type="checkbox"
                   name="Asia"
                   value="Asia"
@@ -79,6 +85,7 @@ export default function FilterContinents({ setCurrentPage }) {
               </label>
               <label className={style.filterTitle}>
                 <input
+                  id="all"
                   type="checkbox"
                   name="Oceania"
                   value="Oceania"
@@ -89,6 +96,7 @@ export default function FilterContinents({ setCurrentPage }) {
               </label>
               <label className={style.filterTitle}>
                 <input
+                  id="all"
                   type="checkbox"
                   name="Africa"
                   value="Africa"
@@ -99,6 +107,7 @@ export default function FilterContinents({ setCurrentPage }) {
               </label>
               <label className={style.filterTitle}>
                 <input
+                  id="all"
                   type="checkbox"
                   name="Antarctica"
                   value="Antarctica"

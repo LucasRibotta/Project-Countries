@@ -1,8 +1,41 @@
+
 .filterList {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   align-items: flex-start;
 
+}
+
+
+@media (min-width: 350px) {
+  .filterList {
+    margin-left: auto;
+    margin-right: auto;
+    
+  }
+}
+
+@media (min-width: 769px) {
+  .filterList {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .filterList {
+    margin-right: auto;
+    margin-right: auto;
+
+  }
+}
+
+@media (min-width: 1280px) {
+  .filterList {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .filterName {
@@ -14,9 +47,41 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+
+@media (min-width: 350px) {
+  .filterName {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 769px) {
+  .filterName {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .filterName {
+    margin-right: auto;
+    margin-right: auto;
+
+  }
+}
+
+@media (min-width: 1280px) {
+  .filterName {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
 .filterTitle{
   color: #ffffff;
   font-weight: bold;
   font-size: 12px;
   font-family: 'Segoe UI', Tahoma, Geneva
 }
+

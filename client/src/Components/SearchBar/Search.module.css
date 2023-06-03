@@ -5,26 +5,39 @@
     position: relative; 
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 350px) {
     .searchContainer {
       margin-left: auto;
       margin-right: auto;
+      
     }
   }
-  
+      
+  @media (min-width: 769px) {
+    .searchContainer {
+      margin-left: auto;
+      margin-right: auto;
+     
+    }
+  }
+      
   @media (min-width: 1024px) {
     .searchContainer {
-      margin-left: auto;
       margin-right: auto;
+      margin-right: auto;
+      
+      
     }
   }
-  
+      
   @media (min-width: 1280px) {
     .searchContainer {
       margin-left: auto;
       margin-right: auto;
+     
     }
   }
+
   
   .searchFocused {
     width: 250px;
@@ -45,13 +58,49 @@
     border-bottom: 2px solid black;
     cursor: text;
   }
+
+  @media (min-width: 350px) {
+    .searchContainer .search:focus {
+      margin-left: auto;
+      margin-right: auto;
+      width: 180px;
+      
+    }
+  }
+      
+  @media (min-width: 769px) {
+    .searchContainer .search:focus {
+      margin-left: auto;
+      margin-right: auto;
+      width: 200px;
+     
+    }
+  }
+      
+  @media (min-width: 1024px) {
+    .searchContainer .search:focus {
+      margin-right: auto;
+      margin-right: auto;
+      width: 220px;
+      
+    }
+  }
+      
+  @media (min-width: 1280px) {
+    .searchContainer .search:focus {
+      margin-left: auto;
+      margin-right: auto;
+      width: 220px;
+     
+    }
+  }
   
   .searchContainer .search {
     height: 30px;
     font-size: 25px;
     display: inline-block;
     font-family: "Lato";
-    font-weight: 90;
+    font-weight: 80;
     border: none;
     outline: none;
     color: #000000;
@@ -66,27 +115,39 @@
     cursor: pointer;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 350px) {
     .searchContainer .search {
       margin-left: auto;
       margin-right: auto;
-      padding-left: 25px;
+      padding-left: 30px;
+      
     }
   }
-  
+      
+  @media (min-width: 769px) {
+    .searchContainer .search {
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 30px;
+     
+    }
+  }
+      
   @media (min-width: 1024px) {
     .searchContainer .search {
-      margin-left: auto;
       margin-right: auto;
-      padding-left: 25px;
+      margin-right: auto;
+      padding-left: 30px;
+      
     }
   }
-  
+      
   @media (min-width: 1280px) {
     .searchContainer .search {
       margin-left: auto;
       margin-right: auto;
       padding-left: 30px;
+     
     }
   }
   

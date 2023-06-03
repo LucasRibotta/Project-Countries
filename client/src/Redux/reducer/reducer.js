@@ -121,6 +121,7 @@ function rootReducer (state= initialState, action) {
                     flags: act.flags,
                     continents: act.continents,
                     capital: act.capital,
+                    population: act.population,
                     activities: temporada,
                   };
                 });

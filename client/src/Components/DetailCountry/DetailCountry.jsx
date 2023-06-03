@@ -32,8 +32,8 @@ export default function Detail() {
   <div className={style.nameFlagsContainer}>
 
       {details.hasOwnProperty("name") ? (
-        <div >
-          <img className={style.flagImage} src={details.flags} alt='Bandera' />
+        <div className={style.flagImage}>
+          <img src={details.flags} alt='Bandera' className={style.flameando} />
         </div>
       ) : (
         <p>Buscando.....</p>

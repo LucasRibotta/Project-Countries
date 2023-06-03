@@ -2,162 +2,334 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
  } 
+
+ @media (min-width: 350px) {
+  .conteinerPrincipal {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 769px) {
+  .conteinerPrincipal {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .conteinerPrincipal {
+    margin-right: auto;
+    margin-right: auto;
+
+  }
+}
+
+@media (min-width: 1280px) {
+  .conteinerPrincipal {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
   
-  .detailContainer {
-        display: flex;
-        color: whitesmoke;
-        flex-direction: column;
-        align-items: center;
-        padding: 20px;
-        width: 80%;
-        height: 80%;
-        border-radius: 5px;
-        background-color: #3b3b3b;
-        box-shadow: 
-        0 2px 5px #ccc,
-        0 6px 10px #ccc;
-        margin: 5px;
-        margin-top: 20px;
-        margin-bottom: 5px;
+.detailContainer {
+    display: flex;
+    color: whitesmoke;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 80%;
+    height: 80%;
+    border-radius: 5px;
+    background-color: #3b3b3b;
+    box-shadow: 
+    0 2px 5px #ccc,
+    0 6px 10px #ccc;
+    margin: 5px;
+    margin-top: 20px;
+    margin-bottom: 5px;
 
+}
+
+    @media (min-width: 350px) {
+      .detailContainer {
+        margin-left: auto;
+        margin-right: auto;
+      }
     }
     
-    .nameFlagsContainer {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 20px;
+    @media (min-width: 769px) {
+      .detailContainer {
+        margin-left: auto;
+        margin-right: auto;
+      }
     }
     
+    @media (min-width: 1024px) {
+      .detailContainer {
+        margin-right: auto;
+        margin-right: auto;
     
-    .flagImage {   
-        width: 200px;
-        height: 150px;
-        border-radius: 10px;
-        position: relative;
-        overflow: hidden;
-        animation: flagFlame 2s infinite alternate;
       }
+    }
+    
+    @media (min-width: 1280px) {
+      .detailContainer {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+    
+.nameFlagsContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+    
+    
+    @media (min-width: 350px) {
+      .nameFlagsContainer {
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        padding: auto;
+      }
+    }
+    
+    @media (min-width: 769px) {
+      .nameFlagsContainer {
+        margin-left: auto;
+        margin-right: auto;
+        padding: auto;
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .nameFlagsContainer {
+        margin-right: auto;
+        margin-right: auto;
+        padding: auto;
+    
+      }
+    }
+    
+    @media (min-width: 1280px) {
+      .nameFlagsContainer {
+        margin-left: auto;
+        margin-right: auto;
+        padding: auto;
+      }
+    }
       
-      .flagImage::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -50%;
-        width: 150%;
-        height: 100%;
-        background: linear-gradient(
-          to right,
-          rgba(255, 255, 255, 0) 0%,
-          rgba(228, 2, 2, 0.8) 50%,
-          rgba(255, 255, 255, 0) 100%
-        );
-        background-color: rgba(228, 2, 2, 0.8);
-        transform: skewX(-15deg) translateX(-25%);
-        animation: flameMotion 1s infinite linear;
-      }
-      
-      @keyframes flagFlame {
-        0% {
-          transform: translateY(0);
-        }
-        50% {
-          transform: translateY(-10px);
-        }
-        100% {
-          transform: translateY(0);
-        }
-      }
-      
-      @keyframes flameMotion {
-        0% {
-          transform: skewX(-15deg) translateX(-25%);
-        }
-        50% {
-          transform: skewX(15deg) translateX(25%);
-        }
-        100% {
-          transform: skewX(-15deg) translateX(-25%);
-        }
-      }
+.flagImage {
+  position: relative;
+  display: flex;
+  width: 200px;
+  height: 180px;
+}
+    
+  .flameando {
+    animation: flamear 2s infinite;
+  }
+
+  @keyframes flamear {
+    0% {
+      transform: translateX(0) rotateZ(1deg); 
+    }
+    50% {
+      transform: scale(.5) rotate(1deg);
+    }
+    100% {
+      transform: scale(.2) rotate(0);
+    }
+  }
+  
+  .flagImagedera img {
+    animation: flamear 2s ease-in-out infinite;
+  }
       
 
-    .nameContainer {
-        margin-left: 20px;
-    }
-    
-    .countriesActivitiesContainer {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 20px;
-        height: 100%;
-        width: 100%;
-    }
-    
-    .countriesContainer {
-        flex: 0 0 48%;
-        padding: 10px;
-    }
-    
-    .activitiesContainer {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        margin-right: 20%;
-        margin-bottom: 20px;
+.nameContainer {
+  display: flex;
+  margin-left: 20px;
+  font-size: 25px;
+}
 
-    }
+@media (min-width: 350px) {
+  .nameContainer {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 10px;
+  }
+}
     
-    .activityItem {
-        margin-bottom: 20px;
-        border: 1px solid #00000088;
-        color: rgb(0, 0, 0);
-        font-size: 12px;
-        font-weight: bold;
-        padding: 10px;
-        border-radius: 10px;
-    }
+@media (min-width: 769px) {
+  .nameContainer {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+  }
+}
     
-    .titleAct {
-        font-weight: bold;
-        margin: 0;
-    }
+@media (min-width: 1024px) {
+  .nameContainer {
+    margin-right: auto;
+    margin-right: auto;
+    font-size: 20px;
     
-    .activityDetails {
-        margin-top: 10px;
-    }
+  }
+}
     
+@media (min-width: 1280px) {
+  .nameContainer {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+  }
+}
+
+.countriesActivitiesContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    height: 100%;
+    width: 100%;
+}
+
+@media (min-width: 350px) {
+  .countriesActivitiesContainer {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 10px;
+  }
+}
+    
+@media (min-width: 769px) {
+  .countriesActivitiesContainer {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+  }
+}
+    
+@media (min-width: 1024px) {
+  .countriesActivitiesContainer {
+    margin-right: auto;
+    margin-right: auto;
+    font-size: 20px;
+    
+  }
+}
+    
+@media (min-width: 1280px) {
+  .countriesActivitiesContainer {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+  }
+}
+
+.countriesContainer {
+    flex: 0 0 48%;
+    padding: 10px;
+}
+
+.activitiesContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 20%;
+    margin-bottom: 20px;
+
+}
+
+.activityItem {
+    margin-bottom: 20px;
+    border: 1px solid #e5e5e5ef;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+@media (min-width: 350px) {
+  .activityItem {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 10px;
+  }
+}
+    
+@media (min-width: 769px) {
+  .activityItem {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+  }
+}
+    
+@media (min-width: 1024px) {
+  .activityItem {
+    margin-right: auto;
+    margin-right: auto;
+    font-size: 20px;
+    
+  }
+}
+    
+@media (min-width: 1280px) {
+  .activityItem {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+  }
+}
+
+.titleAct {
+    font-weight: bold;
+    margin: 0;
+}
+
+.activityDetails {
+    margin-top: 10px;
+}
+
     .activityDetails span {
         display: block;
         margin-bottom: 5px;
     }
 
-    .img{
-        width: 40px;
-        height: 40px;
-        
-    }
+.img{
+    width: 40px;
+    height: 40px;
+    
+}
 
-    .mapContainer {
-        display: flex;
-        justify-content: center;
-        height: 100%;
-        width: 70%;
-        color: white;
-        font-size: 20px;
-    }
-    
-    .map {
-        width: 100%;
-        height: 700px;
-        align-items: center;
-        justify-content: center;
-    }
-    
+.mapContainer {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 70%;
+    color: white;
+    font-size: 20px;
+}
+
+.map {
+    width: 100%;
+    height: 700px;
+    align-items: center;
+    justify-content: center;
+}
+
 
 .iconMap{
     width: 200px;
