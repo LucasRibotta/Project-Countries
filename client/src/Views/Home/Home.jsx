@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import {useDispatch, useSelector} from 'react-redux'
 import { getCountries, getActivityCreated} from "../../Redux/actions/actions";
-import Card from "../CardCountry/Card";
-import Pagination from "../Pagination/Pagination";
+import Card from "../../Components/CardCountry/Card";
+import Pagination from "../../Components/Pagination/Pagination";
 import style from './Home.module.css'
-import FilterContinents from "../FilterAndOrder/FilterContinents";
-import FilterActivity from "../FilterAndOrder/FilterActivity"
-import OrderNameAlpha from "../FilterAndOrder/OrderAlfa";
-import OrderPopulation from '../FilterAndOrder/OrderPopulation'; 
-import ClearFilter from "../FilterAndOrder/ClearFilter";
-import SearchBar from "../SearchBar/SearchBar";
+import FilterContinents from "../../Components/FilterAndOrder/FilterContinents";
+import FilterActivity from "../../Components/FilterAndOrder/FilterActivity"
+import OrderNameAlpha from "../../Components/FilterAndOrder/OrderAlfa";
+import OrderPopulation from '../../Components/FilterAndOrder/OrderPopulation'; 
+import ClearFilter from "../../Components/FilterAndOrder/ClearFilter";
+import SearchBar from "../../Components/SearchBar/SearchBar";
 
 
 
