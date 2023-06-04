@@ -1,23 +1,24 @@
 import React, {useState} from "react";
 import { useDispatch } from "react-redux";
 import { clearFilter } from "../../Redux/actions/actions";
+import style from './style/Filter.module.css'
 
-export default function ClearFilter({setCurrentPage}){
+export default function ClearFilter({setCurrentPage, }){
     const dispatch = useDispatch()
-    const [ , setOrder] = useState("")
+    const [  , setOrder] = useState("")
 
-    function handleDefault(evt){
-        const data = document.querySelectorAll('#all');
-        data.forEach((e)=> e.checked = false)
-        dispatch(clearFilter())
-        setCurrentPage(1)
-        setOrder(evt.target.value)
+    function handleDefault(evt) {
+      const data = document.querySelectorAll('input[type="checkbox"]');
+      data.forEach((e) => (e.checked = false));
+      setCurrentPage(1);
+      setOrder(evt.target.value);
+      dispatch(clearFilter());
     }
 
     return(
         <div>
-            <button onClick={handleDefault}>
-                Clear Filter
+            <button className={style.clear} onClick={handleDefault} >
+                Clear Filter 
             </button>
         </div>
     )

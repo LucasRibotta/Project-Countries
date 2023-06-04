@@ -63,7 +63,7 @@
     .searchContainer .search:focus {
       margin-left: auto;
       margin-right: auto;
-      width: 180px;
+      width: 150px;
       
     }
   }
@@ -186,6 +186,38 @@
     z-index: 2;
     cursor: pointer;
     transition: opacity 0.4s ease;
+  }
+
+  @media (min-width: 350px) {
+    .resetButton {
+      margin-left: 5px;
+      
+    }
+  }
+      
+  @media (min-width: 769px) {
+    .resetButton {
+      margin-left: 3px;
+      margin-right: auto;
+
+     
+    }
+  }
+      
+  @media (min-width: 1024px) {
+    .resetButton {
+      margin-right: 5px;
+      margin-right: auto;
+      
+    }
+  }
+      
+  @media (min-width: 1280px) {
+    .resetButton {
+      margin-left: 5px;
+      margin-right: auto;
+     
+    }
   }
 
   .resetButton:hover {

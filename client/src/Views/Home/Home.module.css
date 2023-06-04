@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+
 .fondo{
   background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
   height: 100%;
@@ -9,27 +12,105 @@
   flex-direction: row;
   align-items: flex-start;
   padding: 20px;
+  font-family: Geologica ;
   
 }
 
+
+.buscadorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 400px;
+  width: 250px;
+  border: 5px dotted rgb(195, 195, 195);
+  margin-right: 20px;
+}
+
+
+@media (min-width: 350px) {
+  .buscadorContainer {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .buscadorContainer {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .buscadorContainer {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 1280px) {
+  .buscadorContainer {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 
 .filtersContainer {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-right: 20px;
+  gap: 0.5rem;
+  padding: 2px;
+  margin-left: 5px;
    
 }
 
+
 .filter {
-  margin-bottom: 10px;
+  margin-top: 20px;
+  margin-bottom: 0px;
 }
 
 .searchBar{
  display: flex;
  flex-direction: row;
  align-items: center;
- margin-top: 30px;
+ margin-top: 40px;
+ margin-left: 10px;
+}
+
+
+@media (min-width: 350px) {
+  .searchBar {
+    margin-left: 2px;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .searchBar {
+    margin-left: 4px;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .searchBar {
+    margin-left: 3px;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 1280px) {
+  .searchBar {
+    margin-left: 5px;
+    margin-right: auto;
+  }
+}
+
+.clear{
+  margin-top: 30px;
 }
 
 
@@ -71,4 +152,32 @@
   display: flex;
   justify-content: center;
   margin-top: 20px;
+}
+
+@media (min-width: 350px) {
+  .pagination {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .pagination {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .pagination {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 1280px) {
+  .pagination {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

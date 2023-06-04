@@ -53,7 +53,7 @@ export default function SearchBar({setCurrentPage}) {
             />
           </form>
           <button onClick={handleReset} className={style.resetButton}>
-            Reset
+            ALL
           </button>
         </div>
 

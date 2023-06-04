@@ -1,54 +1,36 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import {orderByPopulation} from '../../Redux/actions/actions';
-import style from './style/Filter.module.css'
+import { orderByPopulation } from "../../Redux/actions/actions";
+import style from "./style/Filter.module.css";
 
-export default function OrderPopulation ({ setCurrentPage }) {
-    const dispatch = useDispatch()
-    const [open, setOpen] = useState(false);
-    const [ascending, setAscending] = useState(false);
-    const [descending, setDescending] = useState(false);
+export default function OrderPopulation({ setCurrentPage }) {
+  const dispatch = useDispatch();
+  const [sortOrder, setSortOrder] = useState("");
+  const [isExpanded, setIsExpanded] = useState(false);
 
-    function handleToggleOpen() {
-        setOpen(!open);
-      }    
+  function handleSort(e) {
+    const selectedSortOrder = e.target.value;
+    setSortOrder(selectedSortOrder);
+    dispatch(orderByPopulation(selectedSortOrder));
+    setCurrentPage(1);
+  }
 
-    function handleSort(e){
-        const sortOrder = e.target.value;
-        if (sortOrder === "asc") {
-            setAscending(!ascending);
-            setDescending(false);
-          } else if (sortOrder === "desc") {
-            setDescending(!descending);
-            setAscending(false);
-          }
-        dispatch(orderByPopulation(sortOrder));
-        setCurrentPage(1);
+  function toggleExpand() {
+    setIsExpanded(!isExpanded);
+  }
 
-    }
-
-    return (
-        <div>
-          <button onClick={handleToggleOpen} className={style.filterName}>Order By 
-            Population</button>
-          {open && (
-            <div className={style.filterList}>
-              <input
-                type="checkbox"
-                value="asc"
-                onChange={handleSort}
-                checked={ascending}
-              />
-              <label className={style.filterTitle}>Asc</label>
-              <input
-                type="checkbox"
-                value="desc"
-                onChange={handleSort}
-                checked={descending}
-              />
-              <label className={style.filterTitle}>Desc</label>
-            </div>
-          )}
-        </div>
-      );
+  return (
+    <div className={style.orderConteiner}>
+      <select
+        className={`${style.orderList} ${isExpanded ? style.expanded : ''}`}
+        value={sortOrder}
+        onChange={handleSort}
+        onClick={toggleExpand}
+      >
+        <option className={style.orderName} value="">Order By Population</option>
+        <option className={style.orderName} value="asc">Ascending</option>
+        <option className={style.orderName} value="desc">Descending</option>
+      </select>
+    </div>
+  );
 }

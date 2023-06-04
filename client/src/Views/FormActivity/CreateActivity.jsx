@@ -39,26 +39,20 @@ export default function CreateActivity() {
 
       function handleCheck(e) {
         const selectedSeason = e.target.value;
-        const maxSeasons = 2; // Máximo de temporadas permitidas
       
         if (e.target.checked) {
-          if (form.season.length <= maxSeasons) {
-            setForm({
-              ...form,
-              season: [...form.season, selectedSeason],
-            });
-          }
+          setForm((prevForm) => ({
+            ...prevForm,
+            season: [...prevForm.season, selectedSeason],
+          }));
         } else {
-          setForm({
-            ...form,
-            season: form.season.filter(season => season !== selectedSeason),
-          });
+          setForm((prevForm) => ({
+            ...prevForm,
+            season: prevForm.season.filter((season) => season !== selectedSeason),
+          }));
         }
       
-        setErrors(validate({
-          ...form,
-          season: form.season,
-        }));
+        setErrors(validate({ ...form, season: form.season }));
       }
       
 
@@ -206,15 +200,15 @@ export default function CreateActivity() {
                         value="Spring"
                         onChange={handleCheck}/>Spring
                     </label>
-                    {errors.season && (
-                        <p className={style.error} >{errors.season}</p>
+                    {errors.season && errors.season.length > 1 && (
+                      <p className={style.error} >{errors.season}</p>
                     )}
                 </div>
 
 
                 <div className={style.countriesContainer}>
                 <select onChange={(e)=> handleSelect(e)}>
-                <option value="">Select Countries</option>
+                <option className={style.selectCountries} value="">Select Countries</option>
                     {countries.map((cou) => 
                     <option value={cou.name} key={cou.name} > {cou.name}</option>
                     )}
@@ -237,12 +231,12 @@ export default function CreateActivity() {
 
                 </div>
             </div>
+              <div className={style.conteinerButton}>
+              <button className={style.createButton } type="submit">
+                <span>Create New Activity</span>
+              </button>
+              </div>
              
-             <div className={style.conteinerButton}>
-            <button className={style.createButton } type="submit">
-              <span>Create New Activity</span>
-            </button>
-            </div>
             </form>
 
             </div>

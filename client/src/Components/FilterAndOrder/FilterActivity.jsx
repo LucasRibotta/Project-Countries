@@ -1,98 +1,33 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { filterBySeason } from '../../Redux/actions/actions';
-import style from './style/Filter.module.css'
+import style from './style/Filter.module.css';
 
 export default function FilterActivity({ setCurrentPage }) {
   const dispatch = useDispatch();
-  const [isOpen, setIsOpen] = useState(false)
-  const [selectSeason, setSelectSeason] = useState([])
-  
- 
-  const handleChange = (e) => {
-    const seasons = e.target.value
-    setCurrentPage(1);
-    setSelectSeason(seasons)
-    dispatch(filterBySeason(seasons));
-    };
+  const [selectSeason, setSelectSeason] = useState('');
 
-    function toggleDropdown(){
-      setIsOpen(!isOpen)
-    }
+  const handleChange = (e) => {
+    const seasons = e.target.value;
+    setCurrentPage(1);
+    setSelectSeason(seasons);
+    dispatch(filterBySeason(seasons));
+  };
 
   return (
     <div>
-      <div>
-        <button className={style.filterName} onClick={toggleDropdown}>
-          Filter Season
-        </button>
-        {isOpen && (
-          <div> 
-            <div className={style.filterList}>
-        <label className={style.filterTitle}>
-          <input
-          id="all"
-          type="checkbox"
-          name='All'
-          value='All'
-          checked={selectSeason.includes('All')}
-          onChange={handleChange}
-          />
-          All
-        </label>
-
-        <label className={style.filterTitle}>
-          <input
-          id="all" 
-          type="checkbox"
-          name='Summer'
-          value='Summer'
-          checked={selectSeason.includes('Summer')}
-          onChange={handleChange}
-          />
-          Summer
-        </label>
-
-        <label className={style.filterTitle}>
-          <input
-          id="all" 
-          type="checkbox"
-          name='Spring'
-          value='Spring'
-          checked={selectSeason.includes('Spring')}
-          onChange={handleChange}
-          />
-          Spring
-        </label>
-
-        <label className={style.filterTitle}>
-          <input
-          id="all" 
-          type="checkbox"
-          name='Autumn'
-          value='Autumn'
-          checked={selectSeason.includes('Autumn')}
-          onChange={handleChange}
-          />
-          Autumn
-        </label>
-
-        <label className={style.filterTitle}>
-          <input
-          id="all" 
-          type="checkbox"
-          name='Winter'
-          value='Winter'
-          checked={selectSeason.includes('Winter')}
-          onChange={handleChange}
-          />
-          Winter
-        </label>
-      </div>
-          </div>
-        )}
-      </div>
-      
+      <select
+        className={style.filterName}
+        value={selectSeason}
+        onChange={handleChange}
+      >
+        <option value="">Filter Activity</option>
+        <option value="All">All</option>
+        <option value="Summer">Summer</option>
+        <option value="Spring">Spring</option>
+        <option value="Autumn">Autumn</option>
+        <option value="Winter">Winter</option>
+      </select>
     </div>
   );
 }

@@ -12,6 +12,7 @@ import ClearFilter from "../../Components/FilterAndOrder/ClearFilter";
 import SearchBar from "../../Components/SearchBar/SearchBar";
 
 
+
 export default function Home () {
 
     const dispatch = useDispatch();
@@ -49,7 +50,8 @@ return (
   <div className={style.containerHome}>
 
 
-    <div className={style.filtersContainer}>
+    <div className={style.buscadorContainer}>
+      <div className={style.filtersContainer}>
       <div className={style.filter}>
     <FilterContinents setCurrentPage={setCurrentPage} />
       </div>
@@ -62,8 +64,9 @@ return (
       <div className={style.filter}>
         <OrderPopulation setCurrentPage={setCurrentPage} /> 
       </div>
-      <div>
-        <ClearFilter setCurrentPage={setCurrentPage}/>
+      <div className={style.clear}>
+        <ClearFilter setCurrentPage={setCurrentPage} />
+      </div>
       </div>
     <div className={style.searchBar}>
       <SearchBar setCurrentPage={setCurrentPage} />

@@ -1,8 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Exo+2:wght@100&display=swap');
+
+
 .titleH1{
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: rgb(255, 255, 255)
+  font-family: sans-serif;
+  font-size: 30px;
+  color: rgb(196, 196, 196)
 }
 
  .conteiner{
@@ -12,12 +17,63 @@
   text-align: justify;
   width: 50%;
   height: 50%;
+  font-family: Bangers;
+  font-size: 30px;
   margin-left: 25%;
   border-radius: 5px;
   background-color: #fff;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
   padding: 2rem;
  } 
+
+ 
+@media (min-width: 350px) {
+  .conteiner {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    width: 80%;
+    height: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .conteiner {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    width: 80%;
+    height: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .conteiner {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    width: 50%;
+    height: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 1280px) {
+  .conteiner {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    width: 50%;
+    height: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 
  .title {
   display: flex;
@@ -32,7 +88,41 @@
 }
 
   .error {
+    display: flex;
+    font-size: 12px;
     color: red;
+  }
+
+  @media (min-width: 350px) {
+    .error {
+      display: flex;
+      font-size: 12px;
+      color: red;;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .error {
+      display: flex;
+      font-size: 12px;
+      color: red;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .error {
+      display: flex;
+      font-size: 12px;
+      color: red;
+    }
+  }
+  
+  @media (min-width: 1280px) {
+    .error {
+      display: flex;
+      font-size: 12px;
+      color: red;
+    }
   }
   
   .seasonContainer {
@@ -42,23 +132,204 @@
     justify-content: center;
   }
   
+  @media (min-width: 350px) {
+    .seasonContainer {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: space-between;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .seasonContainer {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: space-between;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .seasonContainer {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  
+  @media (min-width: 1280px) {
+    .seasonContainer {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
   .countriesContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  @media (min-width: 350px) {
+    .countriesContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 2px;
+      margin-left: 5px;
+      margin-right: 5px;
+
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .countriesContainer {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .countriesContainer {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  
+  @media (min-width: 1280px) {
+    .countriesContainer {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .selectCountries{
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: 500;
+
+  }
+
+  @media (min-width: 350px) {
+    .selectCountries {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100px;
+      margin-left: 5px;
+      margin-right: 5px;
+
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .selectCountries {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100px;
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .selectCountries {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100px;
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+  }
+  
+  @media (min-width: 1280px) {
+    .selectCountries {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100px;
+      margin-left: 5px;
+      margin-right: 5px;
+    }
   }
   
   .selectedList {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
     justify-content: center;
     padding: 0;
   }
+
+  @media (min-width: 350px) {
+    .selectedList {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .selectedList {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .selectedList {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: center;
+      padding: 0;
+    }
+  }
+  
+  @media (min-width: 1280px) {
+    .selectedList {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: center;
+      padding: 0;
+    }
+  }
   
   .selectedCountry {
-    display: inline-block;
-    margin: 5px;
+    display: flex;
+    flex-direction: row;
+    width: 25px;
+    height: 20px;
+    border-radius: 10px;
+    margin-left: 3px;
+    cursor: pointer;
   }
   
   .selectedCountry button {
@@ -72,22 +343,51 @@
     
   }
 
+  @media (min-width: 350px) {
+    .selectedCountry {
+      display: flex;
+      flex-direction: row;
+      margin: 5px;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .selectedCountry {
+      display: flex;
+      flex-direction: row;
+      margin: 5px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .selectedCountry {
+      display: flex;
+      flex-direction: row;
+      margin: 5px;
+    }
+  }
+  
+  @media (min-width: 1280px) {
+    .selectedCountry {
+      display: flex;
+      flex-direction: row;
+      margin: 5px;
+    }
+  }
+
   .conteinerButton{
      display: flex;
      align-items: center;
      justify-content: center;
-     width: 100%;
-     height: 100%;
-     margin-top: 2rem;
+     margin-top: 5rem;
      margin-bottom: 2rem;
-     padding-bottom: 10%;
 
   }
   
   .createButton {
      background-color: transparent;
-     border: 2px solid #cfff04;
-     background-color: whitesmoke;
+     border: 2px solid #afafaf;
+     background-image: linear-gradient( 58.2deg,  rgba(40,91,212,0.73) -3%, rgba(171,53,163,0.45) 49.3%, rgba(255,204,112,0.37) 97.7% );
      border-radius: 0.4em;
      box-shadow: 
      2px 2px 4px rgba(0, 0, 0, 0.5),
@@ -106,7 +406,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgb(17, 255, 0);
+    background-image: linear-gradient( 358.4deg,  rgba(249,151,119,1) -2.1%, rgba(98,58,162,1) 90% );
     position: absolute;
     border-radius: 50px;
     transition: all 1s ease;

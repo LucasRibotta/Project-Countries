@@ -40,7 +40,7 @@ export default function Detail() {
       )}  
     <div className={style.nameContainer}>
       {details.hasOwnProperty("name") && (
-        <h2>{details.name}</h2>
+        <h2 className={style.titleCountries}>{details.name}</h2>
       )}
     </div>
   </div>

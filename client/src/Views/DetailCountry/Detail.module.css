@@ -43,10 +43,11 @@
     width: 80%;
     height: 80%;
     border-radius: 5px;
-    background-color: #3b3b3b;
+    background: linear-gradient(to right, #141e30, #243b55);
     box-shadow: 
     0 2px 5px #ccc,
-    0 6px 10px #ccc;
+    0 4px 8px #ccc,
+    0 6px 10px #aaa9a9;
     margin: 5px;
     margin-top: 20px;
     margin-bottom: 5px;
@@ -131,32 +132,69 @@
   display: flex;
   width: 200px;
   height: 180px;
+  margin-right: 150px;
+}
+
+    
+@media (min-width: 350px) {
+  .flagImage {
+    width: 100px;
+    height: 100px;
+    margin-left: auto;
+    margin-right: 50px;
+
+  }
+}
+
+@media (min-width: 769px) {
+  .flagImage {
+    width: 150px;
+    height: 100px;
+    margin-right: 100px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .flagImage {
+    width: 200px;
+    height: 180px;
+    margin-right: 150px;
+
+  }
+}
+
+@media (min-width: 1280px) {
+  .flagImage {
+    width: 200px;
+    height: 180px;
+    margin-right: 150px;
+  }
 }
     
   .flameando {
-    animation: flamear 2s infinite;
+    animation: flamear 5s linear;
   }
 
   @keyframes flamear {
     0% {
-      transform: translateX(0) rotateZ(1deg); 
+      transform: translateY(0) rotate(0.5deg); 
     }
     50% {
-      transform: scale(.5) rotate(1deg);
+      transform: scale(.2) rotate(0.5deg);
     }
     100% {
-      transform: scale(.2) rotate(0);
+      transform: scale(.1) rotate(0);
     }
   }
   
   .flagImagedera img {
-    animation: flamear 2s ease-in-out infinite;
+    animation: flamear 5s linear;
   }
       
 
 .nameContainer {
   display: flex;
-  margin-left: 20px;
+  margin-left: 10px;
   font-size: 25px;
 }
 
@@ -190,6 +228,36 @@
     margin-left: auto;
     margin-right: auto;
     font-size: 20px;
+  }
+}
+
+.titleCountries{
+  font-size: 3rem;
+}
+
+
+@media (min-width: 350px) {
+  .titleCountries {
+    font-size: 1rem;
+  }
+}
+    
+@media (min-width: 769px) {
+  .titleCountries {
+    font-size: 1.5rem;
+  }
+}
+    
+@media (min-width: 1024px) {
+  .titleCountries {
+    font-size: 2rem;
+    
+  }
+}
+    
+@media (min-width: 1280px) {
+  .titleCountries {
+    font-size: 3rem;
   }
 }
 

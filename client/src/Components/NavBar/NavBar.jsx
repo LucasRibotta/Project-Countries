@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {useLocation } from "react-router-dom";
 import ExitButton from '../Exit/Exit'
 import style from "./navBar.module.css";
-import plane from '../../assets/Airplane.gif'
+import title from '../../assets/tittle.png'
 
 
 export default function NavBar() {
@@ -74,12 +74,8 @@ export default function NavBar() {
         </div>
 
       </div>
-      
-   <div className={style.h1Container}>
-        <h1 className={style.h1}>COUNTRIES API</h1>
-      </div> 
       <div>
-         <img src={plane} alt="plane" className={style.animatePlane} /> 
+         <img src={title} alt="title" className={style.titleCountries} /> 
       </div>
 
     </div>

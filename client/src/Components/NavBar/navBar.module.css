@@ -2,16 +2,18 @@
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
+  justify-content: space-between;
   background: #203A43;
   border: 1px solid rgb(255, 255, 255);
   padding: 0;
   margin: 0;
-  height: 40px;
+  height: 50px;
   
 }
 
 @media (min-width: 350px) {
   .container {
+    height: 50px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -41,38 +43,11 @@
 
 .menuContainer {
   display: flex;
-  align-items: flex-start;
+  flex-direction: row;
+  align-items: flex-end;
   justify-content: flex-end;
 }
 
-@media (min-width: 350px) {
-  .menuContainer {
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-@media (min-width: 769px) {
-  .menuContainer {
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-@media (min-width: 1024px) {
-  .menuContainer {
-    margin-right: auto;
-    margin-right: auto;
-
-  }
-}
-
-@media (min-width: 1280px) {
-  .menuContainer {
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
 
 .menuContainer > div {
   margin-right: 0;
@@ -80,6 +55,8 @@
 
 .hamburgerMenu {
   position: relative;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .checkbox {
@@ -199,31 +176,13 @@
   display: none;
 }
 
-.h1Container {
-  flex: 1;
-  text-align: center;
-  color: whitesmoke;
-}
 
-.h1{
-  
-}
-
-.animatePlane {
+.titleCountries {
   display: flex;
-  flex-direction: column;
+  flex-direction: row-reverse;
   justify-content: flex-start;
   align-items: flex-start;
-  border: 2px solid black;
-  animation: movePlane 20s linear infinite;
-  
+  margin-left: 0;
+  height: 200px;
+  margin-top: 60px;
 }
-
-@keyframes movePlane {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
-} 
