@@ -32,15 +32,27 @@
   .landingContainer {
     width: 102vh;
     min-height: 100%;
+    text-align: center;
     margin-left: auto;
     margin-right: auto;
   }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 500px) {
   .landingContainer {
     width: 100%;
     min-height: 100vh;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 720px) {
+  .landingContainer {
+    width: 100%;
+    min-height: 100vh;
+    text-align: center;
     margin-left: auto;
     margin-right: auto;
   }
