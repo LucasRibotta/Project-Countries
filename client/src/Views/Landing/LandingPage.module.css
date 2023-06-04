@@ -44,7 +44,7 @@
     width: 100%;
     min-height: 100vh;
     text-align: center;
-     margin-left: auto;
+    margin-left: auto;
   }
 }
 
@@ -99,7 +99,6 @@
     margin-left: auto;
     width: calc(var(--globe-size) - 50px);
     height: calc(var(--globe-size) - 50px); 
-
   }
 }
 
@@ -107,21 +106,19 @@
   .globe {
     align-items: center;
     margin-left: auto;
-    margin-right: auto;
     width: calc(var(--globe-size) - 50px);
     height: calc(var(--globe-size) - 50px); 
-
   }
 }
 
-@media (min-width: 720px) {
+@media (min-width: 720px) and (max-width: 1023px) {
   .globe {
     margin-top: 1rem;
     align-items: center;
     margin-left: auto;
     margin-right: auto;
-    width: calc(var(--globe-size) - 50px);
-    height: calc(var(--globe-size) - 50px); 
+    width: calc(var(--globe-size) - 100px);
+    height: calc(var(--globe-size) - 100px); 
   }
 }
 
@@ -219,6 +216,36 @@
   margin-left: 5%;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
   } 
+
+  @media (min-width: 350px) {
+    .title {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  
+  @media (min-width: 769px) {
+    .title {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .title {
+      margin-right: auto;
+      margin-right: auto;
+  
+    }
+  }
+  
+  @media (min-width: 1280px) {
+    .title {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  
 
 
   .conteinerbtn {
