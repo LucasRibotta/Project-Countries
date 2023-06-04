@@ -1,5 +1,5 @@
 :root {
-  --animation-speed: 10s;
+  --animation-speed: 20s;
   --globe-size: 500px;
 }
 
@@ -72,8 +72,7 @@
   background-color: #2d2938;
   width: var(--globe-size);
   height: var(--globe-size);
-  margin: auto;
-  margin-bottom: 4rem;
+  margin-bottom: 10rem;
   border-radius: 100%;
   overflow: hidden;
   position: relative;
