@@ -10,10 +10,15 @@
 
 @media (min-width: 350px) {
   .container {
-    margin-top: 20px; 
+    margin-top: 10rem; 
   }
 }
 
+@media (min-width: 500px) {
+  .socialIcon {
+    margin-top: 10rem; 
+  }
+}
 
 @media (max-width: 768px) {
   .container {
@@ -80,6 +85,18 @@
   }
   &:hover{
     background-color: blueviolet;
+  }
+}
+
+@media (min-width: 350px) {
+  .socialIcon {
+    margin-top: 10rem; 
+  }
+}
+
+@media (min-width: 500px) {
+  .socialIcon {
+    margin-top: 10rem; 
   }
 }
 
