@@ -105,7 +105,8 @@
 @media (min-width: 500px) {
   .globe {
     align-items: center;
-    margin-left: auto;
+    margin-left: 10rem;
+    margin-right: auto;
     width: calc(var(--globe-size) - 50px);
     height: calc(var(--globe-size) - 50px); 
   }
@@ -115,7 +116,7 @@
   .globe {
     margin-top: 1rem;
     align-items: center;
-    margin-left: auto;
+    margin-left: 10rem;
     margin-right: auto;
     width: calc(var(--globe-size) - 100px);
     height: calc(var(--globe-size) - 100px); 
@@ -124,7 +125,6 @@
 
 @media (min-width: 1024px) {
   .globe {
-    margin-right: auto;
     align-items: center;
     margin-left: auto;
     margin-right: auto;
@@ -219,22 +219,29 @@
 
   @media (min-width: 350px) {
     .title {
-      margin-left: auto;
-      margin-right: auto;
+      margin-left: 0;
+      text-align: center;
+    }
+  }
+
+  @media (min-width: 500px) {
+    .title {
+      margin-left: 10rem;
+      text-align: center;
     }
   }
   
-  @media (min-width: 769px) {
+  @media (min-width: 720px) {
     .title {
-      margin-left: auto;
-      margin-right: auto;
+      margin-left: 10rem;
+      text-align: center;
     }
   }
   
   @media (min-width: 1024px) {
     .title {
-      margin-right: auto;
-      margin-right: auto;
+      margin-left: auto;
+      text-align: center;
   
     }
   }
@@ -242,7 +249,7 @@
   @media (min-width: 1280px) {
     .title {
       margin-left: auto;
-      margin-right: auto;
+      text-align: center;
     }
   }
   
