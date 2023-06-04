@@ -16,13 +16,34 @@
   
 }
 
+@media (min-width: 350px) {
+  .containerHome {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .containerHome {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .containerHome {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 
 .buscadorContainer {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   height: 400px;
-  width: 250px;
+  width: 240px;
   border: 5px dotted rgb(195, 195, 195);
   margin-right: 20px;
 }
@@ -30,6 +51,8 @@
 
 @media (min-width: 350px) {
   .buscadorContainer {
+    height: 100px;
+    width: 80px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -37,6 +60,8 @@
 
 @media (min-width: 768px) {
   .buscadorContainer {
+    height: 200px;
+    width: 150px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -44,6 +69,8 @@
 
 @media (min-width: 1024px) {
   .buscadorContainer {
+    height: 350px;
+    width: 230px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -51,8 +78,9 @@
 
 @media (min-width: 1280px) {
   .buscadorContainer {
-    margin-left: auto;
-    margin-right: auto;
+    height: 400px;
+    width: 240px;
+    margin-left: 0;
   }
 }
 
