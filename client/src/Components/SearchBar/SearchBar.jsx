@@ -14,6 +14,7 @@ export default function SearchBar({setCurrentPage}) {
       setCurrentPage(1) 
       setName(value);
       dispatch(getCountriesName(value));
+
     };
   
     const handleClick = () => {
