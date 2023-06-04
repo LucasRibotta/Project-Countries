@@ -26,14 +26,16 @@
   background-color: #2d2938;
   display: flex;
   flex-direction: column;
+  overflow-y: hidden;
 }
 
 @media (min-width: 350px) {
   .landingContainer {
-    width: 100%;
+    width: 102vh;
     min-height: 100vh;
     text-align: center;
-    margin-left: 1rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -42,7 +44,7 @@
     width: 100%;
     min-height: 100vh;
     text-align: center;
-     margin-left: 1rem;
+     margin-left: auto;
   }
 }
 
@@ -51,7 +53,7 @@
     width: 100%;
     min-height: 100vh;
     text-align: center;
-     margin-left: 1rem;
+     margin-left: auto;
   }
 }
 
@@ -60,7 +62,7 @@
     width: 100%;
     min-height: 100vh;
     text-align: center;
-     margin-left: 1rem;
+     margin-left: auto;
 
   }
 }
@@ -95,16 +97,31 @@
     margin-top: 1.5rem;
     align-items: center;
     margin-left: auto;
-    margin-right: auto;
+    width: calc(var(--globe-size) - 50px);
+    height: calc(var(--globe-size) - 50px); 
+
   }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 500px) {
   .globe {
-    margin-top: 1.5rem;
     align-items: center;
     margin-left: auto;
     margin-right: auto;
+    width: calc(var(--globe-size) - 50px);
+    height: calc(var(--globe-size) - 50px); 
+
+  }
+}
+
+@media (min-width: 720px) {
+  .globe {
+    margin-top: 1rem;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: calc(var(--globe-size) - 50px);
+    height: calc(var(--globe-size) - 50px); 
   }
 }
 
@@ -112,6 +129,7 @@
   .globe {
     margin-right: auto;
     align-items: center;
+    margin-left: auto;
     margin-right: auto;
 
   }
@@ -121,6 +139,7 @@
   .globe {
     margin-left: auto;
     align-items: center;
+    margin-left: auto;
     margin-right: auto;
   }
 }

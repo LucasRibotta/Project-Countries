@@ -26,7 +26,7 @@ export function getCountries () {
             });
         })
         .catch(error => {
-        // Manejar el error en caso de que la solicitud falle
+
             console.error('Error:', error);
         });
     };
@@ -47,7 +47,7 @@ export function getCountriesName(name) {
           });
         })
         .catch(error => {
-          // Manejar el error en caso de que la solicitud falle
+
           console.error('Error:', error);
         });
     };
@@ -122,7 +122,7 @@ export const getActivityCreated = () => {
       dispatch({ type: GET_ACTIVITY_CREATED, payload: activities });
     } catch (error) {
       console.log(error);
-      // Manejo de errores: puedes mostrar una notificación de error o realizar cualquier otra acción necesaria
+     
     }
   };
 };
