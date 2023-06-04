@@ -96,7 +96,7 @@
   .globe {
     margin-top: 1.5rem;
     align-items: center;
-    margin-left: 0;
+    margin-left: 2rem;
     width: calc(var(--globe-size) - 50px);
     height: calc(var(--globe-size) - 50px); 
   }
@@ -105,7 +105,7 @@
 @media (min-width: 500px) {
   .globe {
     align-items: center;
-    margin-left: 0;
+    margin-left: 2rem;
     width: calc(var(--globe-size) - 50px);
     height: calc(var(--globe-size) - 50px); 
   }
@@ -115,7 +115,7 @@
   .globe {
     margin-top: 1rem;
     align-items: center;
-    margin-left: 0;
+    margin-left: 5rem;
     width: calc(var(--globe-size) - 100px);
     height: calc(var(--globe-size) - 100px); 
   }
