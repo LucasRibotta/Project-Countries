@@ -96,7 +96,7 @@
   .globe {
     margin-top: 1.5rem;
     align-items: center;
-    margin-left: auto;
+    margin-left: 10rem;
     width: calc(var(--globe-size) - 50px);
     height: calc(var(--globe-size) - 50px); 
   }
@@ -106,7 +106,6 @@
   .globe {
     align-items: center;
     margin-left: 10rem;
-    margin-right: auto;
     width: calc(var(--globe-size) - 50px);
     height: calc(var(--globe-size) - 50px); 
   }
@@ -117,7 +116,6 @@
     margin-top: 1rem;
     align-items: center;
     margin-left: 10rem;
-    margin-right: auto;
     width: calc(var(--globe-size) - 100px);
     height: calc(var(--globe-size) - 100px); 
   }
