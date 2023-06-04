@@ -115,7 +115,7 @@
   .globe {
     margin-top: 1rem;
     align-items: center;
-    margin-left: 5rem;
+    margin-left:10rem;
     width: calc(var(--globe-size) - 100px);
     height: calc(var(--globe-size) - 100px); 
   }
