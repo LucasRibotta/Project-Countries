@@ -7,17 +7,14 @@ function toCamelCase(name) {
         cocosIslands: 'Cocos (Keeling) Islands',
         alandIslands: 'Åland Islands',
         saintBarthelemy: 'Saint Barthélemy',
-      // Agrega otros nombres de países según sea necesario
     };
   
     const formattedName = name.toLowerCase();
   
-    // Condiciones para manejar nombres de países específicos
     if (countryNameMap.hasOwnProperty(formattedName)) {
       return countryNameMap[formattedName];
     }
   
-    // Resto de la lógica para convertir a camelCase
     return formattedName
       .replace(/[^a-zA-Z0-9]+(.)/g, (match, character) => character.toUpperCase())
       .replace(/[^a-zA-Z0-9]/g, "")
@@ -26,5 +23,4 @@ function toCamelCase(name) {
       .replace(/,\s*/g, "");
   }
   
-  // Mantén el export default al final del archivo
-  export default toCamelCase;
+    export default toCamelCase;

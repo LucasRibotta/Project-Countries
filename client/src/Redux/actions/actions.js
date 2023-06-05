@@ -94,7 +94,6 @@ export function orderByName(type) {
 
 //Orden por población
 export function orderByPopulation(payload) {
-  console.log(payload)
   return {
     type: ORDER_BY_POPULATION,
     payload
@@ -105,7 +104,6 @@ export function orderByPopulation(payload) {
 export const createActivity = (payload) => {
   return async function (dispatch) {
       const apiData = await axios.post(`${url}/activities`, payload)
-       console.log(apiData);
       
       dispatch({type: POST_ACTIVITY, payload: apiData})
   }
@@ -128,7 +126,6 @@ export const getActivityCreated = () => {
 };
 
 export function filterBySeason(payload) {
-  console.log(payload)
   return {
     type: FILTER_BY_SEASON,
     payload

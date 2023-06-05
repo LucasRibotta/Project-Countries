@@ -11,10 +11,9 @@ export default function NavBar() {
 
   const allowedRoutes = ["/home", "/about", "/game", '/create'];
 
-  // Verificar si la ruta actual está permitida
   const isAllowedRoute = allowedRoutes.includes(location.pathname) || location.pathname.startsWith("/detail/");
   if (!isAllowedRoute) {
-    return null; // No renderizar el NavBar cuando la ruta no está permitida
+    return null; 
   }
 
   const handleClick = () => {

@@ -55,7 +55,6 @@ function rootReducer (state= initialState, action) {
 
         case FILTER_BY_CONTINENTS:
             const continents = state.allContinents;
-            console.log(continents)
             const filteredContinents = action.payload === "All" ? continents :
             continents.filter(c => c.continents === action.payload)
             return{
@@ -109,12 +108,11 @@ function rootReducer (state= initialState, action) {
          
             case FILTER_BY_SEASON:
                 const { payload } = action;
-                console.log(payload);
               
                 const filteredActivities = state.allContinents.map((act) => {
-                  console.log(act.activities);
+
                   const temporada = act.activities.map((el) => ({ seasons: el.season }));
-                  console.log(temporada);
+
                   return {
                     id: act.id,
                     name: act.name,
@@ -134,9 +132,7 @@ function rootReducer (state= initialState, action) {
                     el.activities.some((s) => s.seasons && s.seasons.includes(payload))
                   );
                 }
-              
-                console.log(seasonActivities);
-              
+         
                 return {
                   ...state,
                   countries: seasonActivities,

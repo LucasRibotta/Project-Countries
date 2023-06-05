@@ -3,30 +3,24 @@ import styles from './Paginado.module.css';
 
 export default function Pagination({ countryPerPage, allCountries, paginado, currentPage }) {
   const pageCountrys = [];
-  const maxVisiblePages = 7; // Cantidad máxima de números de página visibles
+  const maxVisiblePages = 7;
   const totalPages = Math.ceil(allCountries / countryPerPage);
 
   let startPage;
   let endPage;
 
   if (totalPages <= maxVisiblePages) {
-    // Si el total de páginas es menor o igual a la cantidad máxima de páginas visibles,
-    // mostramos todas las páginas.
     startPage = 1;
     endPage = totalPages;
   } else {
-    // Calculamos el rango de páginas visibles según la página actual.
     const maxVisiblePagesHalf = Math.floor(maxVisiblePages / 2);
     if (currentPage <= maxVisiblePagesHalf) {
-      // Si la página actual está cerca del comienzo, mostramos las primeras páginas.
       startPage = 1;
       endPage = maxVisiblePages;
     } else if (currentPage + maxVisiblePagesHalf >= totalPages) {
-      // Si la página actual está cerca del final, mostramos las últimas páginas.
       startPage = totalPages - maxVisiblePages + 1;
       endPage = totalPages;
     } else {
-      // Si la página actual está en el medio, mostramos las páginas alrededor de la página actual.
       startPage = currentPage - maxVisiblePagesHalf;
       endPage = currentPage + maxVisiblePagesHalf;
     }

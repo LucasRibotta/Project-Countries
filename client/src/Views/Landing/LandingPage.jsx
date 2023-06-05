@@ -5,7 +5,6 @@ import mapaMundo from '../../assets/mapaMundo.png';
 import mapaMundo2 from '../../assets/mapaMundo2.png';
 
 
-
 const LandingPage = () => {
 
 
