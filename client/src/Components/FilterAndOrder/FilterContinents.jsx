@@ -21,8 +21,7 @@ export default function FilterContinents({ setCurrentPage }) {
         value={selectedContinent}
         onChange={handleFilterContinents}
       >
-        <option value="">Filter Continent</option>
-        <option value="All">All</option>
+        <option value="All">All Filter Continent</option>
         <option value="North America">North America</option>
         <option value="South America">South America</option>
         <option value="Europe">Europe</option>

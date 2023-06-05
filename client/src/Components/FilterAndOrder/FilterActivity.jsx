@@ -21,8 +21,7 @@ export default function FilterActivity({ setCurrentPage }) {
         value={selectSeason}
         onChange={handleChange}
       >
-        <option value="">Filter Activity</option>
-        <option value="All">All</option>
+        <option value="All">All Activity</option>
         <option value="Summer">Summer</option>
         <option value="Spring">Spring</option>
         <option value="Autumn">Autumn</option>

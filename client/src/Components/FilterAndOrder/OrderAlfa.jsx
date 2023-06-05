@@ -8,6 +8,7 @@ export default function OrderNameAlpha({ setCurrentPage }) {
   const [sortOrder, setSortOrder] = useState("");
 
   function handleSort(e) {
+    console.log(handleSort)
     const selectedSortOrder = e.target.value;
     setSortOrder(selectedSortOrder);
     dispatch(orderByName(selectedSortOrder));

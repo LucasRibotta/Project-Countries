@@ -40,6 +40,37 @@
   }
 }
 
+@media (min-width: 350px) {
+  .paginationLink {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+}
+
+@media (min-width: 500px) {
+  .paginationLink {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+}
+
+@media (min-width: 720px) {
+  .paginationLink {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+}
+
+@media (min-width: 1024px) {
+  .paginationLink {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+}
 
 .disabled {
   cursor: not-allowed;
