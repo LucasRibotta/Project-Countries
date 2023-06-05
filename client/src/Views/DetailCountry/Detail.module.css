@@ -127,69 +127,64 @@
       }
     }
       
-.flagImage {
-  position: relative;
-  display: flex;
-  width: 200px;
-  height: 180px;
-  margin-right: 150px;
-}
-
+    .flagImage {
+      position: relative;
+      display: flex;
+      width: 200px;
+      height: 180px;
+      margin-right: 150px;
+      animation: moveSide 15s linear infinite;
+      transform-origin: top left;
+      transform: scale(0.1);
+    }
     
-@media (min-width: 350px) {
-  .flagImage {
-    width: 100px;
-    height: 100px;
-    margin-left: auto;
-    margin-right: 50px;
-
-  }
-}
-
-@media (min-width: 769px) {
-  .flagImage {
-    width: 150px;
-    height: 100px;
-    margin-right: 100px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .flagImage {
-    width: 200px;
-    height: 180px;
-    margin-right: 150px;
-
-  }
-}
-
-@media (min-width: 1280px) {
-  .flagImage {
-    width: 200px;
-    height: 180px;
-    margin-right: 150px;
-  }
-}
+    @keyframes moveSide {
+      0% {
+        transform: translateX(0) scale(0.1);
+      }
+      25% {
+        transform: translateX(5px) scale(0.5);
+      }
+      75% {
+        transform: translateX(-5px) scale(0.8);
+      }
+      100% {
+        transform: translateX(0) scale(1);
+      }
+    }
     
-  .flameando {
-    animation: flamear 5s linear;
-  }
-
-  @keyframes flamear {
-    0% {
-      transform: translateY(0) rotate(0.5deg); 
+    @media (min-width: 350px) {
+      .flagImage {
+        width: 100px;
+        height: 100px;
+        margin-left: auto;
+        margin-right: 50px;
+      }
     }
-    50% {
-      transform: scale(.2) rotate(0.5deg);
+    
+    @media (min-width: 769px) {
+      .flagImage {
+        width: 150px;
+        height: 100px;
+        margin-right: 100px;
+      }
     }
-    100% {
-      transform: scale(.1) rotate(0);
+    
+    @media (min-width: 1024px) {
+      .flagImage {
+        width: 200px;
+        height: 180px;
+        margin-right: 150px;
+      }
     }
-  }
-  
-  .flagImagedera img {
-    animation: flamear 5s linear;
-  }
+    
+    @media (min-width: 1280px) {
+      .flagImage {
+        width: 200px;
+        height: 180px;
+        margin-right: 150px;
+      }
+    }
       
 
 .nameContainer {

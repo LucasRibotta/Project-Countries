@@ -51,7 +51,6 @@ export default function Detail() {
         <div className={style.details}>
           <p>Continent: {details.continents}</p>
           <p>Capital: {details.capital.replace(/["{}]/g, '')}</p>
-          <p>Subregion: {details.subregion}</p>
           <p>Area: {parseInt(details.area).toLocaleString('de-DE')} Km2</p>
           <p>Population: {details.population.toLocaleString('de-DE')}</p>
         </div>

@@ -68,7 +68,7 @@ return (
       </div>
       </div>
     <div className={style.searchBar}>
-      <SearchBar setCurrentPage={setCurrentPage} />
+      <SearchBar />
     </div>
     </div>
     

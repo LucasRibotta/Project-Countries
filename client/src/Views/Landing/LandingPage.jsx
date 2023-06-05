@@ -19,7 +19,7 @@ const LandingPage = () => {
              <span></span>
              <span></span>
              <span></span>
-             GO HOME
+             GO TO THE WORLD
             </button>
           </Link>
         </div>

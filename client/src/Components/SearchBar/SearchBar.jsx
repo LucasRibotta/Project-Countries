@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { getCountries, getCountriesName } from "../../Redux/actions/actions";
 import style from './Search.module.css';
 
-export default function SearchBar({setCurrentPage}) {
+export default function SearchBar() {
     const [name, setName] = useState("");
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const searchInputRef = useRef(null);
@@ -12,7 +12,6 @@ export default function SearchBar({setCurrentPage}) {
     const handleInputChange = (e) => {
       const { value } = e.target;
       setName(value);
-      setCurrentPage(1)
       dispatch(getCountriesName(value));
 
     };
