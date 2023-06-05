@@ -7,6 +7,34 @@
   width: 100%;
 }
 
+@media (min-width: 350px) {
+  .fondo {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 500px) {
+  .fondo {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 720px) {
+  .fondo {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .fondo {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 .containerHome {
   display: flex;
   flex-direction: row;
@@ -23,7 +51,14 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 500px) {
+  .containerHome {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 720px) {
   .containerHome {
     margin-left: auto;
     margin-right: auto;
@@ -57,7 +92,16 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width:500px) {
+  .buscadorContainer {
+    height: 100px;
+    width: 70px;
+    margin-left: 0;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 720px) {
   .buscadorContainer {
     height: 200px;
     width: 160px;
@@ -93,6 +137,33 @@
    
 }
 
+@media (min-width: 350px) {
+  .filtersContainer {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 500px) {
+  .filtersContainer {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 720px) {
+  .filtersContainer {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .filtersContainer {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 
 .filter {
   margin-top: 20px;
@@ -151,6 +222,13 @@
   padding-bottom: 2%;
   max-width: 1200px;
   z-index: 1;
+}
+
+@media (min-width: 768px) {
+  .cardContainer {
+    grid-template-columns: repeat(1, 1fr);
+    margin-left: 10%;
+  }
 }
 
 @media (min-width: 768px) {
