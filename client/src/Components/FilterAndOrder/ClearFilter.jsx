@@ -8,12 +8,11 @@ export default function ClearFilter({setCurrentPage, }){
     const [  , setOrder] = useState("")
 
     function handleDefault(evt) {
-      const data = document.querySelectorAll('input[type="checkbox"]');
-      data.forEach((e) => (e.checked = false));
       setCurrentPage(1);
       setOrder(evt.target.value);
       dispatch(clearFilter());
     }
+    
 
     return(
         <div>

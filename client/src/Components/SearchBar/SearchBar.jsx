@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { useDispatch } from "react-redux";
-import { getCountries, getCountriesName } from "../../Redux/actions/actions";
+import { getCountriesName } from "../../Redux/actions/actions";
 import style from './Search.module.css';
 
 export default function SearchBar() {
@@ -27,10 +27,6 @@ export default function SearchBar() {
       }
     };
   
-    const handleReset = () => {
-      setName("");
-      dispatch(getCountries());
-    };
   
     return (
       <div>
@@ -52,9 +48,6 @@ export default function SearchBar() {
               className={`${style.search} ${isSearchOpen ? style.searchOpen : ''}`}
             />
           </form>
-          <button onClick={handleReset} className={style.resetButton}>
-            ALL
-          </button>
         </div>
 
       </div>

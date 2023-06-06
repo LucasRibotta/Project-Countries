@@ -133,7 +133,7 @@
       width: 200px;
       height: 180px;
       margin-right: 150px;
-      animation: moveSide 15s linear infinite;
+      animation: moveSide 12s linear infinite;
       transform-origin: top left;
       transform: scale(0.1);
     }
@@ -409,10 +409,13 @@
     }
 }
 
-.deleteButton {
-  background-color: red;
-  color: white;
-  padding: 5px 10px;
-  border: none;
+.btnBack {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 100%;
+  margin-right: 0;
   cursor: pointer;
+  transition: transform 0.3s;
 }
+

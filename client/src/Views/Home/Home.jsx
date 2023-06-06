@@ -11,8 +11,6 @@ import OrderPopulation from '../../Components/FilterAndOrder/OrderPopulation';
 import ClearFilter from "../../Components/FilterAndOrder/ClearFilter";
 import SearchBar from "../../Components/SearchBar/SearchBar";
 
-
-
 export default function Home () {
   
     const dispatch = useDispatch();
@@ -27,11 +25,10 @@ export default function Home () {
         setCurrentPage(pageNumber)
     }
 
-
-useEffect(()=> {
-    dispatch(getCountries());
-    dispatch(getActivityCreated())
-},[dispatch]);
+    useEffect(()=> {
+        dispatch(getCountries());
+        dispatch(getActivityCreated())
+    },[dispatch]);
 
 
 

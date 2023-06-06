@@ -8,6 +8,7 @@ export default function FilterContinents({ setCurrentPage }) {
   const [selectedContinent, setSelectedContinent] = useState('');
 
   function handleFilterContinents(e) {
+    e.preventDefault()
     const continent = e.target.value;
     setCurrentPage(1);
     setSelectedContinent(continent);
