@@ -80,7 +80,6 @@ export default function CreateActivity() {
       if (Object.keys(errors).length === 0) {
       if (window.confirm("Do you want to create the activity? This step cannot be modified...")) {
       if (window.confirm("¡Successful! Now you can enjoy your activity")) {
-        console.log(form);
         const formData = {
           ...form,
           season: form.season

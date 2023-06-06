@@ -49,13 +49,13 @@
   }
   
   .searchContainer .search:focus:hover {
-    border-bottom: 2px solid black
+    border-bottom: 2px solid rgb(251, 251, 251)
   }
   
   .searchContainer .search:focus {
     width: 220px;
     z-index: 1;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid rgb(249, 248, 248);
     cursor: text;
   }
 
@@ -103,8 +103,8 @@
     font-weight: 80;
     border: none;
     outline: none;
-    color: #000000;
-    background-color: rgb(221, 221, 255);
+    color: #fffafa;
+    background-color: transparent;
     padding: 3px;
     padding-left: 30px;
     width: 10px;
@@ -152,7 +152,7 @@
   }
   
   .searchContainer .search::placeholder {
-    color: #000000;
+    color: #fefefe;
   }
   
   .searchContainer .lupa {
@@ -160,6 +160,7 @@
     width: 30px;
     display: inline-block;
     border: none;
+    color: white;
     position: absolute;
     top: 5px;
     left: 0;
@@ -172,54 +173,4 @@
     display: none;
   }
 
-  .resetButton {
-    height: 20px;
-    width: 60px;
-    display: inline-block;
-    color: rgb(244, 244, 244);
-    background-color: #000000;
-    border: 1px solid rgb(255, 252, 252);
-    border-radius: 10px;
-    position: absolute;
-    top: 50px;
-    left: 0px;
-    z-index: 2;
-    cursor: pointer;
-    transition: opacity 0.4s ease;
-  }
-
-  @media (min-width: 350px) {
-    .resetButton {
-      margin-left: 5px;
-      
-    }
-  }
-      
-  @media (min-width: 769px) {
-    .resetButton {
-      margin-left: 3px;
-      margin-right: auto;
-
-     
-    }
-  }
-      
-  @media (min-width: 1024px) {
-    .resetButton {
-      margin-right: 5px;
-      margin-right: auto;
-      
-    }
-  }
-      
-  @media (min-width: 1280px) {
-    .resetButton {
-      margin-left: 5px;
-      margin-right: auto;
-     
-    }
-  }
-
-  .resetButton:hover {
-    transform: scale(1.2);
-  }
+  
