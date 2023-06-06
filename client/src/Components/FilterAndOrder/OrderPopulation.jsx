@@ -27,7 +27,7 @@ export default function OrderPopulation({ setCurrentPage }) {
         onChange={handleSort}
         onClick={toggleExpand}
       >
-        <option className={style.orderName} value="">Order By Population</option>
+        <option className={style.orderName} value="all">Order By Population</option>
         <option className={style.orderName} value="asc">Ascending</option>
         <option className={style.orderName} value="desc">Descending</option>
       </select>

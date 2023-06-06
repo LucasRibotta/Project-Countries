@@ -17,7 +17,7 @@ export default function OrderNameAlpha({ setCurrentPage }) {
   return (
     <div className={style.orderConteiner}>
       <select className={style.orderList} value={sortOrder} onChange={handleSort}>
-        <option className={style.orderName} value="">Order By Alphabetical</option>
+        <option className={style.orderName} value="all">Order By Alphabetical</option>
         <option className={style.orderName} value="a-z">A - Z</option>
         <option className={style.orderName} value="z-a">Z - A</option>
       </select>
