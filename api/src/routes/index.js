@@ -15,8 +15,8 @@ const router = Router();
     res.status(200).send("Base de datos ok")
 }) */
 
-router.use('/countries', countries);  //"countries" es el nombre del modelo
-router.use('/activities', activities);  //"activity" es el nombre del modelo
+router.use('/countries', countries);  
+router.use('/activities', activities);  
 
 
 module.exports = router;

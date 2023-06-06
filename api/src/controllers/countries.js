@@ -6,17 +6,13 @@ const {DB_URL} = process.env;
 
 
 const getAllCountries = async (req, res) => {
-    // Obtener el parámetro 'name' de la consulta (query)
     const { name } = req.query;
-    // Contar la cantidad de países en la base de datos
     const dBCountry = await Country.count();
 
     try {
        
         if (!dBCountry) {
-            // Si no hay países en la base de datos, obtener los países de la API externa
             const countriesApiGet = await axios.get(DB_URL)
-             // Mapear los datos de los países obtenidos de la API a un formato deseado
             const apiCountries =  countriesApiGet.data.map(pais => {
                 return {
                      id: pais.cca3,
@@ -29,10 +25,8 @@ const getAllCountries = async (req, res) => {
                      maps: pais.maps?.googleMaps || null,
                 }
             })
-             // Insertar los países obtenidos de la API en la base de datos
             await Country.bulkCreate(apiCountries); 
         } else if (name) {
-            // Si se proporciona el parámetro 'name', buscar países por nombre en la base de datos
             const countryName = await Country.findAll({
                 where: {
                      name:  { [Op.iLike]: `%${name}%` },
@@ -47,7 +41,6 @@ const getAllCountries = async (req, res) => {
                 res.status(200).json(countryName) :
                 res.status(404).json(`El pais con el nombre:${name} no se encontro`);
         } else {
-            // Si no se proporciona el parámetro 'name', obtener todos los países de la base de datos
             const allCountrys = await Country.findAll({include: {
               model: Activity,
               attributes: ['names', 'season'],
