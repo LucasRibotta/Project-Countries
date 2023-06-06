@@ -24,6 +24,7 @@ const initialState = {
 
 function rootReducer (state= initialState, action) {
     switch(action.type) {
+
         case GET_COUNTRIES:
             if(state.countries.length === 0){
               return {
@@ -67,34 +68,67 @@ function rootReducer (state= initialState, action) {
                 countries: filteredContinents,
             }
 
-            case ORDER_BY_NAME:
-              const type = action.payload;
-              const sortedCountries = [...state.countries];
-              
-              if (type === "a-z") {
-                sortedCountries.sort((a, b) => a.name.localeCompare(b.name));
-              } else if (type === "z-a") {
-                sortedCountries.sort((a, b) => b.name.localeCompare(a.name));
-              }
-              
-              return {
-                ...state,
-                countries: sortedCountries
-              };
-              
-               case ORDER_BY_POPULATION:
-                let populationOrden;
-                if (action.payload === "asc") {
-                  populationOrden = state.countries.slice().sort((a, b) => b.population - a.population);
-                } else if (action.payload === "desc") {
-                  populationOrden = state.countries.slice().sort((a, b) => a.population - b.population);
-                } else {
-                  populationOrden = state.countries;
-                }
-                return {
-                  ...state,
-                  countries: populationOrden,
-                };
+        case ORDER_BY_NAME:
+
+          const type = action.payload;
+          let sortedCountries = [...state.allContinents];
+          let sortedCountries2 = [...state.countries]
+
+          if (type === "a-z") {
+            sortedCountries.sort((a, b) => a.name.localeCompare(b.name));
+            sortedCountries2.sort((a, b) => a.name.localeCompare(b.name));
+            return{
+              ...state,
+              allContinents: sortedCountries,
+              countries: sortedCountries2
+            }
+          } 
+          if (type === "z-a") {
+            sortedCountries.sort((a, b) => b.name.localeCompare(a.name));
+            sortedCountries2.sort((a, b) => b.name.localeCompare(a.name));
+            return{
+              ...state,
+              allContinents: sortedCountries,
+              countries: sortedCountries2
+            }
+          }else{
+            sortedCountries = state.allContinents
+          }
+          
+          return {
+            ...state,
+            countries: sortedCountries
+          };
+
+        
+          case ORDER_BY_POPULATION:
+          let populationOrden = [];
+          let populationOrden2 = [];
+
+          if (action.payload === "asc") {
+            populationOrden = state.allContinents.slice().sort((a, b) => b.population - a.population);
+            populationOrden2 = state.countries.slice().sort((a,b)=> b.population - a.population);
+            return{
+              ...state,
+              allContinents: populationOrden,
+              countries: populationOrden2
+            }
+          } 
+          if (action.payload === "desc") {
+            populationOrden = state.allContinents.slice().sort((a, b) => a.population - b.population);
+            populationOrden2 = state.countries.slice().sort((a, b) => a.population - b.population);
+            return{
+              ...state,
+              allContinents: populationOrden,
+              countries: populationOrden2
+            }
+          } else {
+            populationOrden = state.allContinents;
+          }
+          return {
+            ...state,
+            countries: populationOrden,
+          };
                       
          
         case GET_ACTIVITY_CREATED:
@@ -142,14 +176,14 @@ function rootReducer (state= initialState, action) {
                   countries: seasonActivities,
                 }; 
 
-              case DELETE_ACTIVITY:
-                const { payload: activityId } = action;
-                const updatedActivities = state.activities.filter((activity) => activity.id !== activityId);
-          
-                return {
-                  ...state,
-                  activities: updatedActivities,
-                };
+          case DELETE_ACTIVITY:
+            const { payload: activityId } = action;
+            const updatedActivities = state.activities.filter((activity) => activity.id !== activityId);
+      
+            return {
+              ...state,
+              activities: updatedActivities,
+            };
         default:
                 return state;
     }

@@ -11,8 +11,8 @@ export default function ClearFilter({setCurrentPage, }){
       setCurrentPage(1);
       setOrder(evt.target.value);
       dispatch(clearFilter());
+
     }
-    
 
     return(
         <div>

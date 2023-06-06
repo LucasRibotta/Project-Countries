@@ -130,10 +130,10 @@
     .flagImage {
       position: relative;
       display: flex;
-      width: 200px;
-      height: 180px;
+      width: 170px;
+      height: 150px;
       margin-right: 150px;
-      animation: moveSide 12s linear infinite;
+      animation: moveSide 5s linear infinite;
       transform-origin: top left;
       transform: scale(0.1);
     }
@@ -180,8 +180,8 @@
     
     @media (min-width: 1280px) {
       .flagImage {
-        width: 200px;
-        height: 180px;
+        width: 170px;
+        height: 150px;
         margin-right: 150px;
       }
     }
