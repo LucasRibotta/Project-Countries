@@ -2,3 +2,4 @@ BACK
 https://pi-countries-production-e7e8.up.railway.app/
 FRONT
 https://pi-countries-front-delta.vercel.app/
+https://pi-countries-front-production-8a32.up.railway.app/
