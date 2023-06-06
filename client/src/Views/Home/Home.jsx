@@ -14,7 +14,7 @@ import SearchBar from "../../Components/SearchBar/SearchBar";
 
 
 export default function Home () {
-
+  
     const dispatch = useDispatch();
     const allCountries = useSelector((state) => state.countries);
     const [currentPage, setCurrentPage] = useState(1);

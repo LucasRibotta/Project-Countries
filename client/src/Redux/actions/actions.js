@@ -10,7 +10,8 @@ import {url,
     GET_ACTIVITY_CREATED,
     POST_ACTIVITY,
     CLEAR_FILTER,
-    FILTER_BY_SEASON
+    FILTER_BY_SEASON,
+    DELETE_ACTIVITY
     } from '../actions-types/actions-types'
 
 
@@ -85,11 +86,11 @@ export function filterByContinents(payload) {
 
 
 //Orden por nombre alfabetico
-export function orderByName(type) {
-    return {
-        type: ORDER_BY_NAME,
-        payload: {type}
-    }
+export function orderByName(sortOrder) {
+  return {
+    type: ORDER_BY_NAME,
+    payload: sortOrder,
+  };
 }
 
 //Orden por población
@@ -133,5 +134,9 @@ export function filterBySeason(payload) {
   
 }
 
-
-
+export function deleteActivity(activityId){
+  return {
+    type: DELETE_ACTIVITY,
+    payload: activityId 
+  };
+}

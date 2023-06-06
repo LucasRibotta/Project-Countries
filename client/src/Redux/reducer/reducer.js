@@ -8,12 +8,14 @@ import {
     GET_ACTIVITY_CREATED,
     POST_ACTIVITY,
     CLEAR_FILTER,
-    FILTER_BY_SEASON
+    FILTER_BY_SEASON,
+    DELETE_ACTIVITY
     } from '../actions-types/actions-types'
 
 const initialState = {
     countries: [],
     allContinents: [],
+    filter: [],
     activities: [],
     detailId: [], 
     controllActivities: {}, 
@@ -28,7 +30,8 @@ function rootReducer (state= initialState, action) {
             return {
                 ...state,
                 countries: action.payload,
-                allContinents: action.payload
+                allContinents: action.payload,
+                filter: action.payload
                 
             }
 
@@ -62,29 +65,29 @@ function rootReducer (state= initialState, action) {
                 countries: filteredContinents,
             }
 
-        case ORDER_BY_NAME:
-               const { type } = action.payload;
-               const sortedCountries = [...state.countries];
-                  
-               if (type === "a-z") {
-                 sortedCountries.sort((a, b) => a.name.localeCompare(b.name));
-               } else if (type === "z-a") {
-                 sortedCountries.sort((a, b) => b.name.localeCompare(a.name));
-               }
-                  
-               return {
-                 ...state,
-                      countries: sortedCountries
-               };
+            case ORDER_BY_NAME:
+              const type = action.payload;
+              const sortedCountries = [...state.allContinents];
+              
+              if (type === "a-z") {
+                sortedCountries.sort((a, b) => a.name.localeCompare(b.name));
+              } else if (type === "z-a") {
+                sortedCountries.sort((a, b) => b.name.localeCompare(a.name));
+              }
+              
+              return {
+                ...state,
+                countries: sortedCountries
+              };
               
                case ORDER_BY_POPULATION:
                 let populationOrden;
                 if (action.payload === "asc") {
-                  populationOrden = state.countries.slice().sort((a, b) => b.population - a.population);
+                  populationOrden = state.allContinents.slice().sort((a, b) => b.population - a.population);
                 } else if (action.payload === "desc") {
-                  populationOrden = state.countries.slice().sort((a, b) => a.population - b.population);
+                  populationOrden = state.allContinents.slice().sort((a, b) => a.population - b.population);
                 } else {
-                  populationOrden = state.countries;
+                  populationOrden = state.allContinents;
                 }
                 return {
                   ...state,
@@ -132,12 +135,19 @@ function rootReducer (state= initialState, action) {
                     el.activities.some((s) => s.seasons && s.seasons.includes(payload))
                   );
                 }
-         
                 return {
                   ...state,
                   countries: seasonActivities,
                 }; 
 
+              case DELETE_ACTIVITY:
+                const { payload: activityId } = action;
+                const updatedActivities = state.activities.filter((activity) => activity.id !== activityId);
+          
+                return {
+                  ...state,
+                  activities: updatedActivities,
+                };
         default:
                 return state;
     }
@@ -147,18 +157,3 @@ function rootReducer (state= initialState, action) {
 export default rootReducer;
 
 
-/* {
-    "id": "ARG",
-    "name": "Argentina",
-    "flags": "https://flagcdn.com/w320/ar.png",
-    "continents": "South America",
-    "capital": "{\"Buenos Aires\"}",
-    "subregion": "South America",
-    "area": "2780400",
-    "population": 45376763,
-    "maps": "https://goo.gl/maps/Z9DXNxhf2o93kvyc6",
-    "activities": [
-        {
-            "names": "Beach",
-            "season": "Summer"
-        } */

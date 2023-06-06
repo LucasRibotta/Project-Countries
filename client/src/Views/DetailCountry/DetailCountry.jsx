@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { getDetail } from "../../Redux/actions/actions";
 import style from './Detail.module.css'
 import coordenadas from "./maps/utils/map";
@@ -29,6 +29,7 @@ export default function Detail() {
   return (
   <div className={style.conteinerPrincipal}>
   <div className={style.detailContainer}>
+  <Link to='/home' ><button>Back</button> </ Link >
   <div className={style.nameFlagsContainer}>
 
       {details.hasOwnProperty("name") ? (
