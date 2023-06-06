@@ -155,8 +155,8 @@ const Error404 = () => {
           </div>
         </div>
           <div className="btn-conteiner " >
-            <Link to="/">
-              <button className='btn'>GO Back</button>
+            <Link to="/home">
+              <button className='btn'>GO HOME</button>
             </Link>
          </div>
       </div>
