@@ -4,6 +4,7 @@ import { createActivity, getCountries } from '../../Redux/actions/actions'
 import { validate } from './validate'
 import style from './style/Create.module.css'
 import { useNavigate } from 'react-router-dom';
+import swal from 'sweetalert';
 
 export default function CreateActivity() {
   const dispatch = useDispatch();
@@ -40,20 +41,39 @@ export default function CreateActivity() {
       function handleCheck(e) {
         const selectedSeason = e.target.value;
       
-        if (e.target.checked) {
-          setForm((prevForm) => ({
-            ...prevForm,
-            season: [...prevForm.season, selectedSeason],
-          }));
+        if (selectedSeason === 'All') {
+          if (e.target.checked) {
+            setForm((prevForm) => ({
+              ...prevForm,
+              season: ['Summer', 'Autumn', 'Winter', 'Spring'],
+            }));
+          } else {
+            setForm((prevForm) => ({
+              ...prevForm,
+              season: [],
+            }));
+          }
         } else {
-          setForm((prevForm) => ({
-            ...prevForm,
-            season: prevForm.season.filter((season) => season !== selectedSeason),
-          }));
+          if (e.target.checked) {
+            setForm((prevForm) => ({
+              ...prevForm,
+              season: [...prevForm.season, selectedSeason],
+            }));
+            setErrors((prevErrors) => {
+              const updatedErrors = { ...prevErrors };
+              delete updatedErrors.season;
+              return updatedErrors;
+            });
+          } else {
+            setForm((prevForm) => ({
+              ...prevForm,
+              season: prevForm.season.filter((season) => season !== selectedSeason),
+            }));
+            setErrors(validate({ ...form, season: form.season }));
+          }
         }
-      
-        setErrors(validate({ ...form, season: form.season }));
       }
+      
       
 
     function handleSelect(e){
@@ -77,30 +97,45 @@ export default function CreateActivity() {
     function handleSubmit(e) {
       e.preventDefault();
     
-      if (Object.keys(errors).length === 0) {
-      if (window.confirm("Do you want to create the activity? This step cannot be modified...")) {
-      if (window.confirm("¡Successful! Now you can enjoy your activity")) {
-        const formData = {
-          ...form,
-          season: form.season
+      const formErrors = validate(form);
+    
+      if (Object.keys(errors).length === 0 && Object.keys(formErrors).length === 0) {
+        if (Object.values(form).every((value) => value !== "")) {
+          swal({
+            title: "Do you want to create the activity? This step cannot be modified...",
+            text: "¡Successful! Now you can enjoy your activity",
+            icon: "warning",
+            buttons: ["Cancel", "Create"],
+            dangerMode: true,
+          }).then((createConfirmed) => {
+            if (createConfirmed) {
+              const formData = {
+                ...form,
+                season: form.season
+              };
+              dispatch(createActivity(formData));
+              setForm({
+                names: "",
+                difficulty: "",
+                duration: "",
+                season: [],
+                countries: []
+              });
+              navigate("/home");
+    
+              swal("Activity Created!", "You can now enjoy your activity", "success");
+            } else {
+              swal("Proceed to make the changes");
+            }
+          });
+        } else {
+          swal("Please fill in all the required fields.", "", "error");
         }
-        dispatch(createActivity(formData));
-        setForm({
-          names: "",
-          difficulty: "",
-          duration: "",
-          season: [],
-          countries: []
-        });
-        navigate("/home");
+      } else {
+        setErrors(formErrors);
+        swal("Please fix the validation errors.", "", "error");
       }
-    } else {
-      window.alert("Proceed to make the changes");
     }
-  } else {
-    window.alert("Please fill in all the required fields.");
-  }
-}
 
 
 
@@ -110,7 +145,7 @@ export default function CreateActivity() {
             <div>
             <h1 className={style.titleH1}>Create tourist activity</h1>
             <form onSubmit={(e) => handleSubmit(e)} >
-
+              
               <div className={style.conteiner}>
                 <div className={style.title}>
                     <label>Activity Name:</label>

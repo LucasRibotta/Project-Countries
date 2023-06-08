@@ -27,7 +27,6 @@ const LandingPage = () => {
         <img src={mapaMundo} alt="mapaMundo" className={`${style.img} ${style.world}`}/>
         <img src={mapaMundo2} alt="mapaInvert" className={`${style.img} ${style.worldInv}`} />
       </div>
-      
     </div>
   );
 };

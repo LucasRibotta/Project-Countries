@@ -15,22 +15,18 @@ import {url,
     } from '../actions-types/actions-types'
 
 
-//Renderizado de todos los países, por Id y nombre
-export function getCountries () {
-    return function(dispatch) {
-        //Conexión entre FRONT Y BACK
-        return axios.get(`${url}/countries`)
-        .then(response => {
-            dispatch({
-                type: GET_COUNTRIES,
-                payload: response.data
-            });
-        })
-        .catch(error => {
-
-            console.error('Error:', error);
-        });
-    };
+export function getCountries(){
+  return function(payload){
+   return axios.get(`${url}/countries`)
+    .then((resp)=> {
+      payload({
+        type: GET_COUNTRIES,
+        payload: resp.data
+      })
+    }).catch((error) => {
+     console.log(error)
+    })
+  }
 }
 
 //Para el searchBar
