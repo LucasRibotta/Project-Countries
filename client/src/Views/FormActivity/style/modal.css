@@ -1,0 +1,21 @@
+.custom-modal{
+    width: 400px;
+    max-width: 90%;
+    background-color: rgb(29, 29, 29);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 
+    0 2px 4px rgb(205, 205, 205),
+    0 4px 6px rgb(204, 204, 204),
+    0 6px 8px rgba(205, 205, 205, 0.871);
+}
+
+.custom-modal .swal-title{
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+}
+
+.custom-modal .swal-text{
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+}

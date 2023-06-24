@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { createActivity, getCountries } from '../../Redux/actions/actions'
 import { validate } from './validate'
 import style from './style/Create.module.css'
+import './style/modal.css'
 import { useNavigate } from 'react-router-dom';
 import swal from 'sweetalert';
 
@@ -96,9 +97,7 @@ export default function CreateActivity() {
 
     function handleSubmit(e) {
       e.preventDefault();
-    
       const formErrors = validate(form);
-    
       if (Object.keys(errors).length === 0 && Object.keys(formErrors).length === 0) {
         if (Object.values(form).every((value) => value !== "")) {
           swal({
@@ -107,6 +106,7 @@ export default function CreateActivity() {
             icon: "warning",
             buttons: ["Cancel", "Create"],
             dangerMode: true,
+            className: 'custom-modal'
           }).then((createConfirmed) => {
             if (createConfirmed) {
               const formData = {
