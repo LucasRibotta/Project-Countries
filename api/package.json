@@ -7,7 +7,7 @@
     "start": "node index.js",
     "test": "mocha -w ./tests/**/*.spec.js",
     "nodemon": "nodemon index.js",
-    "build": "run build"
+    "build": "next build"
   },
   "author": "Henry",
   "license": "ISC",
