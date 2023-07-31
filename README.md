@@ -19,30 +19,27 @@
 El objetivo es brindar a los usuarios una plataforma educativa y entretenida para aprender sobre los países del mundo, sus características únicas, atracciones turísticas y más. La aplicación fomenta la curiosidad y el deseo de viajar, al tiempo que permite a los usuarios colaborar y compartir su conocimiento sobre los destinos que han explorado.
 </div>
 
+<br />
+
 Características Principales:
 <div text='white'>
-    Exploración y Búsqueda de Países:
+1) Exploración y Búsqueda de Países:
     Descubre un vasto tesoro de países mediante una interfaz intuitiva que te permitirá explorar la lista completa o realizar búsquedas personalizadas por nombre.
-
-    Filtrado Inteligente:
-    Con el filtrado por población, alfabético y por continentes, podrás organizar la lista de países según tus preferencias, ya sea para ver los países más poblados, ordenarlos alfabéticamente o agruparlos por continente para comprender mejor la diversidad mundial.
-
-    Actividades Turísticas por Temporada:
-    ¿Interesado en las mejores experiencias turísticas según la temporada del año? Nuestra aplicación te muestra las actividades turísticas más emocionantes para cada país, permitiéndote planificar tus aventuras en cualquier época.
-
-    Detalles enriquecidos de cada País:
-    Al hacer clic en un país específico, accederás a una página detallada con información exhaustiva. Desde datos demográficos hasta ubicaciones geográficas, podrás sumergirte en la cultura y geografía de cada destino.
-
-    Explora la Ubicación Geográfica:
+2) Filtrado Inteligente:
+    Con el filtrado por población, alfabético y por continentes, podrás organizar la lista de países según tus preferencias, ya sea para ver los países más poblados,               ordenarlos alfabéticamente o agruparlos por continente para comprender mejor la diversidad mundial.
+3) Actividades Turísticas por Temporada:
+    ¿Interesado en las mejores experiencias turísticas según la temporada del año? Nuestra aplicación te muestra las actividades turísticas más emocionantes para cada país,         permitiéndote planificar tus aventuras en cualquier época.
+4) Detalles enriquecidos de cada País:
+    Al hacer clic en un país específico, accederás a una página detallada con información exhaustiva. Desde datos demográficos hasta ubicaciones geográficas, podrás sumergirte     en la cultura y geografía de cada destino.
+5) Explora la Ubicación Geográfica:
     Aprovecha la representación en el mapa para visualizar la ubicación geográfica de cada país, lo que te ayudará a tener una mejor comprensión de la distribución global.
-
-    Juego de Preguntas y Respuestas:
-    ¿Crees que conoces las banderas del mundo? Pon a prueba tus conocimientos en nuestro juego de adivinanzas de banderas. Diviértete mientras aprendes y desafías a tus amigos a superar tus puntuaciones.
-
-    Colabora con Nuevas Actividades Turísticas:
-    ¿Tienes una experiencia turística única que quieras compartir? Contribuye a la comunidad añadiendo nuevas actividades turísticas para un país y ayuda a otros viajeros a disfrutar de experiencias inolvidables.
+6) Juego de Preguntas y Respuestas:
+    ¿Crees que conoces las banderas del mundo? Pon a prueba tus conocimientos en nuestro juego de adivinanzas de banderas. Diviértete mientras aprendes y desafías a tus amigos     a superar tus puntuaciones.
+7) Colabora con Nuevas Actividades Turísticas:
+    ¿Tienes una experiencia turística única que quieras compartir? Contribuye a la comunidad añadiendo nuevas actividades turísticas para un país y ayuda a otros viajeros a         disfrutar de experiencias inolvidables.
 </div>
 <div>
+    <br />
    ## Tech Stack
 
 <div align="center">  
@@ -56,4 +53,6 @@ Características Principales:
 <a href="https://www.javascript.com/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/javascript-original.svg" alt="JavaScript" height="50" /></a> 
 </div>
 </div>
+<br />
+<br />
   <img src="./countries.png" />
