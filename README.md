@@ -43,7 +43,7 @@ Características Principales:
    
 
 <div align="center">  
-    ## Tech Stack
+    <h1>Tech Stack </h1>
      <br />
 <a href="https://reactjs.org/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/react-original-wordmark.svg" alt="React" height="50" /></a>   
 <a href="https://redux.js.org/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/redux-original.svg" alt="Redux" height="50" /></a>
@@ -57,4 +57,6 @@ Características Principales:
 
 <br />
 <br />
+<div>
   <img src="./countries.png" />
+</div>
