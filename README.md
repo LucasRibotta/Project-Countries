@@ -24,25 +24,27 @@ El objetivo es brindar a los usuarios una plataforma educativa y entretenida par
 Características Principales:
 <div text='white'>
 1) Exploración y Búsqueda de Países:
-    Descubre un vasto tesoro de países mediante una interfaz intuitiva que te permitirá explorar la lista completa o realizar búsquedas personalizadas por nombre.
+    Descubre un vasto tesoro de países mediante una interfaz intuitiva que te permitirá explorar la lista completa o realizar búsquedas personalizadas por nombre.<br />
 2) Filtrado Inteligente:
-    Con el filtrado por población, alfabético y por continentes, podrás organizar la lista de países según tus preferencias, ya sea para ver los países más poblados,               ordenarlos alfabéticamente o agruparlos por continente para comprender mejor la diversidad mundial.
+    Con el filtrado por población, alfabético y por continentes, podrás organizar la lista de países según tus preferencias, ya sea para ver los países más poblados,               ordenarlos alfabéticamente o agruparlos por continente para comprender mejor la diversidad mundial.<br />
 3) Actividades Turísticas por Temporada:
-    ¿Interesado en las mejores experiencias turísticas según la temporada del año? Nuestra aplicación te muestra las actividades turísticas más emocionantes para cada país,         permitiéndote planificar tus aventuras en cualquier época.
+    ¿Interesado en las mejores experiencias turísticas según la temporada del año? Nuestra aplicación te muestra las actividades turísticas más emocionantes para cada país,         permitiéndote planificar tus aventuras en cualquier época.<br />
 4) Detalles enriquecidos de cada País:
-    Al hacer clic en un país específico, accederás a una página detallada con información exhaustiva. Desde datos demográficos hasta ubicaciones geográficas, podrás sumergirte     en la cultura y geografía de cada destino.
+    Al hacer clic en un país específico, accederás a una página detallada con información exhaustiva. Desde datos demográficos hasta ubicaciones geográficas, podrás sumergirte     en la cultura y geografía de cada destino.<br />
 5) Explora la Ubicación Geográfica:
-    Aprovecha la representación en el mapa para visualizar la ubicación geográfica de cada país, lo que te ayudará a tener una mejor comprensión de la distribución global.
+    Aprovecha la representación en el mapa para visualizar la ubicación geográfica de cada país, lo que te ayudará a tener una mejor comprensión de la distribución global.<br />
 6) Juego de Preguntas y Respuestas:
-    ¿Crees que conoces las banderas del mundo? Pon a prueba tus conocimientos en nuestro juego de adivinanzas de banderas. Diviértete mientras aprendes y desafías a tus amigos     a superar tus puntuaciones.
+    ¿Crees que conoces las banderas del mundo? Pon a prueba tus conocimientos en nuestro juego de adivinanzas de banderas. Diviértete mientras aprendes y desafías a tus amigos     a superar tus puntuaciones.<br />
 7) Colabora con Nuevas Actividades Turísticas:
-    ¿Tienes una experiencia turística única que quieras compartir? Contribuye a la comunidad añadiendo nuevas actividades turísticas para un país y ayuda a otros viajeros a         disfrutar de experiencias inolvidables.
+    ¿Tienes una experiencia turística única que quieras compartir? Contribuye a la comunidad añadiendo nuevas actividades turísticas para un país y ayuda a otros viajeros a         disfrutar de experiencias inolvidables.<br />
 </div>
-<div>
     <br />
-   ## Tech Stack
+
+   
 
 <div align="center">  
+    ## Tech Stack
+     <br />
 <a href="https://reactjs.org/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/react-original-wordmark.svg" alt="React" height="50" /></a>   
 <a href="https://redux.js.org/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/redux-original.svg" alt="Redux" height="50" /></a>
 <a href="https://www.w3schools.com/css/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/css3-original-wordmark.svg" alt="CSS3" height="50" /></a>  
@@ -52,7 +54,7 @@ Características Principales:
 <a href="https://www.mysql.com/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/mysql-original-wordmark.svg" alt="MySQL" height="50" /></a>
 <a href="https://www.javascript.com/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/javascript-original.svg" alt="JavaScript" height="50" /></a> 
 </div>
-</div>
+
 <br />
 <br />
   <img src="./countries.png" />
