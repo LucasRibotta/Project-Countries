@@ -15,7 +15,7 @@
 
 ---
 <div align="center">
-"Explorando el Mundo" es un emocionante proyecto que te invita a explorar y conocer países de todo el mundo. Utilizando la API de Rest Countries, esta aplicación web te brinda una experiencia interactiva para descubrir información detallada sobre 250 países, desde datos demográficos hasta actividades turísticas por temporada. Sumérgete en la riqueza cultural y geográfica del planeta mientras te diviertes con juegos y contribuyes a enriquecer el conocimiento turístico global.
+"Explorando el Mundo" es un emocionante proyecto que te invita a explorar y conocer países de todo el mundo. Utilizando la API de Rest Countries, esta aplicación web te brinda una experiencia interactiva para descubrir información detallada sobre 250 países, desde datos demográficos hasta actividades turísticas por temporada. Sumérgete en la riqueza cultural y geográfica del planeta mientras te diviertes con juegos y contribuyes a enriquecer el conocimiento turístico global. <br />
 El objetivo es brindar a los usuarios una plataforma educativa y entretenida para aprender sobre los países del mundo, sus características únicas, atracciones turísticas y más. La aplicación fomenta la curiosidad y el deseo de viajar, al tiempo que permite a los usuarios colaborar y compartir su conocimiento sobre los destinos que han explorado.
 </div>
 
